@@ -1,4 +1,4 @@
 aristotle-admin
 ===============
 
-Aristotle Admin app
+Aristotle admin app for site management.
