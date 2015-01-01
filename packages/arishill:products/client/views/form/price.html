@@ -1,0 +1,14 @@
+<template name="aristotle__products__form_price">
+  <section id="products-form-price">
+    <h3>Price</h3>
+    <fieldset class="{{productError "price.regular_cents"}}">
+      <input type="text" name="price[regular_cents]" placeholder="Regular Price" value="{{centsToDollars price.regular_cents}}">
+      {{productErrorMsg "price.regular_cents"}}
+    </fieldset>
+
+    <fieldset class="{{productError "price.sale_cents"}}">
+      <input type="text" name="price[sale_cents]" placeholder="Sale Price"  value="{{centsToDollars price.sale_cents}}">
+      {{productErrorMsg "price.sale_cents"}}
+    </fieldset>
+  </section>
+</template>
