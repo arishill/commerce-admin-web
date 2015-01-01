@@ -1,0 +1,4 @@
+.meteor
+.DS_Store
+.deploy
+settings.json
