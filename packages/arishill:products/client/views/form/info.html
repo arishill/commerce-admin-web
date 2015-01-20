@@ -1,28 +1,28 @@
 <template name="aristotle__products__form_info">
   <section id="products-form-info">
-    <h3>Info</h3>
+    <h3 class="head-secondary margin-top-large">Info</h3>
     <fieldset class="{{productError "title"}}">
-      <input type="text" name="title" placeholder="Title" value="{{title}}">
+      <input type="text" name="title" placeholder="Title" value="{{title}}" class="input-fill">
       {{productErrorMsg "title"}}
     </fieldset>
 
     <fieldset class="{{productError "subtitle"}}">
-      <input type="text" name="subtitle" placeholder="Subtitle" value="{{subtitle}}">
+      <input type="text" name="subtitle" placeholder="Subtitle" value="{{subtitle}}" class="input-fill">
       {{productErrorMsg "subtitle"}}
     </fieldset>
 
     <fieldset class="{{productError "extract"}}">
-      <input type="text" name="extract" placeholder="Extract" value="{{extract}}">
+      <input type="text" name="extract" placeholder="Extract" value="{{extract}}" class="input-fill">
       {{productErrorMsg "extract"}}
     </fieldset>
 
     <fieldset class="{{productError "url"}}">
-      <input type="text" name="url" placeholder="Path/URL" value="{{url}}">
+      <input type="text" name="url" placeholder="Path/URL" value="{{url}}" class="input-fill">
       {{productErrorMsg "url"}}
     </fieldset>
 
     <fieldset class="{{productError "description"}}">
-      <textarea name="description" placeholder="Description">{{{description}}}</textarea>
+      <textarea name="description" placeholder="Description" class="input-fill input-xmedium">{{{description}}}</textarea>
       {{productErrorMsg "description"}}
     </fieldset>
   </section>

@@ -1,35 +1,46 @@
 <template name="aristotle__products__edit">
-  {{> aristotle__products__form}}
+  <section class="contain-2-3 contain-center margin-vert-large">
+    <h1 class="head-primary margin-top-large">Edit Product</h1>
+    {{> aristotle__products__form}}
+  </section>
 </template>
 
 <template name="aristotle__products__create">
-  {{> aristotle__products__form}}
+  <section class="contain-2-3 contain-center">
+    <h1 class="head-primary margin-top-large">Create Product</h1>
+    {{> aristotle__products__form}}
+  </section>
 </template>
 
 <template name="aristotle__products__form">
 
-  <form id='products-form-{{page.action}}' data-action="{{page.action}}" data-action-key="product">
+  <form id='products-form-{{page.action}}' class="form" data-action="{{page.action}}" data-action-key="product">
     {{#with product}}
       {{> aristotle__products__form_info }}
       {{> aristotle__products__form_flags }}
       {{> aristotle__products__form_options }}
-      {{> aristotle__products__form_price }}
-      {{> aristotle__products__form_schedule }}
+      {{> aristotle__products__form_images }}
+
+      <div class="row">
+        {{> aristotle__products__form_price }}
+        {{> aristotle__products__form_schedule }}
+      </div>
       {{> aristotle__products__form_shipping }}
     {{/with}}
 
     <section id="products-form-variants">
-      <ul>
+      <h3 class="head-secondary margin-top-large">Variants</h3>
+      <ul class="row">
       {{#each withIndex product.variants}}
         {{> aristotle__products__form_variants }}
       {{/each}}
       </ul>
 
-      <a href="#" data-action="add" data-action-key="product.variant">Add another</a>
+      <a href="#" data-action="add" data-action-key="product.variant" class="button-tertiary button-radius">Add another</a>
     </section>
 
     <!-- submit -->
-    <input type="submit" value="{{page.btn}}">
+    <button type="submit" class="button-primary button-radius">{{page.btn}}</button>
   </form>
 
 </template>

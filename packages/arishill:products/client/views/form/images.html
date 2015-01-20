@@ -1,0 +1,27 @@
+<template name="aristotle__products__form_images">
+  <section id="products-form-images">
+    <h3 class="head-secondary margin-top-large">Images</h3>
+
+    <fieldset>
+      {{#each withIndex images.cascade}}
+      <div>
+        <img src="{{imgix value 'cascade'}}">
+        <input type="hidden" name="images[cascade][{{index}}]" value="{{value}}">
+      </div>
+      {{/each}}
+      <input type="file" data-action="upload" data-action-key="resumable" data-action-name="images[cascade]">
+      <p>{{progress 'images[cascade]'}}</p>
+    </fieldset>
+
+    <fieldset>
+      {{#each withIndex images.gallery}}
+      <div>
+        <img src="{{imgix value 'gallery'}}">
+        <input type="hidden" name="images[gallery][{{index}}]" value="{{value}}">
+      </div>
+      {{/each}}
+      <input type="file" data-action="upload" data-action-key="resumable" data-action-name="images[gallery]" multiple>
+      <p>{{progress 'images[gallery]'}}</p>
+    </fieldset>
+  </section>
+</template>

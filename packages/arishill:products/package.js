@@ -6,13 +6,35 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0.2');
-  api.use(['mongo', 'random', 'iron:router@=1.0.6', 'aldeed:template-extension@3.1.1', 'aldeed:simple-schema@1.2.0', 'arishill:forms']);
-  api.use(['underscore', 'minimongo', 'templating', 'ui', 'spacebars'], 'client');
+
+  api.use([
+    'mongo',
+    'random',
+    'underscore',
+    'iron:router@=1.0.6',
+    'aldeed:simple-schema@1.2.0',
+    'arishill:forms',
+    'arishill:uploader',
+    'arishill:imgix',
+    'momentjs:moment'
+    ]);
+
+  api.use([
+    'minimongo',
+    'templating',
+    'ui',
+    'spacebars'
+  ], 'client');
 
   api.addFiles([
     'lib/collections.js',
     'lib/controllers.js',
     'lib/routes.js',
+    'lib/schemas/schema.flags.js',
+    'lib/schemas/schema.price.js',
+    'lib/schemas/schema.scheduled.js',
+    'lib/schemas/schema.shipping.js',
+    'lib/schemas/schema.variants.js',
     'lib/schema.js'
   ]);
 
@@ -20,10 +42,12 @@ Package.onUse(function(api) {
     'client/callbacks.js',
     'client/events.js',
     'client/helpers.js',
+    'client/definitions.js',
     'client/views/index.html',
     'client/views/form.html',
     'client/views/form/shipping.html',
     'client/views/form/info.html',
+    'client/views/form/images.html',
     'client/views/form/schedule.html',
     'client/views/form/flags.html',
     'client/views/form/options.html',
@@ -42,7 +66,8 @@ Package.onUse(function(api) {
     'ProductsCreate',
     'ProductsEdit',
     'ProductsTemplates',
-    'ProductsCollection'
+    'ProductsCollection',
+    'moment'
   ]);
 
   api.export([

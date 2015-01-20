@@ -30,13 +30,17 @@ ProductsEdit = RouteController.extend({
     return Meteor.subscribe('productsByUrl', this.params.url);
   },
   data: function() {
-    return {
-      product: ProductsCollection.findOne(),
-      page: {
-        btn: 'Save Product',
-        action: 'update'
-      }
-    };
+    if (typeof(Session.get('product')) !== 'undefined') {
+      return {
+        product: Session.get('product'),
+        page: {
+          btn: 'Save Product',
+          action: 'update'
+        }
+      };
+    } else {
+      Session.set('product', ProductsCollection.findOne());
+    }
   },
   action: function () {
     this.render();

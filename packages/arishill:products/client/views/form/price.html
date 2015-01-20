@@ -1,6 +1,6 @@
 <template name="aristotle__products__form_price">
-  <section id="products-form-price">
-    <h3>Price</h3>
+  <section id="products-form-price" class="col small-1-4">
+    <h3 class="head-secondary margin-top-large">Price</h3>
     <fieldset class="{{productError "price.regular_cents"}}">
       <input type="text" name="price[regular_cents]" placeholder="Regular Price" value="{{centsToDollars price.regular_cents}}">
       {{productErrorMsg "price.regular_cents"}}

@@ -1,7 +1,6 @@
 <template name="aristotle__products__form_schedule">
-  <section id="products-form-schedule">
-    <h3>Schedule</h3>
-
+  <section id="products-form-schedule" class="col small-1-4">
+    <h3 class="head-secondary margin-top-large">Schedule</h3>
     <fieldset class="{{productError "scheduled.start"}}">
       <input type="text" name="scheduled[start]" placeholder="Schedule Start" value="{{timestampToDate scheduled.start}}">
       {{productErrorMsg "scheduled.start"}}

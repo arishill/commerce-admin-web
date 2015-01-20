@@ -20,6 +20,15 @@ ProductsTemplates.helpers.form = {
       return 'checked';
     }
   },
+  imageCollectionCount: function(name) {
+    var product = Session.get('product');
+
+    if (_.isUndefined(product.images) || _.isUndefined(product.images[name])) {
+      return 0;
+    } else {
+      return product.images[name].length;
+    }
+  },
   multipleVariants: function() {
     var product = Session.get('product');
 
@@ -49,6 +58,7 @@ ProductsTemplates.helpers.form = {
 ProductsTemplates.useHelpers = function(template) {
   _.each([
     'form',
+    'form_images',
     'form_info',
     'form_flags',
     'form_options',
@@ -57,7 +67,9 @@ ProductsTemplates.useHelpers = function(template) {
     'form_shipping',
     'form_variants'
     ], function(item, index, list) {
-      Template['aristotle__products__' + item].helpers(ProductsTemplates.helpers.form);
+      var form_helpers = _.extend({}, ProductsTemplates.helpers.form, UploaderHelpers, ImgixHelpers);
+
+      Template['aristotle__products__' + item].helpers(form_helpers);
     });
 
   Template.aristotle__products__index.helpers(ProductsTemplates.helpers.index);
