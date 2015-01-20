@@ -12,6 +12,7 @@ Package.onUse(function(api) {
     'lib/clean.js',
     'lib/currency.js',
     'lib/serialize.js',
+    'lib/schema.js',
     'server/modifier.js'
   ]);
 
@@ -22,6 +23,7 @@ Package.onUse(function(api) {
   ], 'server');
 
   api.export([
+    'Schemas',
     'SimpleSchema',
     'Forms'
   ]);
