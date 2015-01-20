@@ -1,0 +1,35 @@
+<template name="aristotle__orders__edit">
+  {{> aristotle__orders__form}}
+</template>
+
+<template name="aristotle__orders__create">
+  {{> aristotle__orders__form}}
+</template>
+
+<template name="aristotle__orders__form">
+
+  <form id='orders-form-{{page.action}}' data-action="{{page.action}}" data-action-key="product">
+    {{#with order}}
+      {{> aristotle__orders__form_info }}
+      {{> aristotle__orders__form_flags }}
+      {{> aristotle__orders__form_options }}
+      {{> aristotle__orders__form_price }}
+      {{> aristotle__orders__form_schedule }}
+      {{> aristotle__orders__form_shipping }}
+    {{/with}}
+
+    <section id="orders-form-variants">
+      <ul>
+      {{#each withIndex product.variants}}
+        {{> aristotle__orders__form_variants }}
+      {{/each}}
+      </ul>
+
+      <a href="#" data-action="add" data-action-key="product.variant">Add another</a>
+    </section>
+
+    <!-- submit -->
+    <input type="submit" value="{{page.btn}}">
+  </form>
+
+</template>

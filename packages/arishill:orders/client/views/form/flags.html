@@ -1,0 +1,29 @@
+<template name="aristotle__products__form_flags">
+  <section id="products-form-flags">
+    <h3>Flags</h3>
+
+    <fieldset class="{{productError "flags.is_active"}}">
+      <label>Is active?</label>
+      <input type="checkbox" name="flags[is_active]" {{isChecked flags.is_active}}>
+      {{productErrorMsg "flags.is_active"}}
+    </fieldset>
+
+    <fieldset class="{{productError "flags.is_sale"}}">
+      <label>Is on Sale?</label>
+      <input type="checkbox" name="flags[is_sale]" {{isChecked flags.is_sale}}>
+      {{productErrorMsg "flags.is_sale"}}
+    </fieldset>
+
+    <fieldset class="{{productError "flags.is_taxable"}}">
+      <label>Is taxable?</label>
+      <input type="checkbox" name="flags[is_taxable]" {{isChecked flags.is_taxable}}>
+      {{productErrorMsg "flags.is_taxable"}}
+    </fieldset>
+
+    <fieldset class="{{productError "flags.is_discount_ignored"}}">
+      <label>Ignore Bulk Discounts</label>
+      <input type="checkbox" name="flags[is_discount_ignored]" {{isChecked flags.is_discount_ignored}}>
+      {{productErrorMsg "flags.is_discount_ignored"}}
+    </fieldset>
+  </section>
+</template>
