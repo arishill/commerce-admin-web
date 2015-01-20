@@ -1,0 +1,69 @@
+/*.....................................
+  SPACING
+.....................................*/
+.margin-vert-medium {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.margin-top-medium {
+  margin-top: 20px;
+}
+.margin-top-large {
+  margin-top: 30px;
+}
+
+/* helper function spacing
+......................................*/
+// @function set_spacer_size($name) {
+//   @if ($name == "xsmall") {
+//     $size: $size_xsmall;
+//   } @else if ($name == "small") {
+//     $size: $size_small;
+//   } @else if ($name == "medium") {
+//     $size: $size_medium;
+//   } @else if ($name == "xmedium") {
+//     $size: $size_xmedium;
+//   } @else if ($name == "large") {
+//     $size: $size_large;
+//   } @else if ($name == "xlarge") {
+//     $size: $size_xlarge;
+//   } @else if ($name == "xxlarge") {
+//     $size: $size_xxlarge;
+//   }
+//   @return $size;
+// }
+
+// @mixin spacer($type, $name, $style) {
+//   @if $type == 'vert' {
+//     .#{$style}-vert-#{$name} {
+//       #{$style}-top: set_spacer_size($name);
+//       #{$style}-bottom: set_spacer_size($name);
+//     }
+//   }
+//   @else if $type == 'horz' {
+//     .#{$style}-horz-#{$name} {
+//       #{$style}-left: set_spacer_size($name);
+//       #{$style}-right: set_spacer_size($name);
+//     }
+//   }
+//   @else {
+//     @if $type != '' {
+//       $type: '-' + $type;
+//     }
+//     .#{$style}#{$type}-#{$name} {
+//       #{$style}#{$type}: set_spacer_size($name);
+//     }
+//   }
+// }
+
+// @each $size in $sizes {
+//   @each $type in $spacing_types {
+//     @include spacer('', $size, $type);
+//     @include spacer(top, $size, $type);
+//     @include spacer(bottom, $size, $type);
+//     @include spacer(right, $size, $type);
+//     @include spacer(left, $size, $type);
+//     @include spacer(vert, $size, $type);
+//     @include spacer(horz, $size, $type);
+//   }
+// }

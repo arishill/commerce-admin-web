@@ -1,0 +1,183 @@
+@import "base/include";
+
+/*.....................................
+  CONTAINERS
+.....................................*/
+
+// contain and self clearing float
+.contain {
+  position: relative;
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+   clear: both;
+  }
+}
+
+// containers
+.contain-page {
+  width: 100%;
+  margin: 0;
+  .box-sizing(border-box);
+}
+.contain-360 {
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  .box-sizing(border-box);
+}
+.contain-480 {
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  .box-sizing(border-box);
+}
+.contain-600 {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  .box-sizing(border-box);
+}
+.contain-750 {
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  .box-sizing(border-box);
+}
+.contain-900 {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  .box-sizing(border-box);
+}
+.contain-960 {
+  max-width: 990px;
+  margin-left: auto;
+  margin-right: auto;
+  .box-sizing(border-box);
+}
+.contain-1000 {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  .box-sizing(border-box);
+}
+.contain-1024 {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  .box-sizing(border-box);
+}
+.contain-1100 {
+  max-width: 1110px;
+  margin-left: auto;
+  margin-right: auto;
+  .box-sizing(border-box);
+}
+.contain-1400 {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  .box-sizing(border-box);
+}
+
+// fixed containers
+.contain-fixed-left-100 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100px;
+}
+.contain-fixed-left-200 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100px;
+}
+.contain-fixed-left-400 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 400px;
+}
+
+.contain-fixed-right-100 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100px;
+}
+.contain-fixed-right-200 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100px;
+}
+.contain-fixed-right-400 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 400px;
+}
+
+.contain-fixed-top-50 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+}
+.contain-fixed-top-100 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 150px;
+  width: 100%;
+}
+.contain-fixed-top-300 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 300px;
+  width: 100%;
+}
+
+.contain-fixed-bottom-50 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+}
+.contain-fixed-bottom-100 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 150px;
+  width: 100%;
+}
+.contain-fixed-bottom-300 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 300px;
+  width: 100%;
+}
+
+.contain-center {
+  margin: auto;
+  position: relative;
+}
+.contain-2-3 {
+  width: 66.666%;
+}

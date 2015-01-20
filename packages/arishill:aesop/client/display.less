@@ -1,0 +1,53 @@
+@import "base/include";
+
+/*.....................................
+  DISPLAY
+.....................................*/
+
+// block, inline, hidden
+.is-block {
+  display: block;
+}
+.is-inline {
+  display: inline-block;
+}
+.is-hidden {
+  display: none;
+}
+
+// radius
+.radius {
+  .border-radius(5px);
+}
+.radius-top {
+  .border-radius(5px 5px 0px 0px);
+}
+.radius-bottom {
+  .border-radius(0px 0px 5px 5px);
+}
+.radius-left {
+  .border-radius(5px 5px 0px 0px);
+}
+.radius-right {
+  .border-radius(5px 5px 0px 0px);
+}
+
+// box shadows
+.box-shadow {
+  border: 1px solid #f5f5f5;
+  .box-shadow(3px 3px 7px 0px #ccc);
+}
+
+// arrows
+.arrow-bottom-center {
+  // .triangle(top, 5px, #4A3060);
+}
+.arrow-top-center {
+  // .triangle(bottom, 5px, #4A3060);
+}
+.arrow-left-center {
+  // .triangle(left, 5px, #4A3060);
+}
+.arrow-right-center {
+  // .triangle(right, 5px, #4A3060);
+}

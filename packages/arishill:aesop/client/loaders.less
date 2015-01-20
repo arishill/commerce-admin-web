@@ -1,0 +1,50 @@
+@import "base/include";
+@import "base/keyframes";
+
+/*.....................................
+  LOADERS
+.....................................*/
+
+.loader {
+  left: 50%;
+  top: 15%;
+  display: inline-block;
+  margin: 0;
+  border-radius: 50%;
+  border-right-color: transparent !important;
+  .animation(spin 1.2s infinite linear);
+}
+
+// loader size mixin
+.loader-size(@loader-size, @size-name, @border-size) {
+  .loader-@{size-name} {
+    .loader;
+    border-width: @border-size;
+    border-style: solid;
+    width: @loader-size;
+    height: @loader-size;
+  }
+}
+
+// loader color mixin
+.loader-color(@color, @color-name) {
+  .loader-@{color-name} {
+    border-color: @color;
+  }
+}
+
+// run through the loader sizes
+.loader-size(5px, xsmall, 2px);
+.loader-size(@size_small, small, 3px);
+.loader-size(@size_medium, medium, 4px);
+.loader-size(@size_xmedium, xmedium, 4px);
+.loader-size(@size_large, large, 5px);
+.loader-size(@size_xlarge, xlarge, 6px);
+
+// run through the loader colors
+.loader-color(@color-white, inverse);
+
+.loader-color(@color-pastel-green, pastel-green);
+.loader-color(@color-pastel-gray, pastel-gray);
+.loader-color(@color-pastel-red, pastel-red);
+.loader-color(@color-pastel-orange, pastel-orange);

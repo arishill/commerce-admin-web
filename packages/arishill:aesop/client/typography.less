@@ -1,0 +1,255 @@
+@import "base/include";
+
+/*.....................................
+  TYPOGRAPHY
+.....................................*/
+
+// alignment
+.text-top {
+  vertical-align: top;
+}
+.text-middle {
+  vertical-align: middle;
+}
+.text-bottom {
+  vertical-align: bottom;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+.word-break {
+  word-break: break-word;
+}
+
+// case
+.text-upper {
+  text-transform: uppercase;
+}
+.text-lower {
+  text-transform: lowercase;
+}
+
+// colors
+.color-primary {
+  color: @color-black;
+}
+.color-secondary {
+  color: @color-gray-mid;
+}
+.color-tertiary {
+  color: #ffffff;
+}
+.color-error {
+  color: #ffffff;
+}
+.color-warning {
+  color: #ffffff;
+}
+.color-inverse {
+  color: #ffffff;
+}
+.color-desat {
+  color: #ffffff;
+}
+.color-highlight {
+  color: #ffffff;
+}
+
+// fonts
+.font-primary {
+  font-family: sans-serif;
+}
+.font-secondary {
+  font-family: sans-serif;
+}
+.font-tertiary {
+  font-family: sans-serif;
+}
+
+// size
+.text-xsmall {
+  font-size: 12px;
+}
+.text-small {
+  font-size: 14px;
+}
+.text-medium {
+  font-size: 16px;
+}
+.text-xmedium {
+  font-size: 21px;
+}
+.text-large {
+  font-size: 24px;
+}
+.text-xlarge {
+  font-size: 24px;
+}
+
+// tracking
+.tracking-xsmall {
+  letter-spacing: .5px;
+}
+.tracking-small {
+  letter-spacing: 1px;
+}
+.tracking-medium {
+  letter-spacing: 1.5px;
+}
+.tracking-xmedium {
+  letter-spacing: 2px;
+}
+.tracking-large {
+  letter-spacing: 3px;
+}
+.tracking-xlarge {
+  letter-spacing: 4px;
+}
+
+// leading
+.line-primary {
+  line-height: 40px;
+  height: 40px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.line-secondary {
+  line-height: 28px;
+  height: 28px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.line-tertiary {
+  line-height: 21px;
+  height: 21px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+// links
+.link-primary,
+.link-primary a {
+  &:link,
+  &:visited {
+    color: #4A3060;
+  }
+  &:hover,
+  &:active {
+    color: #4A3060;
+  }
+}
+.link-secondary,
+.link-secondary a {
+  &:link,
+  &:visited {
+    color: #4A3060;
+    text-decoration: none;
+  }
+  &:hover,
+  &:active {
+    color: #4A3060;
+    text-decoration: none;
+  }
+}
+.link-tertiary,
+.link-tertiary a {
+  &:link,
+  &:visited {
+    color: #4A3060;
+    text-decoration: none;
+  }
+  &:hover,
+  &:active {
+    color: #4A3060;
+    text-decoration: none;
+  }
+}
+.link-inverse,
+.link-inverse a {
+  &:link,
+  &:visited {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  &:hover,
+  &:active {
+    text-decoration: none;
+    color: #ffffff;
+  }
+}
+.link-desat,
+.link-desat a {
+  &:link,
+  &:visited {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  &:hover,
+  &:active {
+    text-decoration: none;
+    color: #ffffff;
+  }
+}
+.link-highlight,
+.link-highlight a {
+  &:link,
+  &:visited {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  &:hover,
+  &:active {
+    text-decoration: none;
+    color: #ffffff;
+  }
+}
+
+// truncate
+.truncate {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+
+  &.xlarge {
+    max-width: 90%;
+  }
+  &.large {
+    max-width: 75%;
+  }
+  &.medium {
+    max-width: 60%;
+  }
+  &.small {
+    max-width: 40%;
+  }
+}
+
+// text copy (extend fonts, sizes, colors)
+.text-copy-primary {
+
+}
+.text-copy-secondary {
+
+}
+.text-copy-tertiary {
+
+}
+
+  // &.disabled,
+  // &.is-disabled {
+  //   &.is-active,
+  //   &.is-hover {
+  //     cursor: pointer;
+  //     @include transition(opacity 200ms ease-out);
+  //     opacity: 1;
+  //   }
+  // }

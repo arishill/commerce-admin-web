@@ -1,0 +1,110 @@
+@import "base/include";
+
+/*.....................................
+  FORMS
+......................................*/
+.form {
+
+  // fieldsets
+  fieldset {
+    .margin-vert-medium;
+
+    &.is-disabled {
+      opacity: 0.4;
+    }
+    label {
+      cursor: default;
+    }
+  }
+
+  // labels
+  label {
+  }
+
+  // input fields
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="number"],
+  textarea {
+    padding: 12px;
+    background: #ffffff;
+    height: 40px;
+
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #333;
+    line-height: normal;
+
+    border: 1px solid #ccc;
+
+    .border-radius(5px);
+    .box-sizing(border-box);
+    .transition(border .2s ease);
+    .placeholder(#ddd);
+
+    &[disabled],
+    &.is-disabled {
+      opacity: 0.4;
+    }
+
+    // has error
+    &.is-error {
+
+      // error selected
+      &.is-selected {
+      }
+      .placeholder(#eee);
+    }
+
+    // focus
+    &:focus {
+      .placeholder(#eee);
+
+      //focus error
+      &.is-error {
+
+        // focus error selected
+        &.is-selected {
+        }
+
+        .placeholder(#eee);
+      }
+    }
+  }
+}
+
+// input sizes
+.input-fill {
+  width: 100%;
+}
+.input-xsmall {
+}
+.input-input-small {
+}
+.input-medium {
+}
+.input-xmedium {
+}
+.input-large {
+}
+.input-xlarge {
+}
+
+// textarea sizes
+textarea {
+  &.input-xsmall {
+  }
+  &.input-small {
+  }
+  &.input-medium {
+  }
+  &.input-xmedium {
+    height: 100px;
+  }
+  &.input-large {
+  }
+  &.input-xlarge {
+  }
+}

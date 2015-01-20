@@ -1,0 +1,57 @@
+@import "base/include";
+
+/*.....................................
+  NOTICES
+.....................................*/
+
+.notice {
+  position: relative;
+
+  // active
+  &.is-active {
+    height: 50px;
+  }
+
+  // default
+  &.is-default {
+    background: #ef2f61;
+    .notice-msg {
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+
+  // success
+  &.is-success {
+    background: #ef2f61;
+    .notice-msg {
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+
+  // warning
+  &.is-warning {
+    background: #ef2f61;
+    .notice-msg {
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+
+  // error
+  &.is-error {
+    background: #ef2f61;
+    .notice-msg {
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+
+  // close
+  [data-close] {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+  }
+}

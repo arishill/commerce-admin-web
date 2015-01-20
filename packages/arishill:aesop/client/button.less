@@ -1,0 +1,116 @@
+@import "base/include";
+@import "loaders";
+
+/*.....................................
+  BUTTONS
+.....................................*/
+
+// button base
+.button {
+  // display
+  display: inline-block;
+  padding: 8px 30px;
+  background-color: #4A3060;
+  .box-sizing(border-box);
+
+  // typography
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 21px;
+
+  .transition(background 200ms ease-in-out);
+
+  // strong (bold style)
+  strong {
+    font-weight: 700;
+  }
+
+  // states
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
+  &:hover,
+  &.is-hover {
+    background-color: #444;
+    text-decoration: none;
+  }
+  &:focus,
+  &.is-focus {
+  }
+  &:active,
+  &.is-active {
+  }
+  &[disabled],
+  &.is-disabled {
+    &:hover, &:focus, &:active, &.is-active {
+    }
+  }
+  &.loading,
+  &.processing {
+    position: relative;
+    color: rgba(0, 0, 0, 0);
+    &:before {
+      .loader-small;
+      .loader-inverse;
+      content: " ";
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -8px 0 0 -8px;
+    }
+  }
+}
+
+.button-radius {
+  .border-radius(5px);
+}
+
+// button types
+.button-primary {
+  .button;
+  background: @color-pastel-green;
+}
+
+.button-secondary {
+  .button;
+  background: @color-pastel-orange;
+}
+
+.button-tertiary {
+  .button;
+  background: @color-pastel-gray;
+}
+
+.button-delete {
+  .button;
+  background: @color-pastel-red;
+}
+
+// button sizes
+.button-xsmall {
+
+}
+.button-small {
+
+}
+.button-medium {
+
+}
+.button-xmedium {
+
+}
+.button-large {
+
+}
+.button-xlarge {
+
+}
+.button-fill {
+  width: 100%;
+}
