@@ -131,18 +131,22 @@
 }
 
 .contain-fixed-top-50 {
+  z-index: 10;
   position: fixed;
   top: 0;
   left: 0;
   height: 50px;
   width: 100%;
+  .box-sizing(border-box);
 }
 .contain-fixed-top-100 {
+  z-index: 10;
   position: fixed;
   top: 0;
   left: 0;
-  height: 150px;
+  height: 100px;
   width: 100%;
+  .box-sizing(border-box);
 }
 .contain-fixed-top-300 {
   position: fixed;

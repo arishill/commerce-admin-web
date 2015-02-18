@@ -46,8 +46,11 @@
 .color-tertiary {
   color: #ffffff;
 }
+.color-delete {
+  color: #e74545;
+}
 .color-error {
-  color: #ffffff;
+  color: @color-error;
 }
 .color-warning {
   color: #ffffff;
@@ -117,6 +120,12 @@
 .line-primary {
   line-height: 40px;
   height: 40px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.line-container-50 {
+  line-height: 50px;
+  height: 50px;
   vertical-align: middle;
   display: inline-block;
 }
@@ -208,6 +217,19 @@
   &:active {
     text-decoration: none;
     color: #ffffff;
+  }
+}
+.link-delete,
+.link-delete a {
+  &:link,
+  &:visited {
+    color: #e74545;
+    text-decoration: none;
+  }
+  &:hover,
+  &:active {
+    text-decoration: none;
+    color: #f16666;
   }
 }
 
