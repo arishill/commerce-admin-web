@@ -1,17 +1,15 @@
 // definitions
-Products = (_.isUndefined(Products)) ? {} : Products;
-Products.schemas = (_.isUndefined(Products.schemas)) ? {} : Products.schemas;
+Schemas.collections = (_.isUndefined(Schemas.collections)) ? {} : Schemas.collections;
+Schemas.collections.products = (_.isUndefined(Schemas.collections.products)) ? {} : Schemas.collections.products;
 
 /* PRICING SCHEMA
 .................................................*/
-
-Products.schemas.price = new SimpleSchema({
+Schemas.collections.products.price = new SimpleSchema({
   'regular_cents': {
     type: Number
   },
   'sale_cents': {
     type: Number,
-    defaultValue: null,
     optional: true
   }
 });

@@ -1,20 +1,6 @@
-<template name="aristotle__products__edit">
-  <section class="contain-2-3 contain-center margin-vert-large">
-    <h1 class="head-primary margin-top-large">Edit Product</h1>
-    {{> aristotle__products__form}}
-  </section>
-</template>
-
-<template name="aristotle__products__create">
-  <section class="contain-2-3 contain-center">
-    <h1 class="head-primary margin-top-large">Create Product</h1>
-    {{> aristotle__products__form}}
-  </section>
-</template>
-
 <template name="aristotle__products__form">
 
-  <form id='products-form-{{page.action}}' class="form" data-action="{{page.action}}" data-action-key="product">
+  <form id="products-form-{{page.action}}" data-action="{{page.action}}"  data-id="{{product._id}}" class="form">
     {{#with product}}
       {{> aristotle__products__form_info }}
       {{> aristotle__products__form_flags }}
@@ -36,11 +22,18 @@
       {{/each}}
       </ul>
 
-      <a href="#" data-action="add" data-action-key="product.variant" class="button-tertiary button-radius">Add another</a>
+      <button data-action="add" data-arr="variants" class="button-tertiary button-radius">Add another</button>
     </section>
 
     <!-- submit -->
-    <button type="submit" class="button-primary button-radius">{{page.btn}}</button>
+    <div class="text-right padding-top-large margin-top-large border-top border-primary">
+      {{#with product}}
+        <div class="is-inline padding-right-medium">
+          <a href="api/products/delete/{{_id}}" data-action="delete" class="link-delete line-primary is-inline">Delete</a>
+        </div>
+      {{/with}}
+      <button type="submit" class="button-primary button-radius">{{page.btn}}</button>
+    </div>
   </form>
 
 </template>

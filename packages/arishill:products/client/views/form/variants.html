@@ -1,62 +1,80 @@
 <template name="aristotle__products__form_variants">
   <li class="col small-1-3">
-    <fieldset class="{{productError 'variants.{i}.title' index}}">
+    <fieldset class="{{formError 'variants.{i}.title' index}}">
       <input type="text" name="variants[{{index}}][title]" placeholder="Item Title" value="{{value.title}}" class="input-fill">
-      {{productErrorMsg 'variants.{i}.title' index}}
+      {{#if formError 'variants.{i}.title' index}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg 'variants.{i}.title' index}}</p>
+      {{/if}}
     </fieldset>
 
-    <fieldset class="{{productError 'variants.{i}.description' index}}">
+    <fieldset class="{{formError 'variants.{i}.description' index}}">
       <textarea name="variants[{{index}}][description]" placeholder="Item Description" class="input-fill input-xmedium">{{value.description}}</textarea>
-      {{productErrorMsg 'variants.{i}.description' index}}
+      {{#if formError 'variants.{i}.description' index}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg 'variants.{i}.description' index}}</p>
+      {{/if}}
     </fieldset>
 
-    <fieldset class="{{productError 'variants.{i}.price.regular_cents' index}}">
+    <fieldset class="{{formError 'variants.{i}.price.regular_cents' index}}">
       <input type="text" name="variants[{{index}}][price][regular_cents]" placeholder="Item Regular Price" value="{{centsToDollars value.price.regular_cents}}" class="input-fill">
-      {{productErrorMsg 'variants.{i}.price.regular_cents' index}}
+      {{#if formError 'variants.{i}.price.regular_cents' index}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg 'variants.{i}.price.regular_cents' index}}</p>
+      {{/if}}
     </fieldset>
 
-    <fieldset class="{{productError 'variants.{i}.price.sale_cents' index}}">
+    <fieldset class="{{formError 'variants.{i}.price.sale_cents' index}}">
       <input type="text" name="variants[{{index}}][price][sale_cents]" placeholder="Item Sale Price" value="{{centsToDollars value.price.sale_cents}}" class="input-fill">
-      {{productErrorMsg 'variants.{i}.price.sale_cents' index}}
+      {{#if formError 'variants.{i}.price.sale_cents' index}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg 'variants.{i}.price.sale_cents' index}}</p>
+      {{/if}}
     </fieldset>
 
-    <fieldset class="{{productError "variants.{i}.stock"}} index">
+    <fieldset class="{{formError "variants.{i}.stock"}} index">
       <input type="text" name="variants[{{index}}][stock]" placeholder="Item Stock" value="{{value.stock}}" class="input-fill">
-      {{productErrorMsg 'variants.{i}.stock' index}}
+      {{#if formError 'variants.{i}.stock' index}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg 'variants.{i}.stock' index}}</p>
+      {{/if}}
     </fieldset>
 
     <!--
     options: {}
     -->
 
-    <fieldset class="{{productError 'variants.{i}.flags.is_active' index}}">
+    <fieldset class="{{formError 'variants.{i}.flags.is_active' index}}">
       <label>Is active?</label>
       <input type="checkbox" name="variants[{{index}}][flags][is_active]" {{isChecked value.flags.is_active}}>
-      {{productErrorMsg 'variants.{i}.flags.is_active' index}}
+      {{#if formError 'variants.{i}.flags.is_active' index}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg 'variants.{i}.flags.is_active' index}}</p>
+      {{/if}}
     </fieldset>
 
-    <fieldset class="{{productError 'variants.{i}.flags.is_sale' index}}">
+    <fieldset class="{{formError 'variants.{i}.flags.is_sale' index}}">
       <label>Is on Sale?</label>
       <input type="checkbox" name="variants[{{index}}][flags][is_sale]" {{isChecked value.flags.is_sale}}>
-      {{productErrorMsg 'variants.{i}.flags.is_sale'}}
+      {{#if formError 'variants.{i}.flags.is_sale'}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg 'variants.{i}.flags.is_sale'}}</p>
+      {{/if}}
     </fieldset>
 
-    <fieldset class="{{productError 'variants.{i}.flags.is_taxable' index}}">
+    <fieldset class="{{formError 'variants.{i}.flags.is_taxable' index}}">
       <label>Is taxable?</label>
       <input type="checkbox" name="variants[{{index}}][flags][is_taxable]" {{isChecked value.flags.is_taxable}}>
-      {{productErrorMsg 'variants.{i}.flags.is_taxable' index}}
+      {{#if formError 'variants.{i}.flags.is_taxable' index}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg 'variants.{i}.flags.is_taxable' index}}</p>
+      {{/if}}
     </fieldset>
 
-    <fieldset class="{{productError 'variants.{i}.flags.is_discount_ignored' index}}">
+    <fieldset class="{{formError 'variants.{i}.flags.is_discount_ignored' index}}">
       <label>Ignore Bulk Discounts</label>
       <input type="checkbox" name="variants[{{index}}][flags][is_discount_ignored]" {{isChecked value.flags.is_discount_ignored}}>
-      {{productErrorMsg 'variants.{i}.flags.is_discount_ignored' index}}
+      {{#if formError 'variants.{i}.flags.is_discount_ignored' index}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg 'variants.{i}.flags.is_discount_ignored' index}}</p>
+      {{/if}}
     </fieldset>
 
     <input type="hidden" value="{{value.sku}}" name="variants[{{index}}][sku]">
 
-    {{#if multipleVariants}}
-      <a href="#" data-action="remove" data-action-key="product.variant" data-action-index="{{index}}">Delete</a>
+    {{#if hasMultiple 'product' 'variants'}}
+      <a href="#" data-action="remove" data-arr="variants" data-index="{{index}}">Delete</a>
     {{/if}}
   </li>
 </template>

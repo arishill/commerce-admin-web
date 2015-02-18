@@ -1,11 +1,10 @@
 // definitions
-Products = (_.isUndefined(Products)) ? {} : Products;
-Products.schemas = (_.isUndefined(Products.schemas)) ? {} : Products.schemas;
+Schemas.collections = (_.isUndefined(Schemas.collections)) ? {} : Schemas.collections;
+Schemas.collections.products = (_.isUndefined(Schemas.collections.products)) ? {} : Schemas.collections.products;
 
 /* VARIANTS SCHEMA
 .................................................*/
-
-Products.schemas.variants = new SimpleSchema({
+Schemas.collections.products.variants = new SimpleSchema({
   options: {
     type: Object,
     optional: true
@@ -27,7 +26,7 @@ Products.schemas.variants = new SimpleSchema({
   },
   images: Schemas.images(),
   price: {
-    type: Products.schemas.price
+    type: Schemas.collections.products.price
   },
   stock: {
     type: Number,
@@ -35,6 +34,6 @@ Products.schemas.variants = new SimpleSchema({
     optional: true
   },
   flags: {
-    type: Products.schemas.flags
+    type: Schemas.collections.products.flags
   }
 });

@@ -1,11 +1,10 @@
 // definitions
-Products = (_.isUndefined(Products)) ? {} : Products;
-Products.schemas = (_.isUndefined(Products.schemas)) ? {} : Products.schemas;
+Schemas.collections = (_.isUndefined(Schemas.collections)) ? {} : Schemas.collections;
+Schemas.collections.products = (_.isUndefined(Schemas.collections.products)) ? {} : Schemas.collections.products;
 
 /* SCHEDULED SCHEMA
 .................................................*/
-
-Products.schemas.scheduled = new SimpleSchema({
+Schemas.collections.products.scheduled = new SimpleSchema({
   'start': {
     type: Date,
     defaultValue: null,

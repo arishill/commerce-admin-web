@@ -1,29 +1,40 @@
 <template name="aristotle__products__form_info">
   <section id="products-form-info">
     <h3 class="head-secondary margin-top-large">Info</h3>
-    <fieldset class="{{productError "title"}}">
+    <fieldset class="{{formError "title"}}">
       <input type="text" name="title" placeholder="Title" value="{{title}}" class="input-fill">
-      {{productErrorMsg "title"}}
+      {{#if formError "title"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "title"}}</p>
+      {{/if}}
     </fieldset>
 
-    <fieldset class="{{productError "subtitle"}}">
+    <fieldset class="{{formError "subtitle"}}">
       <input type="text" name="subtitle" placeholder="Subtitle" value="{{subtitle}}" class="input-fill">
-      {{productErrorMsg "subtitle"}}
+      {{#if formError "subtitle"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "subtitle"}}</p>
+      {{/if}}
     </fieldset>
 
-    <fieldset class="{{productError "extract"}}">
+    <fieldset class="{{formError "extract"}}">
       <input type="text" name="extract" placeholder="Extract" value="{{extract}}" class="input-fill">
-      {{productErrorMsg "extract"}}
+      {{#if formError "extract"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "extract"}}</p>
+      {{/if}}
     </fieldset>
 
-    <fieldset class="{{productError "url"}}">
+    <fieldset class="{{formError "url"}}">
       <input type="text" name="url" placeholder="Path/URL" value="{{url}}" class="input-fill">
-      {{productErrorMsg "url"}}
+      {{#if formError "url"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "url"}}</p>
+      {{/if}}
     </fieldset>
 
-    <fieldset class="{{productError "description"}}">
+    <fieldset class="{{formError "description"}}">
       <textarea name="description" placeholder="Description" class="input-fill input-xmedium">{{{description}}}</textarea>
-      {{productErrorMsg "description"}}
+      {{#if formError "description"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "description"}}</p>
+      {{/if}}
+
     </fieldset>
   </section>
 </template>

@@ -1,0 +1,15 @@
+<template name="aristotle__products__table_body">
+  <tbody>
+    {{#each products}}
+    <tr>
+      <td></td>
+      <td><a href="/products/{{url}}/edit">{{title}}</a></td>
+      <td><a href="/products/{{url}}/edit">{{date.created}}</a></td>
+      <td><a href="/products/{{url}}/edit">{{stock}}</a></td>
+      <td>{{centsToDollars price.regular_cents}}</td>
+      <td>{{centsToDollars price.sale_cents}}</td>
+      <td>{{#if flags.is_active}}Active{{else}}Inactive{{/if}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</template>

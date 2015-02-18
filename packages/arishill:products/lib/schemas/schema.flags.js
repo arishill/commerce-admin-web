@@ -1,10 +1,10 @@
 // definitions
-Products = (_.isUndefined(Products)) ? {} : Products;
-Products.schemas = (_.isUndefined(Products.schemas)) ? {} : Products.schemas;
+Schemas.collections = (_.isUndefined(Schemas.collections)) ? {} : Schemas.collections;
+Schemas.collections.products = (_.isUndefined(Schemas.collections.products)) ? {} : Schemas.collections.products;
 
 /* FLAGS SCHEMA
 .................................................*/
-Products.schemas.flags = new SimpleSchema({
+Schemas.collections.products.flags = new SimpleSchema({
   'is_active': {
     type: Boolean,
     defaultValue: false,

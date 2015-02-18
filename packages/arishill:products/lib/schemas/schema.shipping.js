@@ -1,10 +1,10 @@
 // definitions
-Products = (_.isUndefined(Products)) ? {} : Products;
-Products.schemas = (_.isUndefined(Products.schemas)) ? {} : Products.schemas;
+Schemas.collections = (_.isUndefined(Schemas.collections)) ? {} : Schemas.collections;
+Schemas.collections.products = (_.isUndefined(Schemas.collections.products)) ? {} : Schemas.collections.products;
 
 /* SHIPPING SCHEMA
 .................................................*/
-Products.schemas.shipping = new SimpleSchema({
+Schemas.collections.products.shipping = new SimpleSchema({
   'weight': {
     type: Number,
     defaultValue: 0,
