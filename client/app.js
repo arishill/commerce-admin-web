@@ -1,11 +1,47 @@
 App = {};
 
-GlobalTemplates.useHelpers(Template);
-ProductsTemplates.useHelpers(Template);
-ProductsTemplates.useEvents(Template);
-ProductsTemplates.useCallbacks(Template);
-
 Imgix.configSource({
   name: '***REMOVED***',
   token: '***REMOVED***'
+});
+
+// Aristotle.setup({
+//   transactions: {
+//     paypal: {
+//       enabled: true,
+//       display_name: 'Arishill.com',
+//       single_use: false,
+//       locale: 'en_usa',
+//       enable_shipping: false
+//     }
+//   }
+// })
+
+Transactions.setup({
+  default_gateway: 'braintree',
+  backup_gateway: 'stripe',
+
+  // requires braintree
+  paypal: {
+    enabled: true,
+    display_name: 'Arishill.com',
+    single_use: false,
+    locale: 'en_usa',
+    enable_shipping: false
+  }
+});
+
+// definitions
+
+/* IMGIX DEFINITIONS
+.................................................*/
+Imgix.addDefinitions({
+  'cascade': {
+    w: 200,
+    sat: -100
+  },
+  'gallery': {
+    w: 500,
+    sat: 400
+  }
 });

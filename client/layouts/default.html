@@ -1,0 +1,22 @@
+<head>
+  <title>My App</title>
+</head>
+
+<body>
+</body>
+
+<template name="app_layout">
+  <nav class="contain-fixed-top-50 bg-primary border-bottom border-primary">
+    <ul class="list-no-bullets list-inline link-inverse line-container-50">
+      <li class="padding-horz-medium"><a href="{{pathFor 'products_index'}}">Products</a></li>
+      <li class="padding-horz-medium"><a href="{{pathFor 'sales_index'}}">Sales</a></li>
+      <li class="padding-horz-medium"><a href="{{pathFor 'invoices_index'}}">Invoices</a></li>
+      <!-- <li class="padding-horz-medium"><a href="{{pathFor 'discounts_index'}}">Discounts</a></li> -->
+    </ul>
+  </nav>
+  <div class="contain margin-vert-large">
+    {{> yield}}
+  </div>
+
+  <!-- {{ > aristotle__transaction__form}} -->
+</template>
