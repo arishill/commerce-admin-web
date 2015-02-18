@@ -1,36 +1,50 @@
+// definitions
+Schemas.collections = (_.isUndefined(Schemas.collections)) ? {} : Schemas.collections;
+Schemas.collections.orders = (_.isUndefined(Schemas.collections.orders)) ? {} : Schemas.collections.orders;
+
 /* ORDERS DEFAULT SCHEMA
 .................................................*/
-Orders.schemas.default = new SimpleSchema({
+Schemas.collections.orders.default = new SimpleSchema({
   'type': {
     type: String,
     label: "Order Type",
     regEx: /(^phone$|^online$|^in_person$|^invoice$)/
   },
-  'date': Schemas.date,
+  'date': {
+    type: Schemas.date()
+  },
   'customer': {
-    type: Orders.schemas.customer
+    type: Schemas.collections.orders.customer
   },
   'billing': {
-    type: Orders.schemas.billing
+    type: Schemas.collections.orders.billing
   },
   'invoice': {
-    type: Orders.schemas.invoice,
+    type: Schemas.collections.orders.invoice,
     optional: true
   },
   'receipt': {
-    type: Orders.schemas.receipt
+    type: Schemas.collections.orders.receipt
   },
   'refunds': {
-    type: Orders.schemas.refunds,
+    type: Schemas.collections.orders.refunds,
     optional: true
   },
   'items': {
-    type: [Orders.schemas.item],
-    optional: true
+    type: [Schemas.collections.orders.item],
+    optional: true,
+    custom: function() {
+      if (this.field('type').value !== 'invoice' && _.isArray(this.value) && this.value.length >= 1) {
+        return true;
+      } else {
+        return 'minCount';
+      }
+    }
   },
   'line_items': {
-    type: [Orders.schemas.line_item],
-    optional: true
+    type: [Schemas.collections.orders.line_item],
+    optional: true,
+    minCount: 1
   },
   'comments': {
     type: [Schemas.comment(false)],
@@ -49,30 +63,40 @@ Orders.schemas.default = new SimpleSchema({
       optional: true
   },
   'delivery': {
-    'is_physical': {
-      type: Boolean,
-      defaultValue: false
-    },
-    'is_digital': {
-      type: Boolean,
-      defaultValue: false
-    }
+    type: Object
+  },
+  'delivery.is_physical': {
+    type: Boolean,
+    defaultValue: false
+  },
+  'delivery.is_digital': {
+    type: Boolean,
+    defaultValue: false
   },
   'shipment': {
-    type: Orders.schemas.shipment,
+    type: Schemas.collections.orders.shipment,
     optional: true
   },
   'payment': {
-    'status': {
-      type: String,
-      label: "Payment Status",
-      regEx: /(^approved$|^refunded$|^pending$|^canceled$|^failed$)/
-    },
-    'transactions': {
-      type: [Orders.schemas.transaction],
-      optional: true
-    }
+    type: Object
+  },
+  'payment.status': {
+    type: String,
+    label: "Payment Status",
+    regEx: /(^refunded$|^pending$|^canceled$|^failed$|^success$)/,
+    defaultValue: 'pending'
+  },
+  'payment.transactions': {
+    type: [Schemas.collections.orders.transaction],
+    optional: true
   }
 });
 
-Orders.schemas.context = Orders.schemas.default.namedContext('Orders');
+Schemas.collections.orders.context = Schemas.collections.orders.default.namedContext('Orders');
+
+
+Schemas.collections.orders.default.messages({
+  'required billing.email': 'Please enter your email address',
+  'regEx billing.phone': 'Please enter a valid phone number',
+  'minCount items': 'You must add at least one item to this order'
+});

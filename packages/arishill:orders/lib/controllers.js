@@ -6,8 +6,17 @@ OrdersCreate = RouteController.extend({
   template: 'aristotle__orders__create',
   layoutTemplate: 'app_layout',
   waitOn: function () {
+    return Session.set('order', { items: [], receipt: { amount: {} } });
   },
   data: function() {
+    return {
+      order: Session.get('order'),
+      schema: 'orders',
+      page: {
+        btn: 'Create Order',
+        action: 'create'
+      }
+    }
   },
   action: function () {
     this.render();
@@ -19,9 +28,18 @@ OrdersEdit = RouteController.extend({
   template: 'aristotle__orders__edit',
   layoutTemplate: 'app_layout',
   waitOn: function () {
-    return Meteor.subscribe('ordersByUrl', this.params.url);
+    Meteor.subscribe('ordersByID', this.params.id);
+    return Session.set('order', Collections.orders.findOne({_id: this.params.id}));
   },
   data: function() {
+    return {
+      order: Session.get('order'),
+      schema: 'orders',
+      page: {
+        btn: 'Edit Order',
+        action: 'update'
+      }
+    }
   },
   action: function () {
     this.render();
@@ -65,7 +83,7 @@ SalesIndex = RouteController.extend({
   },
   data: function() {
     return {
-      sales: OrdersCollection.find({}, { sort: { 'date.modified': -1 } })
+      sales: Collections.orders.find({  }, { sort: { 'date.modified': -1 } })
     };
   },
   action: function () {
@@ -82,7 +100,7 @@ InvoicesIndex = RouteController.extend({
   },
   data: function() {
     return {
-      invoices: OrdersCollection.find({}, { sort: { 'date.modified': -1 } })
+      invoices: Collections.orders.find({ type: 'invoice' }, { sort: { 'date.modified': -1 } })
     };
   },
   action: function () {

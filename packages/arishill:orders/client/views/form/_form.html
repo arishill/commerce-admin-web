@@ -1,0 +1,39 @@
+<template name="aristotle__orders__form">
+
+  <form id="orders-form-{{page.action}}" data-action="{{page.action}}"  data-id="{{order._id}}" class="form">
+    {{#with order}}
+      {{> aristotle__orders__form_type }}
+      {{> aristotle__orders__form_customer }}
+      {{> aristotle__orders__form_receipt }}
+      {{> aristotle__orders__form_transactions }}
+    {{/with}}
+
+    <section id="orders-form-items">
+      <h3 class="head-secondary margin-top-large">Items</h3>
+
+        <ul class="row {{formError "items"}}">
+        {{#each withIndex order.items}}
+          {{> aristotle__orders__form_item }}
+        {{/each}}
+        </ul>
+
+        {{#if formError "items"}}
+          <div>{{formErrorMsg "items"}}</div>
+        {{/if}}
+
+        <button data-action="add" data-arr="items" class="button-tertiary button-radius">Add Item</button>
+    </section>
+
+    <!-- submit -->
+    <div class="text-right padding-top-large margin-top-large border-top border-primary">
+      {{#with order}}
+        <div class="is-inline padding-right-medium">
+          <a href="#" data-action="delete" class="link-delete line-primary is-inline">Delete</a>
+        </div>
+      {{/with}}
+
+      <button type="submit" class="button-primary button-radius">{{page.btn}}</button>
+    </div>
+  </form>
+
+</template>

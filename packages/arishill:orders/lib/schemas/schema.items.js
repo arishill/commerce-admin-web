@@ -1,11 +1,14 @@
 // definitions
-Sales = (_.isUndefined(Sales)) ? {} : Sales;
-Sales.schemas = (_.isUndefined(Sales.schemas)) ? {} : Sales.schemas;
+Schemas.collections = (_.isUndefined(Schemas.collections)) ? {} : Schemas.collections;
+Schemas.collections.orders = (_.isUndefined(Schemas.collections.orders)) ? {} : Schemas.collections.orders;
 
 /* ITEMS SCHEMA
 .................................................*/
-Sales.schemas.item = new SimpleSchema({
+Schemas.collections.orders.item = new SimpleSchema({
   'product_id': {
+    type: String
+  },
+  'title': {
     type: String
   },
   'variant_sku': {
@@ -20,5 +23,7 @@ Sales.schemas.item = new SimpleSchema({
   'subtotal_cents': {
     type: Number
   },
-  'tax': Schemas.tax()
+  'tax': {
+    type: Schemas.tax()
+  }
 });

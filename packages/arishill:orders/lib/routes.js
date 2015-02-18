@@ -8,7 +8,7 @@ Router.route('/orders/create', {
 });
 
 // order edit
-Router.route('/orders/:url/edit', {
+Router.route('/orders/:id/edit', {
   name: 'orders_edit' ,
   controller: 'OrdersEdit'
 });
@@ -20,7 +20,7 @@ Router.route('/invoice/create', {
 });
 
 // invoice edit
-Router.route('/invoices/:url/edit', {
+Router.route('/invoices/:id/edit', {
   name: 'invoices_edit' ,
   controller: 'InvoicesEdit'
 });

@@ -1,10 +1,10 @@
 // definitions
-Sales = (_.isUndefined(Sales)) ? {} : Sales;
-Sales.schemas = (_.isUndefined(Sales.schemas)) ? {} : Sales.schemas;
+Schemas.collections = (_.isUndefined(Schemas.collections)) ? {} : Schemas.collections;
+Schemas.collections.orders = (_.isUndefined(Schemas.collections.orders)) ? {} : Schemas.collections.orders;
 
 /* INVOICE SCHEMA
 .................................................*/
-Sales.schemas.invoice = new SimpleSchema({
+Schemas.collections.orders.invoice = new SimpleSchema({
   'invoice_id': {
     type: String
   },
