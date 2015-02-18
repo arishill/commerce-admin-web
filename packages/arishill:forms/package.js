@@ -6,10 +6,24 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0.2');
-  api.use(['underscore', 'mongo', 'aldeed:simple-schema@1.2.0']);
+  api.use([
+    'jquery',
+    'templating',
+    'arishill:client'
+  ], 'client');
+
+  api.use([
+    'underscore',
+    'mongo',
+    'aldeed:simple-schema@1.2.0'
+  ]);
 
   api.addFiles([
+    'lib/definitions.js',
     'lib/clean.js',
+    'lib/errors.js',
+    'lib/misc.js',
+    'lib/checks.js',
     'lib/currency.js',
     'lib/serialize.js',
     'lib/schema.js',
@@ -17,12 +31,17 @@ Package.onUse(function(api) {
   ]);
 
   api.addFiles([
+    'client/definitions.js',
+    'client/library.keys.js',
+    'client/library.events.js',
+    'client/library.helpers.js'
   ], 'client');
 
   api.addFiles([
   ], 'server');
 
   api.export([
+    'Aristotle',
     'Schemas',
     'SimpleSchema',
     'Forms'

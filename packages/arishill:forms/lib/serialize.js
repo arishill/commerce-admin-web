@@ -1,7 +1,3 @@
-// definitions
-Forms = (_.isUndefined(Forms)) ? {} : Forms;
-Forms.utils = (_.isUndefined(Forms.utils)) ? {} : Forms.utils;
-
 /* SERIALIZE OBJECT METHOD
 .................................................*/
 Forms.utils.serializeObject = function(form_el) {
@@ -31,8 +27,19 @@ Forms.utils.serializeObject = function(form_el) {
 .................................................*/
 Forms.utils.serializeHelpers = {
 
+  parseStringToObject: function(str, obj) {
+    var parts = str.split("."),
+        i;
+
+    for (i = 0; i < parts.length; ++i) {
+      obj = obj[parts[i]];
+    }
+
+    return obj;
+  },
+
   parseValue: function(item) {
-    if ($(item).attr('name').indexOf('_cents') !== -1) {
+    if ($(item).attr('name').indexOf('_cents') !== -1 && !_.isNaN(parseFloat($(item).val()))) {
       return Forms.utils.dollarsToCents($(item).val());
     } else if ($(item).attr('type') === 'checkbox') {
       return $(item).is(':checked') ? true : false;
