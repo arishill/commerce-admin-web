@@ -3,7 +3,6 @@ Uploader = (_.isUndefined(Uploader)) ? {} : Uploader;
 
 /* CONFIGURATION
 .................................................*/
-
 Uploader.config = function(options) {
   // auth
   this.auth = {
