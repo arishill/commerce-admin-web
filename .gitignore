@@ -1,4 +1,5 @@
 .meteor
+.npm
 .DS_Store
 .deploy
 settings.json
