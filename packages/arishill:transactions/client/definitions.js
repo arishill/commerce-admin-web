@@ -1,0 +1,4 @@
+// definitions
+Transactions = {
+  'callbacks': {}
+};
