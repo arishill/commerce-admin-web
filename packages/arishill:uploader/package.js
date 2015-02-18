@@ -5,9 +5,9 @@ Package.describe({
 });
 
 Npm.depends({
-  "request": "2.51.0",
-  "fibers": "1.0.5",
-  "google-oauth-jwt": "0.1.4"
+  'fibers': '1.0.5',
+  'google-oauth-jwt': '0.1.4',
+  'request': '2.51.0'
 });
 
 Package.onUse(function(api) {
@@ -20,15 +20,18 @@ Package.onUse(function(api) {
   api.use([
     'minimongo',
     'templating',
+    'less',
     'ui',
+    'url',
     'spacebars'
   ], 'client');
 
   api.addFiles([
-    'lib/test.js'
   ]);
 
   api.addFiles([
+    'client/styles.less',
+    'client/xhr.js',
     'client/helpers.js',
     'client/events.js',
     'client/reader.js'
@@ -41,12 +44,11 @@ Package.onUse(function(api) {
   ], 'server');
 
   api.export([
-    'UploaderEvents',
-    'UploaderHelpers'
+    'Uploader'
   ], 'client');
 
   api.export([
-    'Uploader',
+    'Uploader'
   ], 'server');
 
 });
