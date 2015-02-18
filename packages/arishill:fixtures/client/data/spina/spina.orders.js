@@ -3,9 +3,10 @@ Fixtures = (_.isUndefined(Fixtures)) ? {} : Fixtures;
 Fixtures.orders = (_.isUndefined(Fixtures.orders)) ? [] : Fixtures.orders;
 
 // set timestamps
-var now = moment().valueOf(),
-    before = now.subtract(1, 'days'),
-    ship_date = moment().add(5, 'days').valueOf();
+var now         = moment(),
+    now_value   = now.valueOf(),
+    before      = now.subtract(1, 'days').valueOf(),
+    ship_date   = now.add(5, 'days').valueOf();
 
 /* SPINA ORDERS
 .................................................*/
@@ -14,8 +15,8 @@ Fixtures.orders['spina'] = [
   {
     'type': 'online',
     'date': {
-      created: now,
-      modified: now
+      created: now_value,
+      modified: now_value
     },
     'customer': {
       id: 'skaj854',
@@ -24,7 +25,7 @@ Fixtures.orders['spina'] = [
     'billing': {
       email: 'scottusrobus@arishill.com',
       phone: '5768943456',
-      name: 'Scott Robertson',
+      name: { first: 'Scott', last: 'Robertson' },
       address: {
         line_1: '7140 112th St',
         line_2: 'Apt 203',
@@ -42,7 +43,7 @@ Fixtures.orders['spina'] = [
         discount_cents: 0,
         tax_cents:  410,
         total_cents: 5410,
-      }
+      },
       fees: {
         gateway_cents: 123,
         arishill_cents: 343
@@ -51,6 +52,7 @@ Fixtures.orders['spina'] = [
     'items': [
       {
         product_id: 'adsk324',
+        title: 'Spina No. 20',
         variant_sku: 'a0dkj13',
         quantity: 1,
         item_cents: 1500,
@@ -58,6 +60,7 @@ Fixtures.orders['spina'] = [
       },
       {
         product_id: 'rds5324',
+        title: 'Spina No. 19',
         variant_sku: 'q0dk913',
         quantity: 1,
         item_cents: 2000,
@@ -86,17 +89,17 @@ Fixtures.orders['spina'] = [
       },
       tracking: {
         carrier: 'ups',
-        tracking_number: 'alskdjf023jrlskjafj023',
+        number: 'alskdjf023jrlskjafj023',
         status: 'pre_transit',
         estimated_delivery: ship_date
       }
     },
     'payment': {
-      status: 'approved',
+      status: 'success',
       transactions: [
         {
           status: 'approved',
-          date: now,
+          date: now_value,
           method: 'credit',
           gateway: {
             provider: 'braintree',
@@ -136,8 +139,8 @@ Fixtures.orders['spina'] = [
   {
     'type': 'online',
     'date': {
-      created: now,
-      modified: now
+      created: now_value,
+      modified: now_value
     },
     'customer': {
       id: 'skaj854',
@@ -146,7 +149,7 @@ Fixtures.orders['spina'] = [
     'billing': {
       email: 'scottusrobus@arishill.com',
       phone: '5768943456',
-      name: 'Scott Robertson',
+      name: { first: 'Scott', last: 'Robertson' },
       address: {
         line_1: '7140 112th St',
         line_2: 'Apt 203',
@@ -173,6 +176,7 @@ Fixtures.orders['spina'] = [
     'items': [
       {
         product_id: 'adsk324',
+        title: 'Spina No. 9',
         variant_sku: 'a0dkj13',
         quantity: 1,
         item_cents: 1500,
@@ -180,6 +184,7 @@ Fixtures.orders['spina'] = [
       },
       {
         product_id: 'rds5324',
+        title: 'Spina No. 17',
         variant_sku: 'q0dk913',
         quantity: 1,
         item_cents: 2000,
@@ -208,17 +213,17 @@ Fixtures.orders['spina'] = [
       },
       tracking: {
         carrier: 'ups',
-        tracking_number: 'alskdjf023jrlskjafj023',
+        number: 'alskdjf023jrlskjafj023',
         status: 'pre_transit',
         estimated_delivery: ship_date
       }
     },
     'payment': {
-      status: 'approved',
+      status: 'success',
       transactions: [
         {
           status: 'approved',
-          date: now,
+          date: now_value,
           method: 'credit',
           gateway: {
             provider: 'braintree',
@@ -258,8 +263,8 @@ Fixtures.orders['spina'] = [
   {
     'type': 'online',
     'date': {
-      created: now,
-      modified: now
+      created: now_value,
+      modified: now_value
     },
     'customer': {
       id: 'skaj854',
@@ -268,7 +273,7 @@ Fixtures.orders['spina'] = [
     'billing': {
       email: 'scottusrobus@arishill.com',
       phone: '5768943456',
-      name: 'Scott Robertson',
+      name: { first: 'Scott', last: 'Robertson' },
       address: {
         line_1: '7140 112th St',
         line_2: 'Apt 203',
@@ -295,6 +300,7 @@ Fixtures.orders['spina'] = [
     'items': [
       {
         product_id: 'adsk324',
+        title: 'Spina No. 1',
         variant_sku: 'a0dkj13',
         quantity: 1,
         item_cents: 1500,
@@ -302,6 +308,7 @@ Fixtures.orders['spina'] = [
       },
       {
         product_id: 'rds5324',
+        title: 'Spina No. 8',
         variant_sku: 'q0dk913',
         quantity: 1,
         item_cents: 2000,
@@ -330,17 +337,17 @@ Fixtures.orders['spina'] = [
       },
       tracking: {
         carrier: 'ups',
-        tracking_number: 'alskdjf023jrlskjafj023',
+        number: 'alskdjf023jrlskjafj023',
         status: 'pre_transit',
         estimated_delivery: ship_date
       }
     },
     'payment': {
-      status: 'approved',
+      status: 'success',
       transactions: [
         {
           status: 'approved',
-          date: now,
+          date: now_value,
           method: 'credit',
           gateway: {
             provider: 'braintree',
@@ -380,8 +387,8 @@ Fixtures.orders['spina'] = [
   {
     'type': 'online',
     'date': {
-      created: now,
-      modified: now
+      created: now_value,
+      modified: now_value
     },
     'customer': {
       id: 'skaj854',
@@ -390,7 +397,7 @@ Fixtures.orders['spina'] = [
     'billing': {
       email: 'scottusrobus@arishill.com',
       phone: '5768943456',
-      name: 'Scott Robertson',
+      name: { first: 'Scott', last: 'Robertson' },
       address: {
         line_1: '7140 112th St',
         line_2: 'Apt 203',
@@ -417,6 +424,7 @@ Fixtures.orders['spina'] = [
     'items': [
       {
         product_id: 'adsk324',
+        title: 'Spina No. 4',
         variant_sku: 'a0dkj13',
         quantity: 1,
         item_cents: 1500,
@@ -424,6 +432,7 @@ Fixtures.orders['spina'] = [
       },
       {
         product_id: 'rds5324',
+        title: 'Spina No. 2',
         variant_sku: 'q0dk913',
         quantity: 1,
         item_cents: 2000,
@@ -452,17 +461,17 @@ Fixtures.orders['spina'] = [
       },
       tracking: {
         carrier: 'ups',
-        tracking_number: 'alskdjf023jrlskjafj023',
+        number: 'alskdjf023jrlskjafj023',
         status: 'pre_transit',
         estimated_delivery: ship_date
       }
     },
     'payment': {
-      status: 'approved',
+      status: 'success',
       transactions: [
         {
           status: 'approved',
-          date: now,
+          date: now_value,
           method: 'credit',
           gateway: {
             provider: 'braintree',
@@ -497,5 +506,4 @@ Fixtures.orders['spina'] = [
       ]
     }
   }
-];
 ];
