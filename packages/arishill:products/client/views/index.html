@@ -1,31 +1,6 @@
 <template name="aristotle__products__index">
   <section id="products-index">
-    <table>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Date Added</th>
-          <th>Stock</th>
-          <th>Retail</th>
-          <th>Sale</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each products}}
-        <tr>
-          <td>{{thumb}}</td>
-          <td><a href="/products/{{url}}/edit">{{title}}</a></td>
-          <td><a href="/products/{{url}}/edit">{{date.created}}</a></td>
-          <td><a href="/products/{{url}}/edit">{{stock}}</a></td>
-          <td>{{centsToDollars price.regular_cents}}</td>
-          <td>{{centsToDollars price.sale_cents}}</td>
-          <td>{{centsToDollars flags.is_active}}</td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
-
-    <a href="{{pathFor 'products_create'}}">Create Product</a>
+    {{> aristotle__products__table}}
+    <a href="{{pathFor 'products_create'}}" class="button-primary button-radius">Create Product</a>
   </section>
 </template>

@@ -1,11 +1,10 @@
 // definitions
-Products = (_.isUndefined(Products)) ? {} : Products;
-Products.schemas = (_.isUndefined(Products.schemas)) ? {} : Products.schemas;
+Schemas.collections = (_.isUndefined(Schemas.collections)) ? {} : Schemas.collections;
+Schemas.collections.products = (_.isUndefined(Schemas.collections.products)) ? {} : Schemas.collections.products;
 
 /* PRODUCTS DEFAULT SCHEMA
 .................................................*/
-
-Products.schemas.default = new SimpleSchema({
+Schemas.collections.products.default = new SimpleSchema({
   'date': {
     type: Schemas.date()
   },
@@ -49,21 +48,25 @@ Products.schemas.default = new SimpleSchema({
     optional: true
   },
   'price': {
-    type: Products.schemas.price,
+    type: Schemas.collections.products.price,
   },
   'scheduled': {
-    type: Products.schemas.scheduled
+    type: Schemas.collections.products.scheduled
   },
   'shipping': {
-    type: Products.schemas.shipping
+    type: Schemas.collections.products.shipping
   },
   'flags': {
-    type: Products.schemas.flags
+    type: Schemas.collections.products.flags
   },
   'variants': {
-    type: [Products.schemas.variants],
+    type: [Schemas.collections.products.variants],
     minCount: 1
   }
 });
 
-Products.schemas.context = Products.schemas.default.namedContext("Products");
+
+Schemas.collections.products.context = Schemas.collections.products.default.namedContext('Products');
+
+Schemas.collections.products.default.messages({
+});

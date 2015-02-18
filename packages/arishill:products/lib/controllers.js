@@ -11,6 +11,7 @@ ProductsCreate = RouteController.extend({
   data: function() {
     return {
       product: Session.get('product'),
+      schema: 'products',
       page: {
         btn: 'Create Product',
         action: 'create'
@@ -33,13 +34,14 @@ ProductsEdit = RouteController.extend({
     if (typeof(Session.get('product')) !== 'undefined') {
       return {
         product: Session.get('product'),
+        schema: 'products',
         page: {
           btn: 'Save Product',
           action: 'update'
         }
       };
     } else {
-      Session.set('product', ProductsCollection.findOne());
+      Session.set('product', Collections.products.findOne());
     }
   },
   action: function () {
@@ -51,15 +53,15 @@ ProductsEdit = RouteController.extend({
 ProductsIndex = RouteController.extend({
   template: 'aristotle__products__index',
   layoutTemplate: 'app_layout',
-  waitOn: function () {
+  waitOn: function() {
     return Meteor.subscribe('products');
   },
   data: function() {
     return {
-      products: ProductsCollection.find({}, { sort: { 'date.modified': -1 } })
+      products: Collections.products.find({}, { sort: { 'date.modified': -1 } })
     };
   },
-  action: function () {
+  action: function() {
     this.render();
   }
 });

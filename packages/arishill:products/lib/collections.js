@@ -1,4 +1,11 @@
 /* COLLECTIONS
 .................................................*/
-ProductsCollection = new Mongo.Collection('products');
-ProductsTemplates = {};
+Collections = {};
+Collections.products = new Mongo.Collection('products');
+
+Collections.products.allow({
+  update: function(userId, post) { return true; },
+  remove: function(userId, post) { return true; },
+  insert: function(userId, post) { return true; }
+});
+

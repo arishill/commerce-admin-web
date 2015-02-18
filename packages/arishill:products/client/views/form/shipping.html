@@ -1,24 +1,32 @@
 <template name="aristotle__products__form_shipping">
   <section id="products-form-shipping">
     <h3 class="head-secondary margin-top-large">Shipping</h3>
-    <fieldset class="{{productError "shipping.weight"}}">
+    <fieldset class="{{formError "shipping.weight"}}">
       <input type="text" name="shipping[weight]" placeholder="Shipping Weigth" value="{{shipping.weight}}">
-      {{productErrorMsg "shipping.weight"}}
+      {{#if formError "shipping.weight"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "shipping.weight"}}</p>
+      {{/if}}
     </fieldset>
 
-    <fieldset class="{{productError "shipping.width"}}">
+    <fieldset class="{{formError "shipping.width"}}">
       <input type="text" name="shipping[width]" placeholder="Shipping Width" value="{{shipping.width}}">
-      {{productErrorMsg "shipping.width"}}
+      {{#if formError "shipping.width"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "shipping.width"}}</p>
+      {{/if}}
     </fieldset>
 
-    <fieldset class="{{productError "shipping.length"}}">
+    <fieldset class="{{formError "shipping.length"}}">
       <input type="text" name="shipping[length]" placeholder="Shipping Length" value="{{shipping.length}}">
-      {{productErrorMsg "shipping.length"}}
+      {{#if formError "shipping.length"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "shipping.length"}}</p>
+      {{/if}}
     </fieldset>
 
-    <fieldset class="{{productError "shipping.depth"}}">
+    <fieldset class="{{formError "shipping.depth"}}">
       <input type="text" name="shipping[depth]" placeholder="Shipping Depth" value="{{shipping.depth}}">
-      {{productErrorMsg "shipping.depth"}}
+      {{#if formError "shipping.depth"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "shipping.depth"}}</p>
+      {{/if}}
     </fieldset>
   </section>
 </template>

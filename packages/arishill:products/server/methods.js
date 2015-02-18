@@ -3,13 +3,13 @@
 
 Meteor.methods({
   'api/products/create': function (product) {
-    ProductsCollection.insert(product);
+    Collections.products.insert(product);
   },
   'api/products/update': function (id, product) {
     product = Forms.cleanModifier(product);
-    ProductsCollection.update(id, {$set: product});
+    Collections.products.update(id, {$set: product});
   },
   'api/products/remove': function (id) {
-    ProductsCollection.remove({_id: id});
+    Collections.products.remove({_id: id});
   }
 });

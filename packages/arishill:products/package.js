@@ -13,16 +13,15 @@ Package.onUse(function(api) {
     'underscore',
     'iron:router@=1.0.6',
     'aldeed:simple-schema@1.2.0',
-    'arishill:forms',
+    'momentjs:moment',
     'arishill:uploader',
     'arishill:imgix',
-    'momentjs:moment'
-    ]);
+    'arishill:forms'
+  ]);
 
   api.use([
-    'minimongo',
     'templating',
-    'ui',
+    'minimongo',
     'spacebars'
   ], 'client');
 
@@ -39,12 +38,13 @@ Package.onUse(function(api) {
   ]);
 
   api.addFiles([
-    'client/callbacks.js',
-    'client/events.js',
-    'client/helpers.js',
-    'client/definitions.js',
     'client/views/index.html',
-    'client/views/form.html',
+    'client/views/create.html',
+    'client/views/edit.html',
+    'client/views/table/_table.html',
+    'client/views/table/head.html',
+    'client/views/table/body.html',
+    'client/views/form/_form.html',
     'client/views/form/shipping.html',
     'client/views/form/info.html',
     'client/views/form/images.html',
@@ -52,7 +52,10 @@ Package.onUse(function(api) {
     'client/views/form/flags.html',
     'client/views/form/options.html',
     'client/views/form/price.html',
-    'client/views/form/variants.html'
+    'client/views/form/variants.html',
+    'client/callbacks.js',
+    'client/events.js',
+    'client/helpers.js'
   ], 'client');
 
   api.addFiles([

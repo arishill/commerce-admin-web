@@ -3,24 +3,32 @@
     <h3 class="head-secondary margin-top-large">Images</h3>
 
     <fieldset>
-      {{#each withIndex images.cascade}}
-      <div>
-        <img src="{{imgix value 'cascade'}}">
-        <input type="hidden" name="images[cascade][{{index}}]" value="{{value}}">
-      </div>
-      {{/each}}
-      <input type="file" data-action="upload" data-action-key="resumable" data-action-name="images[cascade]">
+      <ul>
+        {{#each withIndex images.cascade}}
+        <li>
+          <img src="{{imgix value 'cascade'}}">
+          <a href="#" class="button-delete button-radius" data-action="remove" data-arr="images.cascade" data-index="{{index}}">Delete</a>
+          <input type="hidden" name="images[cascade][{{index}}]" value="{{value}}">
+        </li>
+        {{/each}}
+      </ul>
+      <button class="button-tertiary button-radius" data-trigger="upload" data-target="images[cascade]">Add Images</button>
+      <input type="file" data-action="upload" data-key="resumable" data-name="images[cascade]" multiple>
       <p>{{progress 'images[cascade]'}}</p>
     </fieldset>
 
     <fieldset>
-      {{#each withIndex images.gallery}}
-      <div>
-        <img src="{{imgix value 'gallery'}}">
-        <input type="hidden" name="images[gallery][{{index}}]" value="{{value}}">
-      </div>
-      {{/each}}
-      <input type="file" data-action="upload" data-action-key="resumable" data-action-name="images[gallery]" multiple>
+      <ul>
+        {{#each withIndex images.gallery}}
+        <li>
+          <img src="{{imgix value 'gallery'}}">
+          <a href="#" class="button-delete button-radius" data-action="remove" data-arr="images.gallery" data-index="{{index}}">Delete</a>
+          <input type="hidden" name="images[gallery][{{index}}]" value="{{value}}">
+        </li>
+        {{/each}}
+      </ul>
+      <button class="button-tertiary button-radius" data-trigger="upload" data-target="images[gallery]">Add Images</button>
+      <input type="file" data-action="upload" data-key="resumable" data-name="images[gallery]" multiple>
       <p>{{progress 'images[gallery]'}}</p>
     </fieldset>
   </section>
