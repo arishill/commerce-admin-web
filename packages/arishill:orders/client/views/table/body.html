@@ -1,0 +1,15 @@
+<template name="aristotle__sales__table_body">
+  <tbody>
+    {{#each sales}}
+    <tr>
+      <td><a href="/orders/{{_id}}/edit">{{date.created}}</a></td>
+      <td><a href="/orders/{{_id}}/edit">{{type}}</a></td>
+      <td><a href="/orders/{{_id}}/edit">{{_id}}</a></td>
+      <td>{{centsToDollars receipt.amount.total_cents}}</td>
+      <td>{{shipment.delivery.date}}</td>
+      <td>{{payment.status}}</td>
+      <td>{{shipment.status}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</template>

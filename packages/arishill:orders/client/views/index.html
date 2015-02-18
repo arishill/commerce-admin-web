@@ -1,31 +1,6 @@
-<template name="aristotle__orders__index">
+<template name="aristotle__sales__index">
   <section id="orders-index">
-    <table>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Date Added</th>
-          <th>Stock</th>
-          <th>Retail</th>
-          <th>Sale</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each orders}}
-        <tr>
-          <td>{{thumb}}</td>
-          <td><a href="/orders/{{url}}/edit">{{title}}</a></td>
-          <td><a href="/orders/{{url}}/edit">{{date.created}}</a></td>
-          <td><a href="/orders/{{url}}/edit">{{stock}}</a></td>
-          <td>{{centsToDollars price.regular_cents}}</td>
-          <td>{{centsToDollars price.sale_cents}}</td>
-          <td>{{centsToDollars flags.is_active}}</td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
-
-    <a href="{{pathFor 'orders_create'}}">Create Order</a>
+    {{> aristotle__sales__table}}
+    <a href="{{pathFor 'orders_create'}}" class="button-primary button-radius">Create Order</a>
   </section>
 </template>

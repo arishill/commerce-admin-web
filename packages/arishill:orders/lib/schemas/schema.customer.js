@@ -1,15 +1,17 @@
 // definitions
-Sales = (_.isUndefined(Sales)) ? {} : Sales;
-Sales.schemas = (_.isUndefined(Sales.schemas)) ? {} : Sales.schemas;
+Schemas.collections = (_.isUndefined(Schemas.collections)) ? {} : Schemas.collections;
+Schemas.collections.orders = (_.isUndefined(Schemas.collections.orders)) ? {} : Schemas.collections.orders;
 
 /* CUSTOMER SCHEMA
 .................................................*/
-Sales.schemas.customer = new SimpleSchema({
+Schemas.collections.orders.customer = new SimpleSchema({
   'id': {
-    type: String
+    type: String,
+    optional: true
   },
   'is_saved_card': {
     type: Boolean,
+    optional: true,
     defaultValue: false
   }
 });

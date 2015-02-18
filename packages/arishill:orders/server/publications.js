@@ -1,8 +1,9 @@
 /* PUBLICATIONS
 .................................................*/
 Meteor.publish('orders', function(path) {
-  return OrdersCollection.find({});
+  return Collections.orders.find({});
 });
-Meteor.publish('ordersByUrl', function(url) {
-  return OrdersCollection.find({url: url});
+
+Meteor.publish('ordersByID', function(id) {
+  return Collections.orders.find({_id: id});
 });

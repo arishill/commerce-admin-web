@@ -1,10 +1,10 @@
 // definitions
-Sales = (_.isUndefined(Sales)) ? {} : Sales;
-Sales.schemas = (_.isUndefined(Sales.schemas)) ? {} : Sales.schemas;
+Schemas.collections = (_.isUndefined(Schemas.collections)) ? {} : Schemas.collections;
+Schemas.collections.orders = (_.isUndefined(Schemas.collections.orders)) ? {} : Schemas.collections.orders;
 
 /* TRANSACTION SCHEMA
 .................................................*/
-Sales.schemas.transaction = new SimpleSchema({
+Schemas.collections.orders.transaction = new SimpleSchema({
  'status': {
     type: String,
     label: "Shipment Status",
@@ -19,41 +19,49 @@ Sales.schemas.transaction = new SimpleSchema({
     regEx: /(^credit$|^debit$|^cash$|^bitcoin$|^paypal$|^bank$)/
   },
   'gateway': {
-    'provider': {
-      type: String,
-      label: 'Gateway Provider',
-      regEx: /(^braintree$|^stripe$|^paypal$|^coinbase$)/
-    },
-    'charge_id': {
-      type: String
-    }
+    type: Object,
+    optional: true
   },
-  'bank': {},
-  'paypal': {},
-  'bitcoin': {},
-  'cash': {},
+  'gateway.provider': {
+    type: String,
+    label: 'Gateway Provider',
+    regEx: /(^braintree$|^stripe$|^paypal$|^coinbase$)/
+  },
+  'gateway.charge_id': {
+    type: String
+  },
+  'bank': {
+    type: String,
+    optional: true
+  },
+  'paypal': {
+    type: String,
+    optional: true
+  },
+  'bitcoin': {
+    type: String,
+    optional: true
+  },
+  'cash': {
+    type: String,
+    optional: true
+  },
   'card': {
-    'type': {
-      type: String,
-      label: 'Card type',
-      regEx: /(^visa$|^amex$|^mastercard$|^discover$|^jcb$|^diners$)/
-    },
-    'last_4': {
-      type: Number,
-      min: 4,
-      max: 4
-    },
-    'expiry': {
-      'month': {
-        type: Number,
-        min: 2,
-        max: 2
-      },
-      'year': {
-        type: Number,
-        min: 4,
-        max: 4
-      }
-    }
+    type: Schemas.credit_card(),
+    optional: true
   }
 });
+
+// authorization_expired
+// authorized
+// authorizing
+// settlement_pending
+// settlement_confirmed
+// settlement_declined
+// failed
+// gateway_rejected
+// processor_declined
+// settled
+// settling
+// submitted_for_settlement
+// voided

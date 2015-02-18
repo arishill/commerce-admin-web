@@ -1,10 +1,10 @@
 // definitions
-Sales = (_.isUndefined(Sales)) ? {} : Sales;
-Sales.schemas = (_.isUndefined(Sales.schemas)) ? {} : Sales.schemas;
+Schemas.collections = (_.isUndefined(Schemas.collections)) ? {} : Schemas.collections;
+Schemas.collections.orders = (_.isUndefined(Schemas.collections.orders)) ? {} : Schemas.collections.orders;
 
 /* REFUNDS SCHEMA
 .................................................*/
-Sales.schemas.refunds = new SimpleSchema({
+Schemas.collections.orders.refunds = new SimpleSchema({
   'is_partial': {
     type: Boolean,
     defaultValue: false
@@ -14,12 +14,12 @@ Sales.schemas.refunds = new SimpleSchema({
     defaultValue: false
   },
   'entries': {
-    type: [Sales.schemas.refund_entries],
+    type: [Schemas.collections.orders.refund_entries],
     optional: true
   }
 });
 
-Sales.schemas.refund_entries = new SimpleSchema({
+Schemas.collections.orders.refund_entries = new SimpleSchema({
   'date': {
     type: Date
   },
@@ -27,24 +27,26 @@ Sales.schemas.refund_entries = new SimpleSchema({
     type: Boolean
   },
   'amount': {
-    'total_cents': {
-      type: Number
-    },
-    'shipping_cents': {
-      type: Number,
-      optional: true
-    },
+    type: Object
+  },
+  'amount.total_cents': {
+    type: Number
+  },
+  'amount.shipping_cents': {
+    type: Number,
+    optional: true
   },
   'fees': {
-    gateway_cents: {
-      type: Number
-    },
-    arishill_cents: {
-      type: Number
-    }
+    type: Object
+  },
+  'fees.gateway_cents': {
+    type: Number
+  },
+  'fees.arishill_cents': {
+    type: Number
   },
   'items': {
-    type: [Sales.schemas.item],
+    type: [Schemas.collections.orders.item],
     optional: true
   }
 });

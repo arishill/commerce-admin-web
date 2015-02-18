@@ -2,24 +2,24 @@
 .................................................*/
 
 Meteor.methods({
-  'api/orders/create': function (product) {
-    ProductsCollection.insert(product);
+  'api/orders/create': function (order) {
+    Collections.orders.insert(order);
   },
-  'api/orders/update': function (id, product) {
-    product = Forms.cleanModifier(product);
-    ProductsCollection.update(id, {$set: product});
+  'api/orders/update': function (id, order) {
+    order = Forms.cleanModifier(order);
+    Collections.orders.update(id, {$set: order});
   },
   'api/orders/remove': function (id) {
-    ProductsCollection.remove({_id: id});
+    Collections.orders.remove({_id: id});
   },
-  'api/invoices/create': function (product) {
-    ProductsCollection.insert(product);
+  'api/invoices/create': function (order) {
+    Collections.orders.insert(order);
   },
-  'api/invoices/update': function (id, product) {
-    product = Forms.cleanModifier(product);
-    ProductsCollection.update(id, {$set: product});
+  'api/invoices/update': function (id, order) {
+    orders = Forms.cleanModifier(orders);
+    Collections.orders.update(id, {$set: order});
   },
   'api/invoices/remove': function (id) {
-    ProductsCollection.remove({_id: id});
+    Collections.orders.remove({_id: id});
   }
 });

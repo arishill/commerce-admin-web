@@ -1,14 +1,22 @@
 // definitions
-Sales = (_.isUndefined(Sales)) ? {} : Sales;
-Sales.schemas = (_.isUndefined(Sales.schemas)) ? {} : Sales.schemas;
+Schemas.collections = (_.isUndefined(Schemas.collections)) ? {} : Schemas.collections;
+Schemas.collections.orders = (_.isUndefined(Schemas.collections.orders)) ? {} : Schemas.collections.orders;
 
 /* BILLING SCHEMA
 .................................................*/
-Sales.schemas.billing = new SimpleSchema({
-  'email': Schemas.email,
-  'phone': Schemas.phone.usa(true),
+Schemas.collections.orders.billing = new SimpleSchema({
+  'email': Schemas.email(),
+  'phone': Schemas.phone('usa', true),
   'name': {
+    type: Object
+  },
+  'name.first': {
     type: String
   },
-  'address': Schemas.address.usa
+  'name.last': {
+    type: String
+  },
+  'address': {
+    type: Schemas.address('usa')
+  }
 });

@@ -1,10 +1,10 @@
 // definitions
-Sales = (_.isUndefined(Sales)) ? {} : Sales;
-Sales.schemas = (_.isUndefined(Sales.schemas)) ? {} : Sales.schemas;
+Schemas.collections = (_.isUndefined(Schemas.collections)) ? {} : Schemas.collections;
+Schemas.collections.orders = (_.isUndefined(Schemas.collections.orders)) ? {} : Schemas.collections.orders;
 
 /* SHIPMENT SCHEMA
 .................................................*/
-Sales.schemas.shipment = new SimpleSchema({
+Schemas.collections.orders.shipment = new SimpleSchema({
   'status': {
     type: String,
     label: "Shipment Status",
@@ -13,31 +13,41 @@ Sales.schemas.shipment = new SimpleSchema({
   'name': {
     type: String,
   },
-  'address': Schemas.address.usa,
+  'address': {
+    type: Schemas.address('usa'),
+    optional: true
+  },
   'delivery': {
-    'phone': Schemas.phone(true),
-    'instructions': {
-      type: String,
-      optional: true
-    },
-    'date': {
-      type: Date
-    }
+    type: Object,
+    optional: true
+  },
+  'delivery.phone': {
+    type: Schemas.phone('usa'),
+    optional: true
+  },
+  'delivery.instructions': {
+    type: String,
+    optional: true
+  },
+  'delivery.date': {
+    type: Date
   },
   'tracking': {
-    'carrier': {
-      type: String,
-      regEx: /(^ups$|^usps$|^fedex$|^dhl$|^ontrac$|^purolator$|^norco$|^lasership$|^colisprive$|^gso$|$candapost$)/
-    },
-    'tracking_number': {
-      type: String
-    },
-    'status': {
-      type: String,
-      regEx: /(^in_transit$|^out_for_delivery$|^delivered$|^return_to_sender$|^failure$|^pre_transit$|^unknown$)/
-    },
-    'estimated_delivery': {
-      type: Date
-    }
+    type: Object,
+    optional: true
+  },
+  'tracking.carrier': {
+    type: String,
+    regEx: /(^ups$|^usps$|^fedex$|^dhl$|^ontrac$|^purolator$|^norco$|^lasership$|^colisprive$|^gso$|$candapost$)/,
+  },
+  'tracking.number': {
+    type: String
+  },
+  'tracking.status': {
+    type: String,
+    regEx: /(^in_transit$|^out_for_delivery$|^delivered$|^return_to_sender$|^failure$|^pre_transit$|^unknown$)/
+  },
+  'tracking.estimated_delivery': {
+    type: Date
   }
 });
