@@ -2,8 +2,11 @@
 Fixtures = (_.isUndefined(Fixtures)) ? {} : Fixtures;
 Fixtures.products = (_.isUndefined(Fixtures.products)) ? [] : Fixtures.products;
 
-var now = new Date().getTime();
+// timestamps
+var now = moment().valueOf();
 
+/* FGC PRODUCTS
+.................................................*/
 Fixtures.products['fgc'] = [
   {
     title: 'Black Camp Boot',

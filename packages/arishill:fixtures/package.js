@@ -13,13 +13,15 @@ Package.onUse(function(api) {
     'arishill:forms',
     'underscore',
     'momentjs:moment'
-  ]);
+  ], 'client');
 
   api.addFiles([
-    'client/data/spina.products.js',
-    'client/data/spina.orders.js',
-    'client/data/fgc.products.js',
-    'client/data/fgc.orders.js',
+    'client/data/spina/spina.products.js',
+    'client/data/spina/spina.invoices.js',
+    'client/data/spina/spina.orders.js',
+    'client/data/fgc/fgc.products.js',
+    'client/data/fgc/fgc.invoices.js',
+    'client/data/fgc/fgc.orders.js',
     'client/fixtures.js'
   ], 'client');
 

@@ -2,7 +2,11 @@
 Fixtures = (_.isUndefined(Fixtures)) ? {} : Fixtures;
 Fixtures.products = (_.isUndefined(Fixtures.products)) ? [] : Fixtures.products;
 
-var now = new Date().getTime();
+// timestamps
+var now = moment().valueOf();
+
+/* SPINA PRODUCTS
+.................................................*/
 
 Fixtures.products['spina'] = [
   // Spina No. 2

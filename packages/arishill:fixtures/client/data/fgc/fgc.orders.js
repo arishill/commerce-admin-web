@@ -2,17 +2,21 @@
 Fixtures = (_.isUndefined(Fixtures)) ? {} : Fixtures;
 Fixtures.orders = (_.isUndefined(Fixtures.orders)) ? [] : Fixtures.orders;
 
-var now = moment().valueOf(),
-    before = now.subtract(1, 'days'),
-    ship_date = moment().add(5, 'days').valueOf();
+// set timestamps
+var now         = moment(),
+    now_value   = now.valueOf(),
+    before      = now.subtract(1, 'days').valueOf(),
+    ship_date   = now.add(5, 'days').valueOf();
 
+/* FGC ORDERS
+.................................................*/
 Fixtures.orders['fgc'] = [
   // order #1
   {
     'type': 'online',
     'date': {
-      created: now,
-      modified: now
+      created: now_value,
+      modified: now_value
     },
     'customer': {
       id: 'skaj854',
@@ -38,8 +42,8 @@ Fixtures.orders['fgc'] = [
         shipping_cents: 1000,
         discount_cents: 0,
         tax_cents:  410,
-        total_cents: 5410,
-      }
+        total_cents: 5410
+      },
       fees: {
         gateway_cents: 123,
         arishill_cents: 343
@@ -83,7 +87,7 @@ Fixtures.orders['fgc'] = [
       },
       tracking: {
         carrier: 'ups',
-        tracking_number: 'alskdjf023jrlskjafj023',
+        number: 'alskdjf023jrlskjafj023',
         status: 'pre_transit',
         estimated_delivery: ship_date
       }
@@ -93,7 +97,7 @@ Fixtures.orders['fgc'] = [
       transactions: [
         {
           status: 'approved',
-          date: now,
+          date: now_value,
           method: 'credit',
           gateway: {
             provider: 'braintree',
@@ -133,8 +137,8 @@ Fixtures.orders['fgc'] = [
   {
     'type': 'online',
     'date': {
-      created: now,
-      modified: now
+      created: now_value,
+      modified: now_value
     },
     'customer': {
       id: 'skaj854',
@@ -205,7 +209,7 @@ Fixtures.orders['fgc'] = [
       },
       tracking: {
         carrier: 'ups',
-        tracking_number: 'alskdjf023jrlskjafj023',
+        number: 'alskdjf023jrlskjafj023',
         status: 'pre_transit',
         estimated_delivery: ship_date
       }
@@ -215,7 +219,7 @@ Fixtures.orders['fgc'] = [
       transactions: [
         {
           status: 'approved',
-          date: now,
+          date: now_value,
           method: 'credit',
           gateway: {
             provider: 'braintree',
@@ -255,8 +259,8 @@ Fixtures.orders['fgc'] = [
   {
     'type': 'online',
     'date': {
-      created: now,
-      modified: now
+      created: now_value,
+      modified: now_value
     },
     'customer': {
       id: 'skaj854',
@@ -327,7 +331,7 @@ Fixtures.orders['fgc'] = [
       },
       tracking: {
         carrier: 'ups',
-        tracking_number: 'alskdjf023jrlskjafj023',
+        number: 'alskdjf023jrlskjafj023',
         status: 'pre_transit',
         estimated_delivery: ship_date
       }
@@ -337,7 +341,7 @@ Fixtures.orders['fgc'] = [
       transactions: [
         {
           status: 'approved',
-          date: now,
+          date: now_value,
           method: 'credit',
           gateway: {
             provider: 'braintree',
@@ -377,8 +381,8 @@ Fixtures.orders['fgc'] = [
   {
     'type': 'online',
     'date': {
-      created: now,
-      modified: now
+      created: now_value,
+      modified: now_value
     },
     'customer': {
       id: 'skaj854',
@@ -449,7 +453,7 @@ Fixtures.orders['fgc'] = [
       },
       tracking: {
         carrier: 'ups',
-        tracking_number: 'alskdjf023jrlskjafj023',
+        number: 'alskdjf023jrlskjafj023',
         status: 'pre_transit',
         estimated_delivery: ship_date
       }
@@ -459,7 +463,7 @@ Fixtures.orders['fgc'] = [
       transactions: [
         {
           status: 'approved',
-          date: now,
+          date: now_value,
           method: 'credit',
           gateway: {
             provider: 'braintree',
@@ -494,7 +498,4 @@ Fixtures.orders['fgc'] = [
       ]
     }
   }
-];
-
-Fixtures.invoices['fgc'] = [
 ];
