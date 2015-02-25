@@ -1,40 +1,49 @@
 <template name="aristotle__products__form_info">
   <section id="products-form-info">
-    <h3 class="head-secondary margin-top-large">Info</h3>
+
+    <h3 class="form-title">
+      Title &amp; Description <a href="#" class="form-title---icon">Help with this section</a>
+    </h3>
+
     <fieldset class="{{formError "title"}}">
-      <input type="text" name="title" placeholder="Title" value="{{title}}" class="input-fill">
+      <label for="text-title" class="form-label">Title</label>
+      <input id="text-title" type="text" name="title" value="{{title}}" class="input-fill">
       {{#if formError "title"}}
         <p class="color-error padding-top-xsmall">{{formErrorMsg "title"}}</p>
       {{/if}}
     </fieldset>
 
+
+    <fieldset class="{{formError "url"}}">
+      <label for="text-url" class="text-gray padding-bottom-xsmall is-block">Path/URL</label>
+      <input id="text-url" type="text" name="url" value="{{url}}" class="input-fill">
+      {{#if formError "url"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "url"}}</p>
+      {{/if}}
+    </fieldset>
+
     <fieldset class="{{formError "subtitle"}}">
-      <input type="text" name="subtitle" placeholder="Subtitle" value="{{subtitle}}" class="input-fill">
+      <label for="text-subtitle" class="text-gray">Subtitle</label>
+      <input id="text-subtitle" type="text" name="subtitle" value="{{subtitle}}" class="input-fill">
       {{#if formError "subtitle"}}
         <p class="color-error padding-top-xsmall">{{formErrorMsg "subtitle"}}</p>
       {{/if}}
     </fieldset>
 
     <fieldset class="{{formError "extract"}}">
-      <input type="text" name="extract" placeholder="Extract" value="{{extract}}" class="input-fill">
+      <label for="text-extract" class="text-gray padding-bottom-xsmall is-block">Extract</label>
+      <input id="text-extract" type="text" name="extract" value="{{extract}}" class="input-fill">
       {{#if formError "extract"}}
         <p class="color-error padding-top-xsmall">{{formErrorMsg "extract"}}</p>
       {{/if}}
     </fieldset>
 
-    <fieldset class="{{formError "url"}}">
-      <input type="text" name="url" placeholder="Path/URL" value="{{url}}" class="input-fill">
-      {{#if formError "url"}}
-        <p class="color-error padding-top-xsmall">{{formErrorMsg "url"}}</p>
-      {{/if}}
-    </fieldset>
-
     <fieldset class="{{formError "description"}}">
-      <textarea name="description" placeholder="Description" class="input-fill input-xmedium">{{{description}}}</textarea>
+      <label for="text-description" class="text-gray padding-bottom-xsmall is-block">Description</label>
+      <textarea id="text-description" name="description" class="input-fill input-xmedium">{{{description}}}</textarea>
       {{#if formError "description"}}
         <p class="color-error padding-top-xsmall">{{formErrorMsg "description"}}</p>
       {{/if}}
-
     </fieldset>
   </section>
 </template>

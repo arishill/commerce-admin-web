@@ -1,13 +1,18 @@
 <template name="aristotle__products__table_head">
   <thead>
     <tr>
-      <th>&nbsp;</th>
-      <th>Title</th>
-      <th>Date Added</th>
-      <th>Stock</th>
-      <th>Retail</th>
-      <th>Sale</th>
-      <th>Status</th>
+      <th class="text-center set-20">{{{checkbox 'selected' 'selected-item' index false}}}</th>
+      {{#if false}}<th class="text-center set-20">&nbsp;</th>{{/if}}
+      <th class="text-center small-1-16">&nbsp;</th>
+      <th class="text-center small-1-16">Status</th>
+      <th class="text-left">Title</th>
+      <th class="text-center">Price</th>
+      <th class="text-center">On Sale</th>
+      <th class="text-center">Stock</th>
+      <th class="text-center">Sold</th>
+      <th class="text-center">Favorited</th>
+      <th class="text-center small-2-16">&nbsp;</th>
+      <th class="text-center set-10"><a href="#"><i class="icon-gear-gray"></i></a></th>
     </tr>
   </thead>
 </template>

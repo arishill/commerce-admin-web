@@ -1,0 +1,80 @@
+<template name="aristotle__products__form_variants_item">
+  <li class="col small-1-3">
+    <fieldset class="{{formError 'variants.{i}.title' index}}">
+      <input type="text" name="variants[{{index}}][title]" placeholder="Item Title" value="{{title}}" class="input-fill">
+      {{#if formError 'variants.{i}.title' index}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg 'variants.{i}.title' index}}</p>
+      {{/if}}
+    </fieldset>
+
+    <fieldset class="{{formError 'variants.{i}.description' index}}">
+      <textarea name="variants[{{index}}][description]" placeholder="Item Description" class="input-fill input-xmedium">{{description}}</textarea>
+      {{#if formError 'variants.{i}.description' index}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg 'variants.{i}.description' index}}</p>
+      {{/if}}
+    </fieldset>
+
+    <fieldset class="{{formError 'variants.{i}.price.regular_cents' index}}">
+      <input type="text" name="variants[{{index}}][price][regular_cents]" placeholder="Item Regular Price" value="{{centsToDollars price.regular_cents}}" class="input-fill">
+      {{#if formError 'variants.{i}.price.regular_cents' index}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg 'variants.{i}.price.regular_cents' index}}</p>
+      {{/if}}
+    </fieldset>
+
+    <fieldset class="{{formError 'variants.{i}.price.sale_cents' index}}">
+      <input type="text" name="variants[{{index}}][price][sale_cents]" placeholder="Item Sale Price" value="{{centsToDollars price.sale_cents}}" class="input-fill">
+      {{#if formError 'variants.{i}.price.sale_cents' index}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg 'variants.{i}.price.sale_cents' index}}</p>
+      {{/if}}
+    </fieldset>
+
+    <fieldset class="{{formError "variants.{i}.stock"}} index">
+      <input type="text" name="variants[{{index}}][stock]" placeholder="Item Stock" value="{{stock}}" class="input-fill">
+      {{#if formError 'variants.{i}.stock' index}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg 'variants.{i}.stock' index}}</p>
+      {{/if}}
+    </fieldset>
+
+    <!--
+    options: {}
+    -->
+
+    <fieldset class="{{formError 'variants.{i}.flags.is_active' index}}">
+      <label>Is active?</label>
+      <input type="checkbox" name="variants[{{index}}][flags][is_active]" {{isChecked flags.is_active}}>
+      {{#if formError 'variants.{i}.flags.is_active' index}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg 'variants.{i}.flags.is_active' index}}</p>
+      {{/if}}
+    </fieldset>
+
+    <fieldset class="{{formError 'variants.{i}.flags.is_sale' index}}">
+      <label>Is on Sale?</label>
+      <input type="checkbox" name="variants[{{index}}][flags][is_sale]" {{isChecked flags.is_sale}}>
+      {{#if formError 'variants.{i}.flags.is_sale'}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg 'variants.{i}.flags.is_sale'}}</p>
+      {{/if}}
+    </fieldset>
+
+    <fieldset class="{{formError 'variants.{i}.flags.is_taxable' index}}">
+      <label>Is taxable?</label>
+      <input type="checkbox" name="variants[{{index}}][flags][is_taxable]" {{isChecked flags.is_taxable}}>
+      {{#if formError 'variants.{i}.flags.is_taxable' index}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg 'variants.{i}.flags.is_taxable' index}}</p>
+      {{/if}}
+    </fieldset>
+
+    <fieldset class="{{formError 'variants.{i}.flags.is_discount_ignored' index}}">
+      <label>Ignore Bulk Discounts</label>
+      <input type="checkbox" name="variants[{{index}}][flags][is_discount_ignored]" {{isChecked flags.is_discount_ignored}}>
+      {{#if formError 'variants.{i}.flags.is_discount_ignored' index}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg 'variants.{i}.flags.is_discount_ignored' index}}</p>
+      {{/if}}
+    </fieldset>
+
+    <input type="hidden" value="{{value.sku}}" name="variants[{{index}}][sku]">
+
+    {{#if hasMultiple 'product' 'variants'}}
+      <a href="#" data-action="remove" data-arr="variants" data-index="{{index}}">Delete</a>
+    {{/if}}
+  </li>
+</template>

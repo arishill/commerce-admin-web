@@ -1,38 +1,29 @@
 <template name="aristotle__products__form">
 
-  <form id="products-form-{{page.action}}" data-action="{{page.action}}"  data-id="{{product._id}}" class="form">
-    {{#with product}}
-      {{> aristotle__products__form_info }}
-      {{> aristotle__products__form_flags }}
-      {{> aristotle__products__form_options }}
-      {{> aristotle__products__form_images }}
+  <form id="products-form-{{page.action}}" data-action="{{page.action}}"  data-id="{{product._id}}" class="form padding-horz-xlarge margin-horz-medium padding-vert-large">
+    <div class="contain padding-bottom-xlarge">
 
-      <div class="row">
-        {{> aristotle__products__form_price }}
-        {{> aristotle__products__form_schedule }}
-      </div>
-      {{> aristotle__products__form_shipping }}
-    {{/with}}
-
-    <section id="products-form-variants">
-      <h3 class="head-secondary margin-top-large">Variants</h3>
-      <ul class="row">
-      {{#each withIndex product.variants}}
-        {{> aristotle__products__form_variants }}
-      {{/each}}
-      </ul>
-
-      <button data-action="add" data-arr="variants" class="button-tertiary button-radius">Add another</button>
-    </section>
-
-    <!-- submit -->
-    <div class="text-right padding-top-large margin-top-large border-top border-primary">
+      <!-- sections-->
       {{#with product}}
-        <div class="is-inline padding-right-medium">
-          <a href="api/products/delete/{{_id}}" data-action="delete" class="link-delete line-primary is-inline">Delete</a>
-        </div>
+        {{> aristotle__products__form_info }}
+        {{> aristotle__products__form_price }}
+        {{> aristotle__products__form_images }}
+        {{> aristotle__products__form_variants }}
+        {{> aristotle__products__form_categories }}
+        {{> aristotle__products__form_relationships }}
       {{/with}}
-      <button type="submit" class="button-primary button-radius">{{page.btn}}</button>
+
+      <!-- submit -->
+      <nav class="form-action">
+        <div class="row fill-width fill-height text-middle">
+          <div class="col small-1-2 text-left">
+            <a href="api/products/delete/{{product._id}}" data-action="delete" class="icon--center icon-trash-red btn margin-left-small">Delete</a>
+          </div>
+          <div class="col small-1-2 text-right">
+            <btn type="submit" class="btn-green margin-right-medium">{{page.btn}}</btn>
+          </div>
+        </div>
+      </nav>
     </div>
   </form>
 

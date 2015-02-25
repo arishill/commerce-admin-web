@@ -14,6 +14,7 @@ Package.onUse(function(api) {
     'iron:router@=1.0.6',
     'aldeed:simple-schema@1.2.0',
     'momentjs:moment',
+    'arishill:core',
     'arishill:uploader',
     'arishill:imgix',
     'arishill:forms'
@@ -22,7 +23,10 @@ Package.onUse(function(api) {
   api.use([
     'templating',
     'minimongo',
-    'spacebars'
+    'spacebars',
+    'less',
+    'arishill:aesop',
+    'arishill:admin-modules'
   ], 'client');
 
   api.addFiles([
@@ -38,6 +42,8 @@ Package.onUse(function(api) {
   ]);
 
   api.addFiles([
+    'client/styles/edit.less',
+
     'client/views/index.html',
     'client/views/create.html',
     'client/views/edit.html',
@@ -45,6 +51,7 @@ Package.onUse(function(api) {
     'client/views/table/head.html',
     'client/views/table/body.html',
     'client/views/form/_form.html',
+    'client/views/form/categories.html',
     'client/views/form/shipping.html',
     'client/views/form/info.html',
     'client/views/form/images.html',
@@ -52,6 +59,7 @@ Package.onUse(function(api) {
     'client/views/form/flags.html',
     'client/views/form/options.html',
     'client/views/form/price.html',
+    'client/views/form/relationships.html',
     'client/views/form/variants.html',
     'client/callbacks.js',
     'client/events.js',
@@ -64,12 +72,11 @@ Package.onUse(function(api) {
   ], 'server');
 
   api.export([
+    'Collections',
     'Products',
     'ProductsIndex',
     'ProductsCreate',
     'ProductsEdit',
-    'ProductsTemplates',
-    'ProductsCollection',
     'moment'
   ]);
 

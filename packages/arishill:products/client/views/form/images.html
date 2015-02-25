@@ -1,35 +1,44 @@
 <template name="aristotle__products__form_images">
-  <section id="products-form-images">
-    <h3 class="head-secondary margin-top-large">Images</h3>
+  <section id="products-form-images" class="row margin-top-xlarge">
+    <h3 class="form-title">
+      Images <a href="#" class="form-title---icon">Help with this section</a>
+    </h3>
 
     <fieldset>
-      <ul>
+      <label class="form-label">Cart/Catalog Image <span class="text--small text--italic">465 x 345 ratio</span></label>
+      <ul class="row border-gray-light border--top border--bottom">
+        <li class="contain col small-1-4 bg-gray-light text-middle text-center" style="height: 150px;">
+          <button class="btn-black icon--center icon-camera-white" data-trigger="upload" data-target="images[cascade]">Add Images</button>
+        </li>
         {{#each withIndex images.cascade}}
-        <li>
+        <li class="contain col small-1-4">
           <img src="{{imgix value 'cascade'}}">
-          <a href="#" class="button-delete button-radius" data-action="remove" data-arr="images.cascade" data-index="{{index}}">Delete</a>
+          <a href="#" class="btn-red btn--circle btn--small icon--center icon-trash-white icon--medium" data-action="remove" data-arr="images.cascade" data-index="{{index}}">Delete</a>
           <input type="hidden" name="images[cascade][{{index}}]" value="{{value}}">
         </li>
         {{/each}}
       </ul>
-      <button class="button-tertiary button-radius" data-trigger="upload" data-target="images[cascade]">Add Images</button>
+
       <input type="file" data-action="upload" data-key="resumable" data-name="images[cascade]" multiple>
-      <p>{{progress 'images[cascade]'}}</p>
+      <!-- <p>{{progress 'images[cascade]'}}</p> -->
     </fieldset>
 
     <fieldset>
-      <ul>
+      <label class="form-label">Gallery Images <span class="text--small text--italic">465 x 345 ratio</span></label>
+      <ul class="row border-gray-light border--top border--bottom">
+        <li class="contain col small-1-4 bg-gray-light text-middle text-center" style="height: 150px;">
+          <button class="btn-black icon--center icon-camera-white" data-trigger="upload" data-target="images[gallery]">Add Images</button>
+        </li>
         {{#each withIndex images.gallery}}
-        <li>
+        <li class="contain col small-1-4">
           <img src="{{imgix value 'gallery'}}">
-          <a href="#" class="button-delete button-radius" data-action="remove" data-arr="images.gallery" data-index="{{index}}">Delete</a>
+          <a href="#" class="btn-red btn--circle btn--small icon--center icon-trash-white icon--medium" data-action="remove" data-arr="images.gallery" data-index="{{index}}">Delete</a>
           <input type="hidden" name="images[gallery][{{index}}]" value="{{value}}">
         </li>
         {{/each}}
       </ul>
-      <button class="button-tertiary button-radius" data-trigger="upload" data-target="images[gallery]">Add Images</button>
       <input type="file" data-action="upload" data-key="resumable" data-name="images[gallery]" multiple>
-      <p>{{progress 'images[gallery]'}}</p>
+      <!-- <p>{{progress 'images[gallery]'}}</p> -->
     </fieldset>
   </section>
 </template>

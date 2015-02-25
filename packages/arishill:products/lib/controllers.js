@@ -1,6 +1,23 @@
 /* CONTROLLERS
 .................................................*/
 
+// index
+ProductsIndex = RouteController.extend({
+  template: 'aristotle__products__index',
+  layoutTemplate: 'app_layout',
+  waitOn: function() {
+    return Meteor.subscribe('products');
+  },
+  data: function() {
+    return {
+      products: Collections.products.find({}, { sort: { 'date.modified': -1 } })
+    };
+  },
+  action: function() {
+    this.render();
+  }
+});
+
 // create
 ProductsCreate = RouteController.extend({
   template: 'aristotle__products__create',
@@ -31,36 +48,30 @@ ProductsEdit = RouteController.extend({
     return Meteor.subscribe('productsByUrl', this.params.url);
   },
   data: function() {
-    if (typeof(Session.get('product')) !== 'undefined') {
-      return {
-        product: Session.get('product'),
-        schema: 'products',
-        page: {
-          btn: 'Save Product',
-          action: 'update'
-        }
-      };
-    } else {
-      Session.set('product', Collections.products.findOne());
+    return {
+      product: Collections.products.findOne({}),
+      schema: 'products',
+      page: {
+        btn: 'Save Product',
+        action: 'update',
+        drawer: true
+      }
     }
   },
-  action: function () {
-    this.render();
-  }
-});
-
-// index
-ProductsIndex = RouteController.extend({
-  template: 'aristotle__products__index',
-  layoutTemplate: 'app_layout',
-  waitOn: function() {
-    return Meteor.subscribe('products');
-  },
-  data: function() {
-    return {
-      products: Collections.products.find({}, { sort: { 'date.modified': -1 } })
-    };
-  },
+  // data: function() {
+  //   // if (typeof(Session.get('product')) !== 'undefined') {
+  //   //   return {
+  //   //     product: Session.get('product'),
+  //   //     schema: 'products',
+  //   //     page: {
+  //   //       btn: 'Save Product',
+  //   //       action: 'update'
+  //   //     }
+  //   //   };
+  //   // } else {
+  //   //   Session.set('product', Collections.products.findOne());
+  //   // }
+  // },
   action: function() {
     this.render();
   }
