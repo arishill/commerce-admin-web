@@ -1,18 +1,38 @@
 <template name="aristotle__products__form_price">
-  <section id="products-form-price" class="col small-1-4">
-    <h3 class="head-secondary margin-top-large">Price</h3>
-    <fieldset class="{{formError "price.regular_cents"}}">
-      <input type="text" name="price[regular_cents]" placeholder="Regular Price" value="{{centsToDollars price.regular_cents}}">
-      {{#if formError "price.regular_cents"}}
-        <p class="color-error padding-top-xsmall">{{formErrorMsg "price.regular_cents"}}</p>
-      {{/if}}
-    </fieldset>
+  <section id="products-form-price" class="row margin-top-xlarge">
+    <h3 class="form-title">
+      Pricing <a href="#" class="form-title---icon">Help with this section</a>
+    </h3>
 
-    <fieldset class="{{formError "price.sale_cents"}}">
-      <input type="text" name="price[sale_cents]" placeholder="Sale Price"  value="{{centsToDollars price.sale_cents}}">
-      {{#if formError "price.sale_cents"}}
-        <p class="color-error padding-top-xsmall">{{formErrorMsg "price.sale_cents"}}</p>
-      {{/if}}
-    </fieldset>
+    <div class="col small-1-2 gutter-right-medium">
+      <fieldset class="{{formError "price.regular_cents"}}">
+        <label for="text-price-regular" class="form-label">Regular Price</label>
+        <input id="text-price-regular" type="text" name="price[regular_cents]" value="{{centsToDollars price.regular_cents}}" class="input-fill">
+        {{#if formError "price.regular_cents"}}
+          <p class="color-error padding-top-xsmall">{{formErrorMsg "price.regular_cents"}}</p>
+        {{/if}}
+      </fieldset>
+
+      <fieldset class="{{formError "price.sale_cents"}}">
+        <label for="text-price-sale" class="form-label">Sale Price</label>
+        <input id="text-price-sale" type="text" name="price[sale_cents]" value="{{centsToDollars price.sale_cents}}" class="input-fill">
+        {{#if formError "price.sale_cents"}}
+          <p class="color-error padding-top-xsmall">{{formErrorMsg "price.sale_cents"}}</p>
+        {{/if}}
+      </fieldset>
+    </div>
+
+    <div class="col small-1-2 gutter-left-medium">
+
+      <fieldset class="contain-text-75 {{formError "flag.ignore_bulk_markdowns"}}">
+        {{{checkboxAlt 'flags[ignore_bulk_markdowns]' 'flags_ignore_bulkmarkdowns' '' flags.ignore_bulk_markdowns 'large'}}}
+        <span class="text-gray-dark margin-left-small">Ignore Bulk Markdowns</span>
+      </fieldset>
+
+      <fieldset class="contain-text-75 {{formError "flag.is_sale"}}">
+        {{{checkboxAlt 'flags[is_sale]' 'flags_is_sale' '' flags.is_sale 'large'}}}
+        <span class="text-gray-dark margin-left-small">On sale</span>
+      </fieldset>
+    </div>
   </section>
 </template>

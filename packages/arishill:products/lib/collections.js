@@ -1,6 +1,5 @@
 /* COLLECTIONS
 .................................................*/
-Collections = {};
 Collections.products = new Mongo.Collection('products');
 
 Collections.products.allow({
