@@ -1,7 +1,26 @@
 <template name="aristotle__orders__edit">
-  <section class="contain-2-3 contain-center">
-    <h1 class="head-primary margin-top-large">Edit Order</h1>
+
+  <section id="orders-edit">
+    <header class="row padding-vert-medium padding-right-large padding-left-small border-gray-light border--bottom">
+      <div class="col small-1-2 text-left text-middle">
+        <a href="{{pathFor 'orders_index'}}" class="col-pull icon--center icon--large icon-chevron-left-gray btn margin-right-xsmall">Back</a>
+        <div class="border-gray-light border--left">
+          <p class="contain-50 margin-horz-medium">
+            <i class="icon-order-gray icon--xmedium"></i>
+          </p>
+        </div>
+        <h1 class="is-inline">
+          <strong class="is-block head-black text--bold">Order {{order._id}} &mdash; {{timestampToDate order.date.created 'MM/DD/YYYY'}}</strong>
+          <span class="text-gray-dark">by {{order.billing.name.first}} {{order.billing.name.last}} from {{order.billing.address.city}}, {{order.billing.address.province}}</span>
+        </h1>
+
+      </div>
+      <div class="col small-1-2 text-right">
+        <p class="padding-bottom-xsmall">{{{getOrderStatus order}}}</p>
+      </div>
+    </header>
+
     {{> aristotle__orders__form}}
-    {{> aristotle__transaction__form }}
+    <!-- {{> aristotle__transaction__form }} -->
   </section>
 </template>
