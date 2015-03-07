@@ -1,38 +1,24 @@
 <template name="aristotle__orders__form">
 
-  <form id="orders-form-{{page.action}}" data-action="{{page.action}}"  data-id="{{order._id}}" class="form">
-    {{#with order}}
-      {{> aristotle__orders__form_type }}
-      {{> aristotle__orders__form_customer }}
-      {{> aristotle__orders__form_receipt }}
-      {{> aristotle__orders__form_transactions }}
-    {{/with}}
-
-    <section id="orders-form-items">
-      <h3 class="head-secondary margin-top-large">Items</h3>
-
-        <ul class="row {{formError "items"}}">
-        {{#each withIndex order.items}}
-          {{> aristotle__orders__form_item }}
-        {{/each}}
-        </ul>
-
-        {{#if formError "items"}}
-          <div>{{formErrorMsg "items"}}</div>
-        {{/if}}
-
-        <button data-action="add" data-arr="items" class="button-tertiary button-radius">Add Item</button>
-    </section>
-
-    <!-- submit -->
-    <div class="text-right padding-top-large margin-top-large border-top border-primary">
+  <form id="orders-form-{{page.action}}" data-action="{{page.action}}"  data-id="{{order._id}}" class="form padding-horz-xlarge margin-horz-medium padding-vert-xlarge">
+    <div class="contain padding-bottom-xlarge">
       {{#with order}}
-        <div class="is-inline padding-right-medium">
-          <a href="#" data-action="delete" class="link-delete line-primary is-inline">Delete</a>
-        </div>
+        {{> aristotle__orders__form_details }}
+        {{> aristotle__orders__form_shipment }}
+        {{> aristotle__orders__form_payment }}
       {{/with}}
 
-      <button type="submit" class="button-primary button-radius">{{page.btn}}</button>
+      <!-- submit -->
+      <nav class="form-action">
+        <div class="row fill-width fill-height text-middle">
+          <div class="col small-1-2 text-left">
+            <a href="api/orders/delete/{{order._id}}" data-action="delete" class="icon--center icon-trash-red btn margin-left-small">Delete</a>
+          </div>
+          <div class="col small-1-2 text-right">
+            <btn type="submit" class="btn-green margin-right-medium">{{page.btn}}</btn>
+          </div>
+        </div>
+      </nav>
     </div>
   </form>
 

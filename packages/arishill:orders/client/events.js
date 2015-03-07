@@ -4,7 +4,7 @@
 .................................................*/
 
 // index
-Template.aristotle__sales__table.events({
+Template.aristotle__orders__table.events({
   // remove orders from DB
   'click [data-action="delete"]': function(event, template) {
     Aristotle.events.delete(event, template, {
@@ -76,5 +76,14 @@ Template.aristotle__orders__form.events({
         '_id': $(event.target).parents('form').data('id')
       }
     });
+  },
+
+  // toggle edit
+  'click [data-edit]': function(event, template) {
+    Session.set($(event.target).data('edit'), true);
+  },
+
+  'click [data-done]': function(event, template) {
+    Session.set($(event.target).data('done'), false);
   }
 });

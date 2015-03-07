@@ -1,14 +1,29 @@
-<template name="aristotle__sales__table_body">
+<template name="aristotle__orders__table_body">
   <tbody>
-    {{#each sales}}
+    {{#each orders}}
     <tr>
-      <td><a href="/orders/{{_id}}/edit">{{date.created}}</a></td>
-      <td><a href="/orders/{{_id}}/edit">{{type}}</a></td>
-      <td><a href="/orders/{{_id}}/edit">{{_id}}</a></td>
-      <td>{{centsToDollars receipt.amount.total_cents}}</td>
-      <td>{{shipment.delivery.date}}</td>
-      <td>{{payment.status}}</td>
-      <td>{{shipment.status}}</td>
+      <td class="text-center set-20">
+        {{{checkbox 'selected' 'selected-item' index false}}}
+      </td>
+      <td class="text-center set-20">
+        <a href="#"><i class="icon-double-arrow-down-gray icon--small"></i></a>
+      </td>
+      <td class="text-center">{{date.created}}</td>
+      <td class="text-center">Flag</td>
+      <td class="text-left">Paris, France</td>
+      <td class="text-left">
+        Michael Caine<br>
+        <em>mcaine@google.fr.co</em>
+      </td>
+      <td class="text-right">
+        <span>{{centsToDollars receipt.amount.total_cents}}</span><i class="padding-left-small icon-gift-gray"></i><i class="icon-tag-gray"></i>
+      </td>
+      <td class="text-left">google.com</td>
+      <td class="text-center">
+        {{{getOrderStatus order}}}
+      </td>
+      <td class="text-right"><a href="{{pathFor 'orders_edit'}}" class="btn-white">Edit</a></td>
+      <td class="text-center border-gray border--left border--bottom"><a href="#" class="btn icon-trash-red icon--center">Delete</a></td>
     </tr>
     {{/each}}
   </tbody>
