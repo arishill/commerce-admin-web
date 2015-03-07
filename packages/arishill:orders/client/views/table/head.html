@@ -1,13 +1,16 @@
-<template name="aristotle__sales__table_head">
+<template name="aristotle__orders__table_head">
   <thead>
     <tr>
-      <th>Date</th>
-      <th>Sale Type</th>
-      <th>Order #</th>
-      <th>Order Total</th>
-      <th>Delivery Date</th>
-      <th>Payment Status</th>
-      <th>Shipment Status</th>
+      <th class="text-center set-20">{{{checkbox 'selected' 'selected-item' index false}}}</th>
+      <th class="text-center set-20">&nbsp;</th>
+      <th class="text-center set-30">Date</th>
+      <th class="text-left small-3-16" colspan="2">Ship to</th>
+      <th class="text-left small-3-16">Name / <em>Email</em></th>
+      <th class="text-center small-2-16">Order Total</th>
+      <th class="text-center">Referrer</th>
+      <th class="text-center small-3-16">Status</th>
+      <th class="text-center">&nbsp;</th>
+      <th class="text-center set-30"><a href="#" class="btn icon--center icon-gear-gray">Settings</a></th>
     </tr>
   </thead>
 </template>

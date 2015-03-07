@@ -13,13 +13,15 @@ Package.onUse(function(api) {
     'underscore',
     'iron:router@=1.0.6',
     'aldeed:simple-schema@1.2.0',
+    'arishill:core',
     'arishill:transactions',
     'arishill:forms'
   ]);
 
   api.use([
     'templating',
-    'spacebars'
+    'spacebars',
+    'dburles:google-maps'
   ], 'client');
 
   api.addFiles([
@@ -45,10 +47,13 @@ Package.onUse(function(api) {
     'client/views/table/_table.html',
     'client/views/table/head.html',
     'client/views/table/body.html',
+    'client/views/form/details.html',
     'client/views/form/_form.html',
     'client/views/form/customer.html',
+    'client/views/form/payment.html',
     'client/views/form/items.html',
     'client/views/form/receipt.html',
+    'client/views/form/shipment.html',
     'client/views/form/type.html',
     'client/views/form/transactions.html',
     'client/callbacks.js',
@@ -66,10 +71,7 @@ Package.onUse(function(api) {
     'Orders',
     'OrdersCreate',
     'OrdersEdit',
-    'SalesIndex',
-    'InvoicesCreate',
-    'InvoicesEdit',
-    'InvoicesIndex'
+    'OrdersIndex'
   ]);
 
   api.export([
