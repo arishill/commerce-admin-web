@@ -1,0 +1,26 @@
+<template name="aristotle__invoices__form">
+
+  <form id="invoices-form-{{page.action}}" data-action="{{page.action}}"  data-id="{{invoice._id}}" class="form padding-horz-xlarge margin-horz-medium padding-vert-xlarge">
+    <div class="contain padding-bottom-xlarge">
+      {{#with invoice}}
+        {{> aristotle__invoices__form_recepient }}
+        {{> aristotle__invoices__form_line_items }}
+        {{> aristotle__invoices__form_transactions }}
+        {{> aristotle__invoices__form_email }}
+      {{/with}}
+
+      <!-- submit -->
+      <nav class="form-action">
+        <div class="row fill-width fill-height text-middle">
+          <div class="col small-1-2 text-left">
+            <a href="api/invoices/delete/{{invoice._id}}" data-action="delete" class="icon--center icon-trash-red btn margin-left-small">Delete</a>
+          </div>
+          <div class="col small-1-2 text-right">
+            <btn type="submit" class="btn-green margin-right-medium">{{page.btn}}</btn>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </form>
+
+</template>
