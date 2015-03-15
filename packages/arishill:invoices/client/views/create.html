@@ -1,0 +1,23 @@
+<template name="aristotle__invoices__create">
+  <section id="invoices-create">
+    <header class="row padding-vert-medium padding-right-large padding-left-small border-gray-light border--bottom text-middle">
+      <div class="col small-1-2 text-left text-middle">
+        <a href="{{pathFor 'invoices_index'}}" class="col-pull icon--center icon--large icon-chevron-left-gray btn margin-right-xsmall">Back</a>
+        <div class="border-gray-light border--left">
+          <p class="contain-50 margin-horz-medium">
+            <i class="icon-invoice-gray icon--xmedium"></i>
+          </p>
+        </div>
+        <h1 class="is-inline">
+          <strong class="is-block head-black text--bold">#INV01293 &mdash; The Geshire Company</strong>
+        </h1>
+
+      </div>
+      <div class="col small-1-2 text-right">
+        <p class="head-yellow">Pending</p>
+      </div>
+    </header>
+
+    {{> aristotle__invoices__form}}
+  </section>
+</template>
