@@ -3,28 +3,28 @@
 
     <form data-action="checkout" class="form" data-card-type="{{cardType}}">
 <!--     {{#transaction}} -->
-      <fieldset class="{{formError "name"}}">
+      <fieldset class="{{formError 'name'}}">
         <input type="text" data-card-name placeholder="Name on credit card" name="card[name]" value="{{card.name}}" class="input-fill">
         {{#if formError "name"}}
           <p class="color-error padding-top-xsmall">{{formErrorMsg "name"}}</p>
         {{/if}}
       </fieldset>
 
-      <fieldset class="{{formError "number"}}">
+      <fieldset class="{{formError 'number'}}">
         <input type="tel" data-card-number placeholder="Credit card number" maxlength="16" class="input-fill">
         {{#if formError "number"}}
         <p class="color-error padding-top-xsmall">{{formErrorMsg "number"}}</p>
         {{/if}}
       </fieldset>
 
-      <fieldset class="{{formError "cvc"}}">
+      <fieldset class="{{formError 'cvc'}}">
         <input type="tel" data-card-cvc placeholder="CVC" class="input-fill">
         {{#if formError "cvc"}}
           <p class="color-error padding-top-xsmall">{{formErrorMsg "cvc"}}</p>
         {{/if}}
       </fieldset>
 
-      <fieldset class="{{formError "expiry_month"}}">
+      <fieldset class="{{formError 'expiry_month'}}">
         <input type="tel" data-card-expiry-month placeholder="MM" maxlength="2" class="input-fill">
         {{#if formError "expiry_month"}}
           <p class="color-error padding-top-xsmall">{{formErrorMsg "expiry_month"}}</p>
@@ -39,8 +39,10 @@
       </fieldset>
 
       <select data-card-country-code name="transaction[country_code]">
-        <option value="usa" selected>United States</option>
-        <option value="gbr">Great Britain</option>
+        {{#each countries}}
+        <option value="{{three_digit_iso}}">{{name}}</option>
+        {{/each}}
+        <!-- <option value="gbr">Great Britain</option> -->
       </select>
 
       <fieldset class="{{formError 'postal_code'}}">
@@ -48,14 +50,13 @@
         {{#if formError 'postal_code'}}
           <p class="color-error padding-top-xsmall">{{formErrorMsg 'postal_code'}}</p>
         {{/if}}
-        <!--{{formErrorMsg "transaction.card.postal_code"}}-->
       </fieldset>
 
-      <div id="paypal-button"></div>
+      <div id="paypal-btn"></div>
       <input type="hidden" data-token name="token">
       <input type="hidden" data-amount name="amount" value="10.50">
 
-      <button type="submit" class="button-secondary button-radius">Pay</button>
+      <btn type="submit" class="btn-secondary btn-radius">Pay</btn>
       <!-- {{/transaction}} -->
     </form>
   </section>

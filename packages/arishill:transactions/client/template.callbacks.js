@@ -11,7 +11,7 @@ Transactions.callbacks.created = function() {
       // paypal is enabled, set it up
       if (Transactions.config.paypal.enabled) {
         braintree.setup(data.token, "paypal", {
-          container: "paypal-button",
+          container: "paypal-btn",
           paymentMethodNonceInputField: $('[data-token]'),
           displayName:  Transactions.config.display_name,
           singleUse: Transactions.config.single_use,

@@ -1,6 +1,6 @@
 /* COLLECTIONS
 .................................................*/
-Collections = {};
+Collections = (_.isUndefined(Collections)) ? {} : Collections;
 Collections.transactions = new Mongo.Collection('transactions');
 
 Collections.transactions.allow({
