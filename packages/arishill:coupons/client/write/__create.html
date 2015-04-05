@@ -1,0 +1,34 @@
+<template name="aristotle__coupons__create">
+  <section id="coupons-create">
+    <header class="row padding-vert-medium padding-right-large padding-left-small border-gray-light border--bottom">
+      <div class="col small-1-2 text-left text-middle">
+        <a href="{{pathFor 'reports_index'}}" class="col-pull icon--center icon--large icon-chevron-left-gray btn margin-right-xsmall">Back</a>
+        <h1 class="header-icon icon-coupon-gray">Create Coupon</h1>
+      </div>
+      <div class="col small-1-2">
+      </div>
+    </header>
+
+    <form id="invoices-form-" data-action=""  data-id="" class="form padding-horz-xlarge margin-horz-medium padding-vert-xlarge">
+      <div class="contain padding-bottom-xlarge">
+
+        {{> aristotle__coupons__form_discount }}
+        {{> aristotle__coupons__form_applies }}
+        {{> aristotle__coupons__form_schedule }}
+        {{> aristotle__coupons__form_email }}
+
+        <!-- submit -->
+        <nav class="form-action">
+          <div class="row fill-width fill-height text-middle">
+            <div class="col small-1-2 text-left">
+              <a href="api/coupons/delete/:id" data-action="delete" class="icon--center icon-trash-red btn margin-left-small">Delete</a>
+            </div>
+            <div class="col small-1-2 text-right">
+              <btn type="submit" class="btn-green margin-right-medium">Create Coupon</btn>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </form>
+  </section>
+</template>
