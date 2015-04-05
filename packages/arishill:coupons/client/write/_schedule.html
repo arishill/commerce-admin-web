@@ -1,0 +1,23 @@
+<template name="aristotle__coupons__form_schedule">
+  <section id="coupons-form-markdown" class="row margin-top-xxlarge">
+    <h3 class="form-title">
+      Schedule <a href="#" class="form-title---icon">Help with this section</a>
+    </h3>
+
+    <fieldset class="row">
+     {{{checkboxAlt 'name' 'schedule_on' '' true 'large'}}}
+      <span class="text-gray-dark margin-left-small">Run coupon at a specific time</span>
+    </fieldset>
+
+    <fieldset class="row">
+      <div class="col small-1-2 gutter-right-medium">
+        <label class="form-label">Start Date <span class="text--small text--italic">MM/DD/YY</span></label>
+        <input type="text" class="input-fill">
+      </div>
+      <div class="col small-1-2 gutter-left-medium">
+        <label class="form-label">End Date <span class="text--small text--italic">MM/DD/YY</span></label>
+        <input type="text" class="input-fill">
+      </div>
+    </fieldset>
+  </section>
+</template>
