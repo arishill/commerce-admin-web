@@ -1,0 +1,18 @@
+<template name="aristotle__coupons__index">
+  <section id="coupons-index">
+    <header class="row padding-vert-medium padding-horz-small">
+      <div class="col small-1-2 text-left">
+      <h1 class="header-icon icon-coupon-gray">Coupons</h1>
+        <a href="#" class="btn btn--large link-gray-dark icon--left icon-filter-gray">Filters</a>
+        <form class="btn--large btn is-inline icon--left icon-search-gray">
+          <input class="text-gray text--xmedium padding-left-xsmall padding-bottom-xsmall" type="text" placeholder="Type here to search...">
+        </form>
+      </div>
+      <div class="col small-1-2 text-right">
+        <a href="{{pathFor 'coupons_create'}}" class="btn-gray-light icon--left icon--small icon-plus-black margin-right-medium">Create coupon</a>
+      </div>
+    </header>
+    {{> aristotle__coupons__table}}
+    {{> aristotle__pagination__table}}
+  </section>
+</template>
