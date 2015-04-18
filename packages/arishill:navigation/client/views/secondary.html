@@ -1,0 +1,17 @@
+<template name="aristotle__nav__secondary">
+  {{#if Template.subscriptionsReady}}
+    <nav class="nav-secondary">
+    {{#each navGroups}}
+      <ul class="list-no-bullets">
+        {{#each navItems}}
+        <li><a href="{{href}}" class="{{isActiveRoute route}} btn-block-site">{{title}}</a></li>
+        {{/each}}
+      </ul>
+    {{/each}}
+
+      <p class="contain-abs-bottom contain--50 text-center padding-bottom-small">
+        <a href="#" class="text-gray text--small icon-help-site icon--bottom">Help for this page</a>
+      </p>
+    </nav>
+  {{/if}}
+</template>
