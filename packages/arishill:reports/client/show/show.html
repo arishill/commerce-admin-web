@@ -1,0 +1,26 @@
+<template name="aristotle__reports__show">
+  <section id="reports-show">
+    <header class="row padding-vert-medium padding-right-large padding-left-small border-gray-light border--bottom">
+      <div class="col small-1-2 text-left text-middle">
+        <a href="{{pathFor 'reports_index'}}" class="col-pull icon--center icon--large icon-chevron-left-gray btn margin-right-xsmall">Back</a>
+        <div class="border-gray-light border--left">
+          <p class="contain-50 margin-horz-medium">
+            <i class="icon-order-gray icon--xmedium"></i>
+          </p>
+        </div>
+        <h1 class="is-inline text-middle">
+          <strong class="is-block head-black text--bold">Sales &amp; Tax Report — March 2015</strong>
+        </h1>
+
+      </div>
+      <div class="col small-1-2 text-right text-middle">
+        <a href="#" class="btn-white btn--small icon-csv-gray icon--left margin-right-small">CSV</a>
+        <a href="#" class="btn-white btn--small icon-acrobat-red icon--left">PDF</a>
+      </div>
+    </header>
+
+    {{> aristotle__reports__show_summary}}
+    {{> aristotle__reports__show_table}}
+    {{> aristotle__pagination__table}}
+  </section>
+</template>
