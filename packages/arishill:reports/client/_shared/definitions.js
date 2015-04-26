@@ -1,0 +1,2 @@
+// definitions
+Reports = {};
