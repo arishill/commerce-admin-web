@@ -1,0 +1,17 @@
+<template name="aristotle__categories__index">
+  <section id="categories-index">
+    <header class="row padding-vert-medium padding-horz-small">
+      <div class="col small-1-2 text-left">
+        <a href="#" class="btn btn--large link-black icon--left icon-filter-black">Filters</a>
+        <form class="btn--large btn is-inline icon--left icon-search-black">
+          <input class="text-gray text--xmedium padding-left-xsmall padding-bottom-xsmall" type="text" placeholder="Type here to search...">
+        </form>
+      </div>
+      <div class="col small-1-2 text-right">
+        <a href="{{pathFor 'categories_create'}}" class="btn btn--large link-black icon--left icon-plus-black">Create category</a>
+      </div>
+    </header>
+    {{> aristotle__categories__table}}
+    {{> aristotle__pagination__table}}
+  </section>
+</template>
