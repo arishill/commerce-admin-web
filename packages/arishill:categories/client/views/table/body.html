@@ -1,0 +1,30 @@
+<template name="aristotle__categories__table_body">
+  <tbody>
+    {{#each sales}}
+    <tr>
+      <td class="text-center set-20">
+        {{{checkbox 'selected' 'selected-item' index false}}}
+      </td>
+      <td class="text-center set-20">
+        <a href="#"><i class="icon-double-arrow-down-gray icon--small"></i></a>
+      </td>
+      <td class="text-center">{{date.created}}</td>
+      <td class="text-center">Flag</td>
+      <td class="text-left">Paris, France</td>
+      <td class="text-left">
+        Michael Caine<br>
+        <em>mcaine@google.fr.co</em>
+      </td>
+      <td class="text-right">
+        {{centsToDollars receipt.amount.total_cents}} <i class="icon-gift-gray"></i><i class="icon-category-gray"></i>
+      </td>
+      <td class="text-left">google.com</td>
+      <td class="text-center">
+        {{{getcategoryStatus category}}}
+      </td>
+      <td class="text-right"><a href="#" class="btn-white btn--small">Edit</a></td>
+      <td class="text-center bcategory-gray bcategory--left bcategory--bottom"><a href="#" class="btn icon-trash-red icon--center">Delete</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</template>

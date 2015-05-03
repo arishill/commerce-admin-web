@@ -1,0 +1,81 @@
+<template name="aristotle__categories__form_customer">
+  <section id="categories-form-customer">
+
+    <h3 class="head-secondary margin-top-large">Billing Info</h3>
+
+    <fieldset class="{{formError "billing.email"}}">
+      <input type="text" name="billing[email]" placeholder="Email Address" value="{{billing.email}}" class="input-fill">
+      {{#if formError "billing.email"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "billing.email"}}</p>
+      {{/if}}
+    </fieldset>
+
+    <fieldset class="{{formError "billing.phone"}}">
+      <input type="text" name="billing[phone]" placeholder="Phone Number" value="{{billing.phone}}" class="input-fill">
+      {{#if formError "billing.phone"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "billing.phone"}}</p>
+      {{/if}}
+    </fieldset>
+
+    <fieldset class="{{formError "billing.name.first"}}">
+      <input type="text" name="billing[name][first]" placeholder="First Name" value="{{billing.name.first}}" class="input-fill">
+      {{#if formError "billing.name.first"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "billing.name.first"}}</p>
+      {{/if}}
+    </fieldset>
+
+    <fieldset class="{{formError "billing.name.last"}}">
+      <input type="text" name="billing[name][last]" placeholder="Last Name" value="{{billing.name.last}}" class="input-fill">
+      {{#if formError "billing.name.last"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "billing.name.last"}}</p>
+      {{/if}}
+    </fieldset>
+
+    <h3 class="head-secondary margin-top-large">Billing Address</h3>
+
+    <fieldset class="{{formError "billing.address.line_1"}}">
+      <input type="text" name="billing[address][line_1]" placeholder="Line 1" value="{{billing.address.line_1}}" class="input-fill">
+      {{#if formError "billing.address.line_1"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "billing.address.line_1"}}</p>
+      {{/if}}
+    </fieldset>
+
+    <fieldset class="{{formError "billing.address.line_2"}}">
+      <input type="text" name="billing[address][line_2]" placeholder="Line 2" value="{{billing.address.line_2}}" class="input-fill">
+      {{#if formError "billing.address.line_2"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "billing.address.line_2"}}</p>
+      {{/if}}
+    </fieldset>
+
+    <fieldset class="{{formError "billing.address.city"}}">
+      <input type="text" name="billing[address][city]" placeholder="City" value="{{billing.address.city}}" class="input-fill">
+      {{#if formError "billing.address.city"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "billing.address.city"}}</p>
+      {{/if}}
+    </fieldset>
+
+    <fieldset class="{{formError "billing.address.province"}}">
+      <input type="text" name="billing[address][province]" placeholder="Province" value="{{billing.address.province}}" class="input-fill">
+      {{#if formError "billing.address.province"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "billing.address.province"}}</p>
+      {{/if}}
+    </fieldset>
+
+    <fieldset class="{{formError "billing.address.postal_code"}}">
+      <input type="text" name="billing[address][postal_code]" placeholder="Postal Code" value="{{billing.address.postal_code}}" class="input-fill">
+      {{#if formError "billing.address.postal_code"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "billing.address.postal_code"}}</p>
+      {{/if}}
+    </fieldset>
+
+    <fieldset class="{{formError "billing.address.country_code"}}">
+      <input type="text" name="billing[address][country_code]" placeholder="Country" value="{{billing.address.country_code}}" lass="input-fill">
+      {{#if formError "billing.address.country_code"}}
+        <p class="color-error padding-top-xsmall">{{formErrorMsg "billing.address.country_code"}}</p>
+      {{/if}}
+    </fieldset>
+
+    <input type="hidden" name="customer[id]" value="{{customer.id}}">
+    <input type="hidden" name="customer[is_saved_card]" value="{{customer.is_saved_card}}">
+  </section>
+</template>
