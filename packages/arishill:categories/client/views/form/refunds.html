@@ -1,0 +1,25 @@
+<template name="aristotle__products__form_shipping">
+  <section id="products-form-shipping">
+    <h3>Shipping</h3>
+
+    <fieldset class="{{productError "shipping.weight"}}">
+      <input type="text" name="shipping[weight]" placeholder="Shipping Weigth" value="{{shipping.weight}}">
+      {{productErrorMsg "shipping.weight"}}
+    </fieldset>
+
+    <fieldset class="{{productError "shipping.width"}}">
+      <input type="text" name="shipping[width]" placeholder="Shipping Width" value="{{shipping.width}}">
+      {{productErrorMsg "shipping.width"}}
+    </fieldset>
+
+    <fieldset class="{{productError "shipping.length"}}">
+      <input type="text" name="shipping[length]" placeholder="Shipping Length" value="{{shipping.length}}">
+      {{productErrorMsg "shipping.length"}}
+    </fieldset>
+
+    <fieldset class="{{productError "shipping.depth"}}">
+      <input type="text" name="shipping[depth]" placeholder="Shipping Depth" value="{{shipping.depth}}">
+      {{productErrorMsg "shipping.depth"}}
+    </fieldset>
+  </section>
+</template>
