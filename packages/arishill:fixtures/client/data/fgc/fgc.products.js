@@ -9,6 +9,10 @@ var now = moment().valueOf();
 .................................................*/
 Fixtures.products['fgc'] = [
   {
+    flags: {
+      is_sale: true,
+      is_active: true
+    },
     title: 'Black Camp Boot',
     descripton: 'Exclusive /  Horween Chromexel Camp Boot from Oak Street Bootmakers / Hand-stitched moccasin construction / Vibram Sole / Form-fitting inner / waxed stitching / Rawhide laces / Made in the USA\r\n\r\nWe recommend sizing down one half size for a snug fit, as natural leather shoes will stretch to conform to your foot.',
     url: 'black-camp-boot',
@@ -27,6 +31,7 @@ Fixtures.products['fgc'] = [
           regular_cents: 25000,
           sale_cents: 20000
         },
+        stock: 1,
         options: {
 
         }
@@ -34,6 +39,10 @@ Fixtures.products['fgc'] = [
     ]
   },
   {
+    flags: {
+      is_sale: true,
+      is_active: true
+    },
     title: 'Trousse de Toilette Homme',
     description: 'French cotton toile. Zip closure on top. Side strap for hand carrying / Two interior patch pockets. Interior plastic lining / Case: 25 x 15 x 10 cm / 100% Cotton',
     url: 'f13-trousse-de-toilette-homme',
@@ -47,6 +56,18 @@ Fixtures.products['fgc'] = [
     },
     variants: [
       {
+        stock: 1,
+        sku: '1230ajf',
+        price: {
+          regular_cents: 25000,
+          sale_cents: 20000
+        },
+        options: {
+
+        }
+      },
+      {
+        stock: 2,
         sku: '1230ajf',
         price: {
           regular_cents: 25000,
@@ -60,7 +81,7 @@ Fixtures.products['fgc'] = [
   },
   {
     title: 'Ladbroke Grove Slim Tapered Jean',
-    description: 'Slim, tapered fit jean in thicker 14.74 oz denim / Cone Mills White Oak raw selvage denim / Heavy cotton pocket bags / Bottom half of back pockets lined for extra durability / Button fly / 100% cotton / Graduated inseams from 33.5” to 35” / Made in San Francisco',
+    description: 'Slim, tapered fit jean in thicker 14.74 oz denim / Cone Mills White Oak raw selvage denim / Heavy cotton pocket bags / Bottom half of back pockets lined for extra durability / btn fly / 100% cotton / Graduated inseams from 33.5” to 35” / Made in San Francisco',
     url: 'f13-ladbrok-grove-slim-tapered-jean',
     date: {
       created: now,
@@ -85,7 +106,7 @@ Fixtures.products['fgc'] = [
   },
   {
     title: 'John Graham Mellor Slim Straight Jean',
-    description: 'Slim, straight fit jean in thicker 14.74 oz denim / Cone Mills White Oak raw selvage denim / Heavy cotton pocket bags / Bottom half of back pockets lined for extra durability / Button fly / 100% cotton / Graduated inseams from 33.5” to 35” / Made in San Francisco',
+    description: 'Slim, straight fit jean in thicker 14.74 oz denim / Cone Mills White Oak raw selvage denim / Heavy cotton pocket bags / Bottom half of back pockets lined for extra durability / btn fly / 100% cotton / Graduated inseams from 33.5” to 35” / Made in San Francisco',
     url: 'john-graham-mellor-slim-strait-jean-1475oz-denim',
     date: {
       created: now,
@@ -110,7 +131,7 @@ Fixtures.products['fgc'] = [
   },
   {
     title: 'Jean New Standard',
-    description: 'Medium rise slim, straight leg 5 pocket raw denim jean / Slightly fitted at bottom to give the appearance of a straight leg / Button fly / Narrow leg / Red selvedge / 100% cotton\r\n\r\nSizing Guidance - We recommend ordering one size down for a snug fit, which will relax in time with wear',
+    description: 'Medium rise slim, straight leg 5 pocket raw denim jean / Slightly fitted at bottom to give the appearance of a straight leg / btn fly / Narrow leg / Red selvedge / 100% cotton\r\n\r\nSizing Guidance - We recommend ordering one size down for a snug fit, which will relax in time with wear',
     url: 'jean-new-tandard-raw-denim',
     date: {
       created: now,
@@ -134,8 +155,12 @@ Fixtures.products['fgc'] = [
     ]
   },
   {
+    flags: {
+      is_sale: true,
+      is_active: false
+    },
     title: 'Jean New Petit Standard',
-    description: 'Slim, tapered 5 pocket raw denim jean / Cut narrower than the New Standard / Slightly higher rise than the original Petit Standard / Narrow leg, slightly fitted at bottom to give the appearance of a straight leg / Button fly / Raw japanese selvedge denim / 100% Cotton\r\n\r\nSizing Guidance - We recommend ordering one size down for a snug fit, which will relax in time with wear',
+    description: 'Slim, tapered 5 pocket raw denim jean / Cut narrower than the New Standard / Slightly higher rise than the original Petit Standard / Narrow leg, slightly fitted at bottom to give the appearance of a straight leg / btn fly / Raw japanese selvedge denim / 100% Cotton\r\n\r\nSizing Guidance - We recommend ordering one size down for a snug fit, which will relax in time with wear',
     url: 'jean-new-petit-standard-raw-denim',
     date: {
       created: now,
@@ -184,6 +209,10 @@ Fixtures.products['fgc'] = [
     ]
   },
   {
+    flags: {
+      is_sale: true,
+      is_active: false
+    },
     title: 'Drop Out Jean',
     description: 'Copped jean with a 9 1/2\" rise / 25\" inseam (un-cuffed - 27\") / Made in the USA / 98% cotton, 2% elasthane',
     url: 'f13-drop-out-jean-indigo',
@@ -535,7 +564,7 @@ Fixtures.products['fgc'] = [
   },
   {
     title: 'Pintuck Tank',
-    description: 'Wide and loose cotton gauze tank with pintucked yoke detail / Keyhole closure at back neck with button closure / 100% cotton / Made in NYC',
+    description: 'Wide and loose cotton gauze tank with pintucked yoke detail / Keyhole closure at back neck with btn closure / 100% cotton / Made in NYC',
     url: 'ss14-white-pintucked-tank',
     date: {
       created: now,
@@ -560,7 +589,7 @@ Fixtures.products['fgc'] = [
   },
   {
     title: 'Popover Blouse',
-    description: 'Printed cotton voile and silk pullover short sleeve top / Keyhole detail on back neck with button closure / 57% cotton voile, 43% silk / Made in NYC',
+    description: 'Printed cotton voile and silk pullover short sleeve top / Keyhole detail on back neck with btn closure / 57% cotton voile, 43% silk / Made in NYC',
     url: 'ss14-multi-popover-blouse',
     date: {
       created: now,
@@ -610,7 +639,7 @@ Fixtures.products['fgc'] = [
   },
   {
     title: 'Linen Blazer',
-    description: 'Lightweight single button blazer with incredible drape / Fully lined sleeves, half lined body / Slight shoulder pad / 30% linen, 70% tencel / Made in Los Angeles',
+    description: 'Lightweight single btn blazer with incredible drape / Fully lined sleeves, half lined body / Slight shoulder pad / 30% linen, 70% tencel / Made in Los Angeles',
     url: 'ss14-white-linen-blazer',
     date: {
       created: now,
@@ -684,9 +713,9 @@ Fixtures.products['fgc'] = [
     ]
   },
   {
-    title: 'Chambray Buttondown',
-    description: 'Classic Gitman button down in light weight green cotton chambray / 2 1/2\" button down collar / Single needle tailoring / 100% cotton / Made in Ashland, Pennsylvania\r\n\r\n*small note - all of our Gitman Vintage shirts are made exclusively for us with a 2 1/2\" button down collar - an slight update from their Classic 3\"\r\n',
-    url: 's14-green-chambray-buttondown',
+    title: 'Chambray btndown',
+    description: 'Classic Gitman btn down in light weight green cotton chambray / 2 1/2\" btn down collar / Single needle tailoring / 100% cotton / Made in Ashland, Pennsylvania\r\n\r\n*small note - all of our Gitman Vintage shirts are made exclusively for us with a 2 1/2\" btn down collar - an slight update from their Classic 3\"\r\n',
+    url: 's14-green-chambray-btndown',
     date: {
       created: now,
       modified: now
@@ -709,9 +738,9 @@ Fixtures.products['fgc'] = [
     ]
   },
   {
-    title: 'Bandanna Buttondown',
-    description: 'Classic Gitman button down in light weight printed cotton shirting / 2 1/2\" button down collar / Single needle tailoring / 100% cotton / Made in Ashland, Pennsylvania\r\n\r\n*small note - all of our Gitman Vintage shirts are made exclusively for us with a 2 1/2\" button down collar - an slight update from their Classic 3\"\r\n',
-    url: 'ss14-blue-bandanna-buttondown',
+    title: 'Bandanna btndown',
+    description: 'Classic Gitman btn down in light weight printed cotton shirting / 2 1/2\" btn down collar / Single needle tailoring / 100% cotton / Made in Ashland, Pennsylvania\r\n\r\n*small note - all of our Gitman Vintage shirts are made exclusively for us with a 2 1/2\" btn down collar - an slight update from their Classic 3\"\r\n',
+    url: 'ss14-blue-bandanna-btndown',
     date: {
       created: now,
       modified: now
@@ -735,7 +764,7 @@ Fixtures.products['fgc'] = [
   },
   {
     title: 'Chemise Casual A Poches',
-    description: 'Clean styled cotton button up / Slim fit / Minimal interfacing on placket, cuff  and collar / 100% cotton ',
+    description: 'Clean styled cotton btn up / Slim fit / Minimal interfacing on placket, cuff  and collar / 100% cotton ',
     url: 'ss14-bleu-gris-chemise-casual-poches',
     date: {
       created: now,
@@ -747,6 +776,8 @@ Fixtures.products['fgc'] = [
     },
     variants: [
       {
+        title: 'Gray',
+        description: 'Silky gray',
         sku: 'bv30ajf',
         price: {
           regular_cents: 25000,
@@ -760,7 +791,7 @@ Fixtures.products['fgc'] = [
   },
   {
     title: 'Point Twill Jacquard Classic Trouser',
-    description: 'Straight wool suiting trouser in a point twill jacquard / Easy tailored fit with a slightly tapered leg / Zip fly / Two side pockets / Two back welt pockets with button closure / 100% italian virgin wool\r\n\r\n*coordinates with the 3 Button Rolling Blazer for a full suit',
+    description: 'Straight wool suiting trouser in a point twill jacquard / Easy tailored fit with a slightly tapered leg / Zip fly / Two side pockets / Two back welt pockets with btn closure / 100% italian virgin wool\r\n\r\n*coordinates with the 3 btn Rolling Blazer for a full suit',
     url: 'ss14-navy-classic-trouser',
     date: {
       created: now,
@@ -784,8 +815,8 @@ Fixtures.products['fgc'] = [
     ]
   },
   {
-    title: 'Point Twill Jacquard 3 Button Rolling Blazer',
-    description: 'Point twill jacquard wool suiting blazer with a three button rolling notched lapel / Traditional tailored details include two front patch pockets and a single chest handkerchief pocket / Fully lined with two interior chest pockets / 100% italian virgin wool \r\n\r\n*coordinates with the Classic Trousers in point twill jacquard for a full suit',
+    title: 'Point Twill Jacquard 3 btn Rolling Blazer',
+    description: 'Point twill jacquard wool suiting blazer with a three btn rolling notched lapel / Traditional tailored details include two front patch pockets and a single chest handkerchief pocket / Fully lined with two interior chest pockets / 100% italian virgin wool \r\n\r\n*coordinates with the Classic Trousers in point twill jacquard for a full suit',
     url: 'ss14-navy-3d-rolling-blazer',
     date: {
       created: now,
@@ -874,8 +905,8 @@ Fixtures.products['fgc'] = [
       {
         sku: 'x2p0ajo',
         price: {
-          regular_cents: 25000,
-          sale_cents: 20000
+          regular_cents: 15000,
+          sale_cents: 10000
         },
         options: {
 
@@ -960,7 +991,7 @@ Fixtures.products['fgc'] = [
   },
   {
     title: 'Reef Pocket Shirt',
-    description: 'Printed silk habotai button front shirt / Covered button placket / Two buttoned chest pockets on yoke seam / Slightly cropped silhouette / 100% silk / Made in NYC',
+    description: 'Printed silk habotai btn front shirt / Covered btn placket / Two btned chest pockets on yoke seam / Slightly cropped silhouette / 100% silk / Made in NYC',
     url: 'ss14-black-reef-hidden-pocket-shirt',
     date: {
       created: now,
