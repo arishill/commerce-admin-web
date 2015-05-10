@@ -10,7 +10,10 @@ Package.onUse(function(api) {
   api.use([
     'arishill:products',
     'arishill:orders',
-    'arishill:forms',
+    'arishill:forms'
+  ]);
+
+  api.use([
     'underscore',
     'momentjs:moment'
   ], 'client');

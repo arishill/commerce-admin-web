@@ -14,30 +14,38 @@ Fixtures.methods = {
     // clear out existing collection
     this.clear(collection);
 
-    // iterate through each fixture entry
-    _.each(Fixtures[collection][name], function(item, index, list) {
+    if (name === 'defaults') {
+      Meteor.call(collection_params.create_method, Fixtures[collection][name], function() {
+        console.log('Collection for ' + name + ' added to application.');
+      });
+    }
 
-      // clean it up first
-      item = Forms.utils.clean(item);
-      collection_params.schema.default.clean(item);
+    else {
+      // iterate through each fixture entry
+      _.each(Fixtures[collection][name], function(item, index, list) {
 
-      // validate against collection type schema
-      if (collection_params.schema.context.validate(item)) {
+        // clean it up first
+        item = Forms.utils.clean(item);
+
+        if (collection_params.schema) {
+          collection_params.schema.default.clean(item);
+
+          // validate against collection type schema
+          if (!collection_params.schema.context.validate(item)) {
+          // entry does not validate against the schema
+            console.log('There were errors adding ' + name + ' to the application. See below:');
+            console.log(collection_params.schema.context.invalidKeys());
+            return;
+          }
+        }
 
         // create/insert into db
         Meteor.call(collection_params.create_method, item, function() {
-
           // entries successfully added
           console.log('Item for ' + name + ' added to application.');
         });
-      }
-
-      // entry does not validate against the schema
-      else {
-        console.log('There were errors adding ' + name + ' to the application. See below:');
-        console.log(collection_params.schema.context.invalidKeys());
-      }
-    });
+      });
+    }
   },
 
   // clear fixtures
@@ -76,7 +84,6 @@ Fixtures.methods = {
 };
 
 Fixtures.getCollectionParams = function(collection) {
-
   switch (collection) {
 
     // products collection
@@ -86,7 +93,6 @@ Fixtures.getCollectionParams = function(collection) {
         create_method: 'api/products/create',
         clear_method: 'api/products/clear'
       };
-      break;
 
     // orders collection
     case 'orders':
@@ -94,8 +100,7 @@ Fixtures.getCollectionParams = function(collection) {
         schema: Schemas.collections.orders,
         create_method: 'api/orders/create',
         clear_method: 'api/orders/clear'
-      }
-      break;
+      };
 
   // discounts collection
     case 'discounts':
@@ -103,7 +108,12 @@ Fixtures.getCollectionParams = function(collection) {
         //schema: Schemas.collections.discounts,
         create_method: 'api/discounts/create',
         clear_method: 'api/discounts/clear'
-      }
-      break;
+      };
+    default:
+      return {
+        //schema: Schemas.collections[collection],
+        create_method: 'api/' + collection + '/create',
+        clear_method: 'api/'+ collection + '/clear'
+      };
   }
 };
