@@ -1,9 +1,19 @@
-@import "base/include";
+@import (reference) "base/include";
+@import (reference) "typography";
 
 /*.....................................
   FORMS
 ......................................*/
 .form {
+
+  .form-line {
+    height: 80px;
+    line-height: 80px;
+  }
+  .form-line--medium {
+    height: 50px;
+    line-height: 50px;
+  }
 
   // fieldsets
   fieldset {
@@ -28,21 +38,22 @@
   input[type="password"],
   input[type="number"],
   textarea {
-    padding: 12px;
-    background: #ffffff;
+
+    padding: 24px 12px;
+    background-color: @color-white;
     height: 40px;
 
-    font-family: sans-serif;
+    font-family: @font-calluna;
     font-size: 16px;
-    color: #333;
+    color: @color-gray-dark;
     line-height: normal;
 
-    border: 1px solid #ccc;
+    border: 1px solid @color-gray-light;
 
     .border-radius(5px);
     .box-sizing(border-box);
-    .transition(border .2s ease);
-    .placeholder(#ddd);
+    .transition(border .2s ease, color .2s ease);
+    .placeholder(@color-gray-light);
 
     &[disabled],
     &.is-disabled {
@@ -60,7 +71,10 @@
 
     // focus
     &:focus {
-      .placeholder(#eee);
+      .placeholder(@color-gray-light);
+      color: @color-black;
+      border: 1px solid @color-site-light;
+      .box-shadow(0 0 7px 0 @color-site-light);
 
       //focus error
       &.is-error {
@@ -72,6 +86,14 @@
         .placeholder(#eee);
       }
     }
+
+    &.icon--right {
+      background-position: right 10px center;
+    }
+  }
+
+  textarea {
+    padding: 12px;
   }
 }
 
@@ -104,7 +126,29 @@ textarea {
     height: 100px;
   }
   &.input-large {
+    height: 150px;
   }
   &.input-xlarge {
+  }
+}
+
+.placeholder-http {
+  position: relative;
+  .text-gray;
+  input[type="text"] {
+    padding-left: 60px;
+  }
+  &:focus {
+    &:before {
+      color: @color-site;
+    }
+  }
+  &:before {
+    content: 'http://';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: 7px;
+    padding-left: 15px;
   }
 }
