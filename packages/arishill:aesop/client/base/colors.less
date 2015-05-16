@@ -1,19 +1,48 @@
 /* COLORS
 .................................................*/
+@colors-baron-fig: '#683047';
+@colors-apple: '#bcbcbc', '#5e5e5e', '#222222';
+@colors-muji: '#f8c7d1', '#7F0019', '#580012';
+@colors-tiffanys: '#c4f7f7', '#41c1ca', '#2d9da0';
+@colors-gwen-penn: '#cabfdb', '#9182A5', '#4A3060';
+@colors-arishill: '#cdf2e3', '#23cc8f', '#0ba067';
+@colors-wigolia: '#ffddbb', '#fd9000', '#d16e02';
+@colors-class-central: '#a3d3f4', '#0662a1', '#12649c';
 
-@color-black: #222;
+// whites
 @color-white: #ffffff;
-@color-error: #f20000;
-@color-navy: #1d2a53;
+@color-white-dark: #f1f1f1;
 
 // grays
-@color-gray-light: #f1f1f1;
-@color-gray-mid: #777777;
-@color-gray-dark: #444444;
+@color-gray-xlight: #ededed;
+@color-gray-light: #dbdbdb;
+@color-gray: #b2b2b2;
+@color-gray-transparent: rgba(178, 178, 178, .57);
+@color-gray-dark: #919191;
 
-// pastels
-@color-pastel-green: #00cb8a; //#71CC9C;
-@color-pastel-red: #da5555;
-@color-pastel-orange: #eea76e;
-@color-pastel-gray: #87888f;
-@color-pastel-blue: #3194cd;
+// blacks
+@color-black-light: #555;
+@color-black: #333;
+@color-black-dark: #000;
+
+// greens
+@color-green-light: #cdf2e3; //#56f4b8;
+@color-green: #23cc8f;
+@color-green-dark: #0ba067;
+
+// reds
+@color-red-light: #ef6767;
+@color-red: #da5555;
+@color-red-dark: #bc3535;
+
+// yellows
+@color-yellow: #ffc639;
+
+.site-colors(@site-colors) {
+  @color-site-light: ~`function() { return @{site-colors}[0];}()`;
+  @color-site: ~`function() { return @{site-colors}[1];}()`;
+  @color-site-dark: ~`function() { return @{site-colors}[2];}()`;
+}
+
+// set site color set
+.site-colors(@colors-apple);
