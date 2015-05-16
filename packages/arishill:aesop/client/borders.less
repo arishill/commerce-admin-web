@@ -1,4 +1,4 @@
-@import "base/include";
+@import (reference) "base/include";
 
 /*.....................................
   BORDERS
@@ -35,48 +35,82 @@ hr {
   }
 }
 
+.border {
+  border-style: solid;
+  border-color: @color-gray;
+}
+
 // colors and style
-.border-primary {
-  border-style: solid;
-  border-color: #ccc;
+.border-site-light {
+  .border;
+  border-color: @color-site-light;
 }
-.border-secondary {
-  border-style: solid;
-  border-color: #000;
+.border-site {
+  .border;
+  border-color: @color-site;
 }
-.border-tertiary {
-  border-style: solid;
-  border-color: #111;
+.border-site-dark {
+  .border;
+  border-color: @color-site-dark;
+}
+
+.border-gray-dark {
+  .border;
+  border-color: @color-gray-dark;
+}
+.border-gray-light {
+  .border;
+  border-color: @color-gray-light
+}
+.border-gray {
+  .border;
+  border-color: @color-gray;
+}
+
+.border-green-light {
+  .border;
+  border-color: @color-green-light;
+}
+.border-green {
+  .border;
+  border-color: @color-green;
+}
+
+.border-right-reset {
+  border-right: none !important;
 }
 
 // border positioning
-.border-vert {
+.border--all {
+  border-width: 1px;
+}
+.border--vert {
   border-top-width: 1px;
   border-bottom-width: 1px;
 }
-.border-horz {
+.border--horz {
   border-style: solid;
   border-left-width: 1px;
   border-right-width: 1px;
 }
-.border-top {
+.border--top {
   border-top-width: 1px;
 }
-.border-bottom {
+.table .border--bottom,
+.border--bottom {
   border-bottom-width: 1px;
 }
-.border-left {
+.table .border--left,
+.border--left {
   border-left-width: 1px;
 }
-.border-right {
+
+.table .border--right,
+.border--right {
   border-right-width: 1px;
 }
 
-.border-reset {
-  border: none !important;
-}
-
-.border-center {
+.border--center {
   z-index: 1;
   position: relative;
 
@@ -89,11 +123,5 @@ hr {
     z-index: -1;
     position: absolute;
     width: 100%;
-  }
-
-  &.border-inverse {
-    &:before {
-      background: #fff;
-    }
   }
 }

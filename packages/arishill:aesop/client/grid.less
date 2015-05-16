@@ -1,4 +1,4 @@
-@import "base/include";
+@import (reference) "base/include";
 
 /*.....................................
   GRID
@@ -83,6 +83,10 @@
 .gutter-left-xxlarge { padding-left: @size_xxlarge; }
 
 .grid(@size) {
+  .@{size}-centered {
+    margin: auto;
+    float: none;
+  }
   .@{size}-1-1 {
     width: 100%;
     min-height: 1px;
@@ -169,6 +173,67 @@
   }
   .@{size}-6-7 {
     width: @col_6_7;
+    min-height: 1px;
+  }
+
+  .@{size}-1-16 {
+    width: @col_1_16;
+    min-height: 1px;
+  }
+  .@{size}-2-16 {
+    width: @col_2_16;
+    min-height: 1px;
+  }
+  .@{size}-3-16 {
+    width: @col_3_16;
+    min-height: 1px;
+  }
+  .@{size}-4-16 {
+    width: @col_4_16;
+    min-height: 1px;
+  }
+  .@{size}-5-16 {
+    width: @col_5_16;
+    min-height: 1px;
+  }
+  .@{size}-6-16 {
+    width: @col_6_16;
+    min-height: 1px;
+  }
+  .@{size}-7-16 {
+    width: @col_7_16;
+    min-height: 1px;
+  }
+  .@{size}-8-16 {
+    width: @col_8_16;
+    min-height: 1px;
+  }
+  .@{size}-9-16 {
+    width: @col_9_16;
+    min-height: 1px;
+  }
+  .@{size}-10-16 {
+    width: @col_10_16;
+    min-height: 1px;
+  }
+  .@{size}-11-16 {
+    width: @col_11_16;
+    min-height: 1px;
+  }
+  .@{size}-12-16 {
+    width: @col_12_16;
+    min-height: 1px;
+  }
+  .@{size}-13-16 {
+    width: @col_13_16;
+    min-height: 1px;
+  }
+  .@{size}-14-16 {
+    width: @col_14_16;
+    min-height: 1px;
+  }
+  .@{size}-15-16 {
+    width: @col_15_16;
     min-height: 1px;
   }
 }

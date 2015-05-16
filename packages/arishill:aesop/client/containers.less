@@ -1,4 +1,4 @@
-@import "base/include";
+@import (reference) "base/include";
 
 /*.....................................
   CONTAINERS
@@ -22,6 +22,14 @@
 .contain-page {
   width: 100%;
   margin: 0;
+  .box-sizing(border-box);
+}
+.contain-50 {
+  max-width: 50px;
+  .box-sizing(border-box);
+}
+.contain-65 {
+  max-width: 65px;
   .box-sizing(border-box);
 }
 .contain-360 {
@@ -85,6 +93,31 @@
   .box-sizing(border-box);
 }
 
+.z-bottom {
+  z-index: -10;
+}
+.z-xlow {
+  z-index: 0;
+}
+.z-low {
+  z-index: 10;
+}
+.z-mid {
+  z-index: 20;
+}
+.z-xmid {
+  z-index: 30;
+}
+.z-high {
+  z-index: 40;
+}
+.z-xhigh {
+  z-index: 50;
+}
+.z-top {
+  z-index: 2147483647;
+}
+
 // fixed containers
 .contain-fixed-left-100 {
   position: fixed;
@@ -98,7 +131,49 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 100px;
+  width: 200px;
+}
+
+.fixed-left,
+.fixed-top {
+  top: 0;
+  left: 0;
+}
+.contain--fixed,
+.contain-fixed-bottom {
+  position: fixed;
+}
+.contain-fixed-bottom {
+  left: 0;
+  bottom: 0;
+}
+.contain--absolute {
+  position: absolute;
+}
+.contain-abs-bottom {
+  position: absolute;
+  left: 0;
+  &.contain--50 {
+    bottom: 50px;
+  }
+}
+.contain-abs-top,
+.contain-fixed-top,
+.contain-abs-bottom,
+.contain-fixed-bottom {
+  &.contain--50 {
+    height: 50px;
+    width: 100%;
+  }
+  &.contain--65 {
+    height: 65px;
+    width: 100%;
+  }
+}
+.fixed-150 {
+  position: fixed;
+  height: 100%;
+  width: 150px;
 }
 .contain-fixed-left-400 {
   position: fixed;
@@ -184,4 +259,15 @@
 }
 .contain-2-3 {
   width: 66.666%;
+}
+
+.contain-text-75 {
+  line-height: 75px;
+  height: 75px;
+  position: relative;
+  top: 10px;
+  .checkbox-alt {
+    position: relative;
+    top: 10px;
+  }
 }

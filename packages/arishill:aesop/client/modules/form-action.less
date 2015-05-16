@@ -1,0 +1,28 @@
+@import (reference) "../base/aesop";
+
+/*.....................................
+  FORM ACTION
+.....................................*/
+
+.form-action {
+  .z-xmid;
+  .contain-fixed-bottom;
+  .contain--65;
+  .row {
+    .bg-white;
+    .border-gray-light;
+    .border--top;
+  }
+  .box-sizing(border-box);
+  padding-right: 300px;
+  padding-left: 150px;
+  &:before {
+    content: ' ';
+    position: absolute;
+    top: -35px;
+    left: 0;
+    height: 35px;
+    .background-image(~"linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,.4) 65%, rgba(255,255,255,1) 100%)");
+    width: 100%;
+  }
+}

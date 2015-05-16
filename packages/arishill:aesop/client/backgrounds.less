@@ -1,34 +1,35 @@
-@import "base/include";
+@import (reference) "base/include";
 
 /*.....................................
   BACKGROUNDS
 .....................................*/
 
 .bg-white {
-  background: #ffffff;
+  background-color: #ffffff;
 }
 .bg-black {
-  background: #000000;
+  background-color: #000000;
 }
-
-.bg-primary {
-  background: #00cb8a;
+.bg-site {
+  background-color: @color-site;
 }
-.bg-secondary {
-  background: #9182A5;
+.bg-green {
+  background-color: @color-green;
 }
-.bg-secondary {
-  background: #9182A5;
+.bg-green-dark {
+  background-color: @color-green-dark;
 }
-
-.bg-image-primary {
-
+.bg-gray-xlight {
+  background-color: @color-gray-xlight;
 }
-.bg-image-secondary {
-
+.bg-gray-light {
+  background-color: @color-gray-light;
 }
-.bg-image-tertiary {
-
+.bg-gray {
+  background-color: @color-gray;
+}
+.bg-gray-dark {
+  background-color: @color-gray-dark;
 }
 
 .bg-cover {

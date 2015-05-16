@@ -1,101 +1,59 @@
 /*.....................................
   SPACING
 .....................................*/
-.margin-vert-medium {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.margin-vert-large {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-.margin-top-medium {
-  margin-top: 20px;
-}
-.margin-top-large {
-  margin-top: 30px;
-}
-.padding-horz-medium {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.padding-vert-small {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.padding-vert-medium {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.padding-vert-large {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-.padding-top-xsmall {
-  padding-top: 5px;
-}
-.padding-top-small {
-  padding-top: 10px;
-}
-.padding-top-large {
-  padding-top: 50px;
-}
-.padding-right-medium {
-  padding-right: 20px;
+@space_sizes: 5px, 10px, 20px, 30px, 40px, 50px, 100px;
+
+.spacer(@size, @type, @index) {
+  .@{type}-@{size} {
+    @{type}: extract(@space_sizes, @index);
+  }
+  .@{type}-vert-@{size} {
+    @{type}-top: extract(@space_sizes, @index);
+    @{type}-bottom: extract(@space_sizes, @index);
+  }
+  .@{type}-horz-@{size} {
+    @{type}-left: extract(@space_sizes, @index);
+    @{type}-right: extract(@space_sizes, @index);
+  }
+  .@{type}-left-@{size} {
+    @{type}-left: extract(@space_sizes, @index);
+  }
+  .@{type}-top-@{size} {
+    @{type}-top: extract(@space_sizes, @index);
+  }
+  .@{type}-right-@{size} {
+    @{type}-right: extract(@space_sizes, @index);
+  }
+  .@{type}-bottom-@{size} {
+    @{type}-bottom: extract(@space_sizes, @index);
+  }
 }
 
-/* helper function spacing
-......................................*/
-// @function set_spacer_size($name) {
-//   @if ($name == "xsmall") {
-//     $size: $size_xsmall;
-//   } @else if ($name == "small") {
-//     $size: $size_small;
-//   } @else if ($name == "medium") {
-//     $size: $size_medium;
-//   } @else if ($name == "xmedium") {
-//     $size: $size_xmedium;
-//   } @else if ($name == "large") {
-//     $size: $size_large;
-//   } @else if ($name == "xlarge") {
-//     $size: $size_xlarge;
-//   } @else if ($name == "xxlarge") {
-//     $size: $size_xxlarge;
-//   }
-//   @return $size;
-// }
+.spacer(xsmall, padding, 1);
+.spacer(small, padding, 2);
+.spacer(medium, padding, 3);
+.spacer(xmedium, padding, 4);
+.spacer(large, padding, 5);
+.spacer(xlarge, padding, 6);
+.spacer(xxlarge, padding, 7);
 
-// @mixin spacer($type, $name, $style) {
-//   @if $type == 'vert' {
-//     .#{$style}-vert-#{$name} {
-//       #{$style}-top: set_spacer_size($name);
-//       #{$style}-bottom: set_spacer_size($name);
-//     }
-//   }
-//   @else if $type == 'horz' {
-//     .#{$style}-horz-#{$name} {
-//       #{$style}-left: set_spacer_size($name);
-//       #{$style}-right: set_spacer_size($name);
-//     }
-//   }
-//   @else {
-//     @if $type != '' {
-//       $type: '-' + $type;
-//     }
-//     .#{$style}#{$type}-#{$name} {
-//       #{$style}#{$type}: set_spacer_size($name);
-//     }
-//   }
-// }
+.spacer(xsmall, margin, 1);
+.spacer(small, margin, 2);
+.spacer(medium, margin, 3);
+.spacer(xmedium, margin, 4);
+.spacer(large, margin, 5);
+.spacer(xlarge, margin, 6);
+.spacer(xxlarge, margin, 7);
 
-// @each $size in $sizes {
-//   @each $type in $spacing_types {
-//     @include spacer('', $size, $type);
-//     @include spacer(top, $size, $type);
-//     @include spacer(bottom, $size, $type);
-//     @include spacer(right, $size, $type);
-//     @include spacer(left, $size, $type);
-//     @include spacer(vert, $size, $type);
-//     @include spacer(horz, $size, $type);
-//   }
-// }
+.margin-top-reset {
+  margin-top: 0px !important;
+}
+.margin-bottom-reset {
+  margin-bottom: 0px !important;
+}
+.margin-left-reset {
+  margin-left: 0px !important;
+}
+.margin-right-reset {
+  margin-right: 0px !important;
+}

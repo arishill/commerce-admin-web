@@ -1,4 +1,4 @@
-@import "base/include";
+@import (reference) "base/include";
 
 /*.....................................
   SYMBOLS
@@ -6,21 +6,16 @@
 
 [class^="symbol-"] {
   background-size: contain;
+  background-position: center center;
   display: inline-block;
-  text-indent: -9999px;
+  color: transparent;
+  overflow: hidden;
+  .box-sizing(border-box);
 }
 
 /* alignment
 ......................................*/
-.symbol-brand-gp {
-  background-image: url(#{$cdn}gp-logo.png);
-  width: 100px;
-  height: 100px;
-}
-
-.symbol-brand-gp {
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  margin-left: -50px;
+[class^="symbol-logo-"] {
+  width: 105px;
+  height: 35px;
 }
