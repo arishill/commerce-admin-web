@@ -18,6 +18,7 @@ Package.onUse(function(api) {
     'client/base/sizes.less',
 
     'client/animation.less',
+    'client/arrows.less',
     'client/backgrounds.less',
     'client/borders.less',
     'client/button.less',
@@ -25,6 +26,7 @@ Package.onUse(function(api) {
     'client/containers.less',
     'client/display.less',
     'client/doc.less',
+    'client/dropdowns.less',
     'client/forms.less',
     'client/grid.less',
     'client/headers.less',
@@ -38,7 +40,19 @@ Package.onUse(function(api) {
     'client/tables.less',
     'client/typography.less',
     'client/unit.less',
-    'client/util.less'
+    'client/util.less',
+
+    'client/modules/stat-card.less',
+    'client/modules/stat-table.less',
+    'client/modules/form-action.less',
+    'client/modules/form-title.less',
+    'client/modules/pagination-table.less',
+    'client/modules/stage.less',
+    'client/modules/headers.less',
+    'client/modules/navigation.less',
+
+    'svg/icons.svg.less',
+    'svg/symbols.svg.less'
   ], 'client');
 
 });

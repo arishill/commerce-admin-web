@@ -11,6 +11,8 @@ html, body, a, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, pre, ab
   font-weight: normal;
   vertical-align: baseline;
   background: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
 article,aside,details,figcaption,figure, footer,header,hgroup,menu,nav,section {
 display:block;
@@ -71,7 +73,7 @@ overflow-y: scroll;
 /* .....................................
   form elements
 ..................................... */
-button {
+btn {
   background: none repeat scroll 0 0 transparent;
   border: medium none;
   border-spacing: 0;
@@ -83,14 +85,14 @@ button {
   text-decoration: none;
   text-indent: 0;
 }
-button,
-input[type="button"],
+btn,
+input[type="btn"],
 input[type="reset"],
 input[type="submit"] {
 cursor: pointer;
 *overflow: visible;
 }
-button[disabled],
+btn[disabled],
 input[disabled] {
 cursor: default;
 }
@@ -109,10 +111,10 @@ input[type="search"] {
 box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button {
+input[type="search"]::-webkit-search-cancel-btn {
 -webkit-appearance: none;
 }
-button::-moz-focus-inner,
+btn::-moz-focus-inner,
 input::-moz-focus-inner {
 border: 0;
 padding: 0;
@@ -152,8 +154,8 @@ html {
 -webkit-text-size-adjust: 100%;
 -ms-text-size-adjust: 100%;
 }
-input[type="button"],
+input[type="btn"],
 input[type="reset"],
 input[type="submit"] {
--webkit-appearance: button;
+-webkit-appearance: btn;
 }

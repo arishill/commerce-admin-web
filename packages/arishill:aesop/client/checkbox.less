@@ -1,197 +1,119 @@
-@import "base/include";
+@import (reference) "base/include";
 
 /*.....................................
   CHECKBOXES
 .....................................*/
-// @import "include";
+.checkbox {
+  display: inline-block;
 
-// .form .checkbox {
-//   position: relative;
-//   display: inline-block;
-//   min-height: rem-calc($field-height);
-//   width: 100%;
+  label {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid @color-gray;
+    background: @color-gray-light;
+    position: relative;
+    .transition(all 300ms ease);
 
-//   color: $ac-default-dark;
-//   font-size: rem-calc(14);
-//   background: transparent;
+    &:hover {
+      border: 1px solid @color-gray-dark;
+      background: @color-white;
+      cursor: pointer;
+    }
+  }
 
-//   &:after {
-//     content: "";
-//     display: table;
-//     clear: both;
-//   }
+  .user-select(none);
 
-//   // @include user-select(none);
+  input[type=checkbox] {
+    display: none;
 
-//   /* checkbox
-//   ...................................*/
-//   input[type="checkbox"] {
-//     display: none;
-//   }
+    & + label {
+      .icon-check-site {
+        display: none;
+      }
+    }
 
-//   /* label unchecked
-//   ...................................*/
-//   label {
-//     opacity: 0;
-//     @include transition(opacity 100ms ease-in);
-//     &.ready {
-//       opacity: 1;
-//     }
-//     display: block;
-//     min-height: rem-calc($field-height);
-//     margin: rem-calc(0);
-//     float: left;
-//     @include box-sizing(border-box);
+    &:checked + label {
+      background-color: @color-white;
+      .icon-check-site {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-size: 18px 18px;
+        height: 17px;
+        line-height: 17px;
+        width: 17px;
+        display: block;
+      }
+    }
+  }
+}
 
-//     line-height: rem-calc($field-height);
+.checkbox-alt {
+  display: inline-block;
+  label {
+    display: inline-block;
+    width: 35px;
+    border: 1px solid @color-gray;
+    height: 19px;
+    border-radius: 30px;
+    position: relative;
 
-//     &:after {
-//       content: "";
-//       display: table;
-//       clear: both;
-//     }
+    &:hover {
+      cursor: pointer;
+    }
+  }
 
-//     &.wide {
-//       width: 100%;
-//       .checkbox--contain {
-//         min-height: rem-calc($field-height);
-//       }
-//     }
+  .user-select(none);
 
-//     .checkbox--contain {
-//       width: 100%;
-//       display: block;
+  input[type=checkbox] {
+    display: none;
 
-//       &:after {
-//         content: "";
-//         display: table;
-//         clear: both;
-//       }
-//     }
+    & + label {
+      .disc {
+        border: 1px solid @color-gray-dark;
+        background: @color-gray;
+        left: 4px;
+      }
+    }
 
-//     // unchecked
-//     .checkbox--icon {
-//       display: inline-block;
-//       width: rem-calc($field-height);
-//       height: rem-calc($field-height);
-//       margin-right: rem-calc(10);
-//       float: left;
-//       background-color: #fff;
-//       background-position: 50% 50%;
-//       background-size: 75%;
-//       position: relative;
+    &:checked + label {
+      .disc {
+        left: 17px;
+        background: @color-green;
+        border: 1px solid @color-green-dark;
+      }
+    }
+  }
 
-//       @include box-shadow(none);
-//       @include box-sizing(border-box);
-//       @include border-radius(3px);
-//       @include transition(box-shadow .2s ease, color .2s ease);
+  .disc {
+    .transition(left 200ms ease);
+    width: 13px;
+    height: 13px;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+  }
+}
 
-//       .checkbox-animate {
-//         @include transition(all 300ms ease);
-//         width: rem-calc($field-height - 10);
-//         height: rem-calc($field-height - 10);
-//         top: 4px;
-//         right: 4px;
-//         display: block;
-//         position: absolute;
-//         background: #fff;
-//       }
-//     }
-//     .checkbox--label {
-//       display: block;
-//       float: left;
-//       min-height: rem-calc($field-height);
-//     }
-
-//     &.check-right {
-//       .checkbox--label {
-//         float: left;
-//         text-align: left;
-//         }
-//       .checkbox--icon {
-//         float: right;
-//       }
-//     }
-//   }
-
-
-//   /* label not-checked
-//   ...................................*/
-//   &.invert input[type="checkbox"]:checked + label,
-//   input[type="checkbox"]:not(:checked) + label {
-//     .checkbox--icon {
-//       @include transition(border 400ms ease-out);
-//       border: 1px solid #d1d9dc;
-//       background-image: none;
-//     }
-//   }
-
-//   /* label checked
-//   ...................................*/
-//   input[type="checkbox"]:checked + label,
-//   &.invert input[type="checkbox"]:not(:checked) + label {
-//     .checkbox--icon {
-//       @include transition(border 400ms ease-out);
-//       border: 1px solid $ac-default-dark;
-//       background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2223%22%20height%3D%2223%22%20viewBox%3D%220%200%2023%2023%22%3E%3Cpath%20fill%3D%22%2322B8AF%22%20d%3D%22M9.291%2019.819l-3.323-3.323%2013.293-13.293%203.323%203.323z%22%2F%3E%3Cpath%20fill%3D%22%23149996%22%20d%3D%22M3.748%207.535l8.84%208.838-3.323%203.324-8.84-8.838z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat;
-//       .checkbox-animate {
-//         width: 0px;
-//         height: 0px;
-//       }
-//     }
-//   }
-
-//   /* label checked
-//   ...................................*/
-//   input[type="checkbox"]:focus + label {
-//     .checkbox--icon {
-//       border: 1px solid #9aaab4;
-//     }
-//   }
-// }
-
-// .form .checkbox.small {
-//     min-height: rem-calc($field-height/3);
-
-//     label {
-//       min-height: rem-calc($field-height/3);
-//       line-height: rem-calc($field-height/3);
-
-//     .checkbox--icon {
-//       width: rem-calc($field-height/3);
-//       height: rem-calc($field-height/3);
-//       .checkbox-animate {
-//         width: rem-calc($field-height/3 - 3);
-//         height: rem-calc($field-height/3 - 3);
-//         top: 1px;
-//         right: 1px;
-//       }
-//     }
-//     .checkbox--label,
-//     .checkbox--contain {
-//       min-height: rem-calc($field-height/3);
-//     }
-//   }
-// }
-// .form .checkbox.medium {
-//     min-height: rem-calc($field-height/2);
-//     label {
-//       min-height: rem-calc($field-height/2);
-//       line-height: rem-calc($field-height/2);
-
-//     .checkbox--icon {
-//       width: rem-calc($field-height/2);
-//       height: rem-calc($field-height/2);
-//       .checkbox-animate {
-//         width: rem-calc($field-height/2 - 5);
-//         height: rem-calc($field-height/2 - 5);
-//         top: 2px;
-//         right: 2px;
-//       }
-//     }
-//     .checkbox--label,
-//     .checkbox--contain {
-//       min-height: rem-calc($field-height/2);
-//     }
-//   }
-// }
+.checkbox--large {
+  height: 29px;
+  label {
+    width: 50px;
+    height: 27px;
+    border-radius: 50px;
+  }
+  input[type=checkbox] {
+    &:checked + label {
+      .disc {
+        left: 25px;
+      }
+    }
+  }
+  .disc {
+    width: 19px;
+    height: 19px;
+    top: 3px;
+  }
+}
