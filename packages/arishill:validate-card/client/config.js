@@ -24,11 +24,13 @@ Forms.card.setup = function(config) {
         cvc: 'Please enter a valid security code (CVC)',
         expiry_month: 'Please enter a valid expiration month',
         expiry_year: 'Please enter a valid expiration year'
-      };
+      },
+      countries = ['usa', 'gbr', 'can', 'aus', 'deu', 'fra', 'swe', 'bra', 'nzl'];
 
   config = (_.isUndefined(config)) ? {} : config;
   config.elements = (_.isUndefined(config.elements)) ? {} : config.elements;
   config.error_messages = (_.isUndefined(config.error_messages)) ? {} : config.error_messages;
+  config.countries = (_.isUndefined(config.countries)) ? countries : config.countries;
 
   Forms.card.elements = _.extend({}, elements, config.elements);
   Forms.card.error_messages = _.extend({}, error_messages, config.error_messages);
@@ -49,6 +51,12 @@ Forms.card.setup = function(config) {
     errors: {}
   };
 
+  Forms.card.countries = config.countries;
+
+  _.each(Forms.card.countries, function(value, index, list) {
+    Forms.card.countries[index] = Forms.regex.countries[value];
+  });
+  console.log(Forms.card.countries);
   Forms.card.init();
 };
 
