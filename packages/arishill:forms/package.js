@@ -34,7 +34,8 @@ Package.onUse(function(api) {
     'client/definitions.js',
     'client/library.keys.js',
     'client/library.events.js',
-    'client/library.helpers.js'
+    'client/library.helpers.js',
+    'client/templates.html'
   ], 'client');
 
   api.addFiles([
