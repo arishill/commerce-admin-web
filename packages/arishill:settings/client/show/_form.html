@@ -1,0 +1,10 @@
+<template name="aristotle__billing__form">
+
+  <form id="billing-form-{{page.action}}" data-action="{{page.action}}"  data-id="" class="form padding-horz-xlarge margin-horz-medium padding-vert-xlarge">
+    <div class="contain padding-bottom-xlarge">
+      {{> aristotle__billing__payment}}
+      {{> aristotle__billing__receipts}}
+    </div>
+  </form>
+
+</template>
