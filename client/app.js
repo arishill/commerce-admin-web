@@ -40,6 +40,11 @@ Imgix.addDefinitions({
     w: 200,
     sat: -100
   },
+  'image-multi': {
+    w: 465,
+    h: 345,
+    fit: 'crop'
+  },
   'gallery': {
     w: 500,
     sat: 400
