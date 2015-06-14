@@ -1,22 +1,41 @@
 <head>
-  <title>My App</title>
+  <title>Aristotle</title>
 </head>
 
 <body>
 </body>
 
 <template name="app_layout">
-  <nav class="contain-fixed-top-50 bg-primary border-bottom border-primary">
-    <ul class="list-no-bullets list-inline link-inverse line-container-50">
-      <li class="padding-horz-medium"><a href="{{pathFor 'products_index'}}">Products</a></li>
-      <li class="padding-horz-medium"><a href="{{pathFor 'sales_index'}}">Sales</a></li>
-      <li class="padding-horz-medium"><a href="{{pathFor 'invoices_index'}}">Invoices</a></li>
-      <!-- <li class="padding-horz-medium"><a href="{{pathFor 'discounts_index'}}">Discounts</a></li> -->
-    </ul>
-  </nav>
-  <div class="contain margin-vert-large">
-    {{> yield}}
-  </div>
+
+{{> aristotle__nav__primary}}
+{{> aristotle__nav__secondary}}
+
+  <section class="stage {{#if page.drawer}}has-drawer{{/if}}">
+    <div class="contain">
+      {{> yield}}
+    </div>
+
+    {{#if page.drawer}}
+      <aside class="drawer">
+        <div class="padding-medium">
+          <div class="row">
+            <div class="col small-1-2 text-left">
+              <h4 class="head-gray icon-help-black icon--left">Help</h4>
+            </div>
+            <div class="col small-1-2 text-right">
+              <a href="#" class="icon-x-black icon--small icon--center">Close</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    {{/if}}
+  </section>
 
   <!-- {{ > aristotle__transaction__form}} -->
+</template>
+
+<template name="loading">
+  <div class="contain fill-width fill-height" style="position: fixed; z-index: -1;">
+    <div class="ui-loader"></div>
+  </div>
 </template>
