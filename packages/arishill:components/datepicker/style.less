@@ -1,0 +1,79 @@
+@import (reference) "../../arishill:aesop/client/base/aesop";
+
+[data-datepicker-container] {
+  position: relative;
+  [data-datepicker-overlay] {
+    position: absolute;
+    .transition(all 200ms ease);
+    &.is-active {
+      opacity: 1;
+    }
+    &.is-hidden,
+    &.is-active {
+      &.in-between {
+        .transform(scale(.8));
+        opacity: 0;
+        display: block;
+      }
+    }
+    .datepicker-days {
+      padding: 0 30px;
+    }
+    table {
+      width: 100%;
+    }
+    th.dow {
+
+    }
+    td {
+      max-width: 37px;
+      min-width: 37px;
+      min-height: 29px;
+      max-height: 29px;
+      line-height: 18px;
+      .box-sizing(border-box);
+      text-align: center;
+      &.old, &.new {
+        .text-gray-light;
+      }
+      &:hover {
+        .bg-gray-xlight;
+        cursor: pointer;
+      }
+      &.today {
+        color: #000;
+        .bg-gray-xlight;
+      }
+      &.active {
+        .bg-site;
+        color: #fff;
+      }
+    }
+    .prev {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 30px;
+      .border-gray-light;
+      .border--right;
+      &:hover {
+        opacity: .5;
+        cursor: pointer;
+      }
+    }
+    .next {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 30px;
+      .border-gray-light;
+      .border--left;
+      &:hover {
+        opacity: .5;
+        cursor: pointer;
+      }
+    }
+  }
+}
