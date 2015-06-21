@@ -9,7 +9,8 @@ Package.onUse(function(api) {
 
   api.use([
     'templating',
-    'underscore'
+    'underscore',
+    'momentjs:moment'
   ], 'client');
 
   api.addFiles([
