@@ -1,0 +1,13 @@
+<template name="component_dropdown">
+  <div class="{{css}}" data-dropdown="{{JSONStringify options}}">
+    <a href="#" class="{{anchor.css}}" data-dropdown-anchor>{{anchor.text}}</a>
+    {{#if options.select_input}}
+    <input type="hidden" name="{{input.name}}" value="{{input.value}}">
+    {{/if}}
+    <ul class="{{list.css}}" data-dropdown-list>
+    {{#each list.items}}
+      <li><a href="{{#if link}}{{link}}{{else}}#{{/if}}" data-value="{{value}}" class="{{css}}">{{text}}</a></li>
+    {{/each}}
+    </ul>
+  </div>
+</template>
