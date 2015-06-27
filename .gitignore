@@ -4,3 +4,4 @@
 .deploy
 settings.json
 private
+npm-debug.log
