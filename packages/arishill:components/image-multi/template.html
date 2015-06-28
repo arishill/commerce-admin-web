@@ -1,0 +1,20 @@
+<template name="component_image_multi">
+  <fieldset class="row" data-image-multi="{{JSONStringify options}}">
+    <label class="form-label">{{title}} <span class="text--small text--italic">{{helper}}</span></label>
+    <ul class="row border-gray-light border--top border--bottom">
+      {{#each withIndex images}}
+      <li class="bg-gray-light contain col" data-image>
+        <img src="{{imgix src data.name}}">
+        <a href="#" class="btn-red btn--circle btn--small icon--center icon-trash-white icon--medium" data-action="remove" data-arr="images.{{data.name}}" data-index="{{index}}">Delete</a>
+        <input type="hidden" name="{{data.field}}" value="{{src}}">
+      </li>
+      {{/each}}
+      <li class="contain col bg-gray-light text-middle text-center" data-image>
+        <a href="#" class="btn-black icon--center icon-camera-white" data-trigger="upload" data-target="images[{{name}}]">Add Image</a>
+      </li>
+    </ul>
+
+    <input type="file" data-action="upload" data-key="resumable" data-name="{{field}}" multiple>
+    <!-- <p>{{progress 'images[cascade]'}}</p> -->
+  </fieldset>
+</template>
