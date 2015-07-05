@@ -1,0 +1,28 @@
+<template name="aristotle__content__fields_link">
+  {{!------------ link --------------}}
+  <fieldset class="row">
+    <div class="placeholder-http">
+      <label for="" class="form-label">Link Input</label>
+      <input type="text" name="" value="" class="fill-width">
+    </div>
+  </fieldset>
+</template>
+
+<template name="aristotle__content__fields_text">
+  {{!------------ standard input --------------}}
+  <fieldset class="row">
+    <label for="" class="form-label">Standard Input</label>
+    <input id="" type="text" name="" value="" class="fill-width">
+    {{#if formError ""}}
+      <p class="color-error padding-top-xsmall">{{formErrorMsg ""}}</p>
+    {{/if}}
+  </fieldset>
+</template>
+
+<template name="aristotle__content__fields_textarea">
+  {{!------------ standard textarea --------------}}
+  <fieldset class="row">
+    <label for="" class="form-label">Standard Textarea</label>
+    <textarea name="" value="" class="fill-width input-large"></textarea>
+  </fieldset>
+</template>
