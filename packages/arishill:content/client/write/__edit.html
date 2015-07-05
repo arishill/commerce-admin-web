@@ -1,0 +1,34 @@
+<template name="aristotle__content__edit">
+  <section id="content-edit">
+    <header class="row padding-vert-medium padding-right-large padding-left-small border-gray-light border--bottom">
+      <div class="col small-1-2 text-left text-middle">
+        <a href="#" class="col-pull icon--center icon--large icon-chevron-left-gray btn margin-right-xsmall">Back</a>
+        <h1 class="header-icon icon-coupon-gray">{{content.title}}</h1>
+      </div>
+      <div class="col small-1-2">
+      </div>
+    </header>
+
+
+    <form id="content-form" data-action=""  data-id="" class="form padding-horz-xlarge margin-horz-medium padding-vert-xlarge">
+      <div class="contain padding-bottom-xlarge">
+
+        {{!-- fields --}}
+        {{#each content.fields}}
+          {{> UI.dynamic template=type data=options }}
+        {{/each}}
+
+        {{!-- submit --}}
+        <nav class="form-action">
+          <div class="row fill-width fill-height text-middle">
+            <div class="col small-1-2 text-left">
+            </div>
+            <div class="col small-1-2 text-right">
+              <btn type="submit" class="btn-green margin-right-medium">Save</btn>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </form>
+  </section>
+</template>
