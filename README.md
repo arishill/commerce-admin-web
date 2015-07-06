@@ -33,13 +33,8 @@ All functionality is handled in local meteor pacakges. These packages will poten
 ### History
 The first version of Aristole was written in PHP back in 2012. It is currently being used by several boutique clients including:
 
-[French Garment Cleaners](frenchgarmentcleaners.com)
-*Boutique in Brooklyn, NY*
-
-[Spina NYC](spinanyc.com)
-*Flower Shop/Event Services Company in New York, NY*
-
-[Gwen Penn](gwenpenn.com)
-*Character shop selling art prints*
+- [French Garment Cleaners](http://frenchgarmentcleaners.com) — *Boutique in Brooklyn, NY*
+- [Spina NYC](http://spinanyc.com) — *Flower Shop/Event Services Company in New York, NY*
+- [Gwen Penn](http://gwenpenn.com) — *Character shop selling art prints*
 
 This open source version of Aristotle, will be a complete re-design and re-write in MeteroJS improving the first iteration in many ways.
