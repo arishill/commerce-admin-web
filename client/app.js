@@ -1,8 +1,8 @@
 App = {};
 
 Imgix.configSource({
-  name: '***REMOVED***',
-  token: '***REMOVED***'
+  name: Meteor.settings.imgix.name,
+  token: Meteor.settings.imgix.token
 });
 
 // Aristotle.setup({
