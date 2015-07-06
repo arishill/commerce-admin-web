@@ -5,3 +5,5 @@
 settings.json
 private
 npm-debug.log
+..bfg-report
+private.txt
