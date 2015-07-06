@@ -1,7 +1,8 @@
 Aristotle Platform
 ==============================
 
-Aristotle is a work in progress.
+Aristotle is a work in progress. It is not yet ready for production use, as most features are not in a complete workable state.
+
 The goal of Aristotle is to be an open source commerce platform for growing businesses. We aim to create something that is flexible and easy for developers to use.
 We have a ways to go, but figured it useful to begin making our progress publically available.
 
@@ -37,4 +38,7 @@ The first version of Aristole was written in PHP back in 2012. It is currently b
 - [Spina NYC](http://spinanyc.com) — *Flower Shop/Event Services Company in New York, NY*
 - [Gwen Penn](http://gwenpenn.com) — *Character shop selling art prints*
 
-This open source version of Aristotle, will be a complete re-design and re-write in MeteroJS improving the first iteration in many ways.
+This open source version of Aristotle, will be built on the same premise, but is a complete re-design and re-write in MeteroJS improving the first iteration in many ways.
+
+==============================
+Copyright (c) 2012-2015 Arishill, LLC
