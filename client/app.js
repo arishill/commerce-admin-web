@@ -1,8 +1,8 @@
 App = {};
 
 Imgix.configSource({
-  name: 'frenchgarmentcleaners',
-  token: 'robHviQr'
+  name: Meteor.settings.imgix.name,
+  token: Meteor.settings.imgix.token
 });
 
 // Aristotle.setup({

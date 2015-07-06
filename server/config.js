@@ -12,11 +12,11 @@ Transactions.setup({
 
   // braintree
   braintree: {
-    channel:      'miners',
-    environment:  'sandbox',
-    merchant_id:  '***REMOVED***',
-    public_key:   's2krxzh6shf67m46',
-    private_key:  'b784752b1c101fdf96984eda80ef8dbd'
+    channel:      Meteor.settings.braintree.channel,
+    environment:  Meteor.settings.braintree.environment,
+    merchant_id:  Meteor.settings.braintree.merchant_id,
+    public_key:   Meteor.settings.braintree.public_key,
+    private_key:  Meteor.settings.braintree.private_key
   },
   // stripe
   stripe: {
