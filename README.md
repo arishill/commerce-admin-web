@@ -6,4 +6,18 @@ The goal of Aristotle is to be an open source commerce platform for growing busi
 
 ![alt tag](https://storage.googleapis.com/arishill/images/arishill-dashboard.png)
 
-Aristotle is being built on [Meteor](https://github.com/meteor/meteor). with various functionality handled in meteor pacakges. These packages will potentially be broken out into seperate repos in the future.
+Aristotle is being built on [Meteor](https://github.com/meteor/meteor), so we can't express our gratitude enough for all that the Meteor team has done. They make our job that much easier.
+
+All functionality is handled in local meteor pacakges. These packages will potentially be broken out into seperate repos in the future. Some features (and packages) currently in progress:
+
+- Products
+- Orders
+- Invoices
+- Reports
+- Transactons
+- Uploader
+- Validation
+- Coupons
+- Components (various UI components)
+- Tags (for categories, relationships, etc)
+- Content (for general collections)
