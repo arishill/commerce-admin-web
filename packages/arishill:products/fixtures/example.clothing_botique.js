@@ -5,9 +5,9 @@ Fixtures.products = (_.isUndefined(Fixtures.products)) ? [] : Fixtures.products;
 // timestamps
 var now = moment().valueOf();
 
-/* FGC PRODUCTS
+/* PRODUCTS EXAMPLE — CLOTHING BOTIQUE
 .................................................*/
-Fixtures.products['fgc'] = [
+Fixtures.products['clothing-boutique'] = [
   {
     flags: {
       is_sale: true,
@@ -23,6 +23,12 @@ Fixtures.products['fgc'] = [
     price: {
       regular_cents: 33600,
       sale_cents: 25200
+    },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/01-product.jpg'
+    },
+    variant_options: {
+      thing: 'some'
     },
     variants: [
       {
@@ -53,6 +59,9 @@ Fixtures.products['fgc'] = [
     price: {
       regular_cents: 15000,
       sale_cents: 0
+    },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/02-product.jpg'
     },
     variants: [
       {
@@ -91,6 +100,9 @@ Fixtures.products['fgc'] = [
       regular_cents: 22000,
       sale_cents: 0
     },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/03-product.jpg'
+    },
     variants: [
       {
         sku: 'x237gyf',
@@ -116,6 +128,9 @@ Fixtures.products['fgc'] = [
       regular_cents: 22000,
       sale_cents: 0
     },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/04-product.jpg'
+    },
     variants: [
       {
         sku: 'b230ajf',
@@ -140,6 +155,9 @@ Fixtures.products['fgc'] = [
     price: {
       regular_cents: 18500,
       sale_cents: 0
+    },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/05-product.jpg'
     },
     variants: [
       {
@@ -170,6 +188,9 @@ Fixtures.products['fgc'] = [
       regular_cents: 18500,
       sale_cents: 0
     },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/06-product.jpg'
+    },
     variants: [
       {
         sku: 'l350ajf',
@@ -194,6 +215,9 @@ Fixtures.products['fgc'] = [
     price: {
       regular_cents: 21300,
       sale_cents: 0
+    },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/07-product.jpg'
     },
     variants: [
       {
@@ -224,6 +248,9 @@ Fixtures.products['fgc'] = [
       regular_cents: 21000,
       sale_cents: 0
     },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/08-product.jpg'
+    },
     variants: [
       {
         sku: 'j230ajf',
@@ -249,34 +276,12 @@ Fixtures.products['fgc'] = [
       regular_cents: 6500,
       sale_cents: 0
     },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/09-product.jpg'
+    },
     variants: [
       {
         sku: 'q230ajf',
-        price: {
-          regular_cents: 25000,
-          sale_cents: 20000
-        },
-        options: {
-
-        }
-      }
-    ]
-  },
-  {
-    title: 'Liberty Travel Wallet',
-    description: 'Leather construction large zippered wallet / Numerous card slots and interior compartments / Signature silver and gold zippers / 4 1/2\" x 9\"',
-    url: 'f13-liberty-travel-wallet',
-    date: {
-      created: now,
-      modified: now
-    },
-    price: {
-      regular_cents: 29500,
-      sale_cents: 0
-    },
-    variants: [
-      {
-        sku: 'w230ajf',
         price: {
           regular_cents: 25000,
           sale_cents: 20000
@@ -298,6 +303,9 @@ Fixtures.products['fgc'] = [
     price: {
       regular_cents: 12500,
       sale_cents: 0
+    },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/10-product.jpg'
     },
     variants: [
       {
@@ -324,6 +332,9 @@ Fixtures.products['fgc'] = [
       regular_cents: 36500,
       sale_cents: 0
     },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/11-product.jpg'
+    },
     variants: [
       {
         sku: 'r230ajf',
@@ -348,6 +359,9 @@ Fixtures.products['fgc'] = [
     price: {
       regular_cents: 23500,
       sale_cents: 0
+    },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/12-product.jpg'
     },
     variants: [
       {
@@ -374,6 +388,9 @@ Fixtures.products['fgc'] = [
       regular_cents: 45000,
       sale_cents: 0
     },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/13-product.jpg'
+    },
     variants: [
       {
         sku: 'y230ajf',
@@ -398,6 +415,9 @@ Fixtures.products['fgc'] = [
     price: {
       regular_cents: 39100,
       sale_cents: 19600
+    },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/14-product.jpg'
     },
     variants: [
       {
@@ -424,6 +444,9 @@ Fixtures.products['fgc'] = [
       regular_cents: 50600,
       sale_cents: 25300
     },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/15-product.jpg'
+    },
     variants: [
       {
         sku: '3450ajf',
@@ -448,6 +471,9 @@ Fixtures.products['fgc'] = [
     price: {
       regular_cents: 65500,
       sale_cents: 32800
+    },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/16-product.jpg'
     },
     variants: [
       {
@@ -474,6 +500,9 @@ Fixtures.products['fgc'] = [
       regular_cents: 39500,
       sale_cents: 15000
     },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/17-product.jpg'
+    },
     variants: [
       {
         sku: 'x2jjijf',
@@ -498,6 +527,9 @@ Fixtures.products['fgc'] = [
     price: {
       regular_cents: 51500,
       sale_cents: 25800
+    },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/18-product.jpg'
     },
     variants: [
       {
@@ -524,6 +556,9 @@ Fixtures.products['fgc'] = [
       regular_cents: 24500,
       sale_cents: 12000
     },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/19-product.jpg'
+    },
     variants: [
       {
         sku: 'x230ppl',
@@ -548,6 +583,9 @@ Fixtures.products['fgc'] = [
     price: {
       regular_cents: 28000,
       sale_cents: 14000
+    },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/20-product.jpg'
     },
     variants: [
       {
@@ -574,6 +612,9 @@ Fixtures.products['fgc'] = [
       regular_cents: 22500,
       sale_cents: 11300
     },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/21-product.jpg'
+    },
     variants: [
       {
         sku: 'x781ajf',
@@ -598,6 +639,9 @@ Fixtures.products['fgc'] = [
     price: {
       regular_cents: 24000,
       sale_cents: 12000
+    },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/22-product.jpg'
     },
     variants: [
       {
@@ -624,6 +668,9 @@ Fixtures.products['fgc'] = [
       regular_cents: 38000,
       sale_cents: 22800
     },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/23-product.jpg'
+    },
     variants: [
       {
         sku: 'x2a29jf',
@@ -648,6 +695,9 @@ Fixtures.products['fgc'] = [
     price: {
       regular_cents: 52900,
       sale_cents: 26500
+    },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/24-product.jpg'
     },
     variants: [
       {
@@ -674,6 +724,9 @@ Fixtures.products['fgc'] = [
       regular_cents: 49500,
       sale_cents: 24800
     },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/25-product.jpg'
+    },
     variants: [
       {
         sku: 'x230vvc',
@@ -698,6 +751,9 @@ Fixtures.products['fgc'] = [
     price: {
       regular_cents: 36800,
       sale_cents: 18400
+    },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/26-product.jpg'
     },
     variants: [
       {
@@ -724,6 +780,9 @@ Fixtures.products['fgc'] = [
       regular_cents: 16800,
       sale_cents: 8400
     },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/27-product.jpg'
+    },
     variants: [
       {
         sku: 'u830ajf',
@@ -749,6 +808,9 @@ Fixtures.products['fgc'] = [
       regular_cents: 18000,
       sale_cents: 9000
     },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/28-product.jpg'
+    },
     variants: [
       {
         sku: 'p730ajf',
@@ -773,6 +835,9 @@ Fixtures.products['fgc'] = [
     price: {
       regular_cents: 20500,
       sale_cents: 10300
+    },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/29-product.jpg'
     },
     variants: [
       {
@@ -801,334 +866,12 @@ Fixtures.products['fgc'] = [
       regular_cents: 28300,
       sale_cents: 14200
     },
+    images: {
+      thumb: 'https://storage.googleapis.com/aristotle/fixtures/clothing-boutique/30-product.jpg'
+    },
     variants: [
       {
         sku: 'x770ajf',
-        price: {
-          regular_cents: 25000,
-          sale_cents: 20000
-        },
-        options: {
-
-        }
-      }
-    ]
-  },
-  {
-    title: 'Point Twill Jacquard 3 btn Rolling Blazer',
-    description: 'Point twill jacquard wool suiting blazer with a three btn rolling notched lapel / Traditional tailored details include two front patch pockets and a single chest handkerchief pocket / Fully lined with two interior chest pockets / 100% italian virgin wool \r\n\r\n*coordinates with the Classic Trousers in point twill jacquard for a full suit',
-    url: 'ss14-navy-3d-rolling-blazer',
-    date: {
-      created: now,
-      modified: now
-    },
-    price: {
-      regular_cents: 59400,
-      sale_cents: 29700
-    },
-    variants: [
-      {
-        sku: 'g230jjf',
-        price: {
-          regular_cents: 25000,
-          sale_cents: 20000
-        },
-        options: {
-
-        }
-      }
-    ]
-  },
-  {
-    title: 'Elisa Mid Waist Trouser',
-    description: 'Cropped skinny ankle fit trouser in stretch cotton twill / Mid-rise rise with a tailored waistband / Two side pockets / Slits at the ankle / 27\" inseam / 98% cotton, 2% elastane / Made in the USA',
-    url: 'ss14-navy-elisa-mid-waist-trouser',
-    date: {
-      created: now,
-      modified: now
-    },
-    price: {
-      regular_cents: 31000,
-      sale_cents: 15500
-    },
-    variants: [
-      {
-        sku: 'x23tajr',
-        price: {
-          regular_cents: 25000,
-          sale_cents: 20000
-        },
-        options: {
-
-        }
-      }
-    ]
-  },
-  {
-    title: 'Lace Back Tee Shirt',
-    description: 'Striped cotton jersey tee with lace back / Scooped neckline / Jersey - 100% cotton  Lace - 40% cotton, 40% viscose, 20% poly / Made in NYC',
-    url: 'ss14-breton-lace-back-t-shirt',
-    date: {
-      created: now,
-      modified: now
-    },
-    price: {
-      regular_cents: 18500,
-      sale_cents: 9300
-    },
-    variants: [
-      {
-        sku: 'xq30qjf',
-        price: {
-          regular_cents: 25000,
-          sale_cents: 20000
-        },
-        options: {
-
-        }
-      }
-    ]
-  },
-  {
-    title: 'Lace Cut Out Dress',
-    description: 'Woven cotton dress with lace insert at the waist / Exposed center back zipper closure / Fully lined / Falls about 34\" from high shoulder point / 83% cotton, 10% poly, 7% polymide / Made in NYC',
-    url: 'ss14-red-lase-cut-out-dress',
-    date: {
-      created: now,
-      modified: now
-    },
-    price: {
-      regular_cents: 40500,
-      sale_cents: 15000
-    },
-    variants: [
-      {
-        sku: 'x2p0ajo',
-        price: {
-          regular_cents: 15000,
-          sale_cents: 10000
-        },
-        options: {
-
-        }
-      }
-    ]
-  },
-  {
-    title: 'Skort',
-    description: 'Thick cotton and linen woven skort / Two front pleats on skirt / Two side pockets / Exposed back metal zipper closure / Fully lined in cotton / 41% cotton, 31% linen, 19% polyester, 8% polymide, 1% acrylic / Made in NYC',
-    url: 'ss14-navy-skort',
-    date: {
-      created: now,
-      modified: now
-    },
-    price: {
-      regular_cents: 33000,
-      sale_cents: 16500
-    },
-    variants: [
-      {
-        sku: 'x235Yjf',
-        price: {
-          regular_cents: 25000,
-          sale_cents: 20000
-        },
-        options: {
-
-        }
-      }
-    ]
-  },
-  {
-    title: 'Elasticated Pant',
-    description: 'Lightweight cotton wide leg trouser / Elasticized waist with interior drawstring waistband / Patch pockets sit on side seam-less leg construction (each leg draped from a single piece of fabric) / French seam construction throughout / 100% cotton / Made in Hungary',
-    url: 'ss14-midnight-elasticated-pant',
-    date: {
-      created: now,
-      modified: now
-    },
-    price: {
-      regular_cents: 44500,
-      sale_cents: 22300
-    },
-    variants: [
-      {
-        sku: 'x990ajf',
-        price: {
-          regular_cents: 25000,
-          sale_cents: 20000
-        },
-        options: {
-
-        }
-      }
-    ]
-  },
-  {
-    title: 'Bicycle Crossover Dress',
-    description: 'Sleeveless printed silk dress / Draped wrap collar / Paneled full skirt / Invisible side zip closure / Falls about 45\" from shoulder / 100% silk / Made in NYC',
-    url: 'ss14-black-bicycle-crossover-dress',
-    date: {
-      created: now,
-      modified: now
-    },
-    price: {
-      regular_cents: 36500,
-      sale_cents: 18300
-    },
-    variants: [
-      {
-        sku: 'x288ajf',
-        price: {
-          regular_cents: 25000,
-          sale_cents: 20000
-        },
-        options: {
-
-        }
-      }
-    ]
-  },
-  {
-    title: 'Reef Pocket Shirt',
-    description: 'Printed silk habotai btn front shirt / Covered btn placket / Two btned chest pockets on yoke seam / Slightly cropped silhouette / 100% silk / Made in NYC',
-    url: 'ss14-black-reef-hidden-pocket-shirt',
-    date: {
-      created: now,
-      modified: now
-    },
-    price: {
-      regular_cents: 27500,
-      sale_cents: 11000
-    },
-    variants: [
-      {
-        sku: 'x23iijf',
-        price: {
-          regular_cents: 25000,
-          sale_cents: 20000
-        },
-        options: {
-
-        }
-      }
-    ]
-  },
-  {
-    title: 'Elisa Mid Waist Trouser',
-    description: 'Cropped skinny ankle fit trouser in stretch cotton twill / Mid-rise rise with a tailored waistband / Two side pockets / Slits at the ankle / 27\" inseam / 98% cotton, 2% elastane / Made in the USA',
-    url: 'ss14-black-elisa-mid-waist-trouser',
-    date: {
-      created: now,
-      modified: now
-    },
-    price: {
-      regular_cents: 31000,
-      sale_cents: 15500
-    },
-    variants: [
-      {
-        sku: 'vv30ajf',
-        price: {
-          regular_cents: 25000,
-          sale_cents: 20000
-        },
-        options: {
-
-        }
-      }
-    ]
-  },
-  {
-    title: 'Furtive Dress',
-    description: 'Black linen tank dress with contrasting yellow trim / Dropped waist lines with a single front pocket / Single vent on front / Falls about 40\" from shoulder point / 100% linen / Made in NYC',
-    url: 'ss14-black-furtive-dress',
-    date: {
-      created: now,
-      modified: now
-    },
-    price: {
-      regular_cents: 33500,
-      sale_cents: 16800
-    },
-    variants: [
-      {
-        sku: 'xio0ajf',
-        price: {
-          regular_cents: 25000,
-          sale_cents: 20000
-        },
-        options: {
-
-        }
-      }
-    ]
-  },
-  {
-    title: 'Ryder Sandal',
-    description: 'Flat leather handmade sandal / Adjustable grommet closure on ankle strap / 100% leather upper, 100% leather sole with rubber heel tap / Handmade in Peru',
-    url: 'ss14-caramel-ryder-sandal',
-    date: {
-      created: now,
-      modified: now
-    },
-    price: {
-      regular_cents: 31900,
-      sale_cents: 16000
-    },
-    variants: [
-      {
-        sku: 'x230qaf',
-        price: {
-          regular_cents: 25000,
-          sale_cents: 20000
-        },
-        options: {
-
-        }
-      }
-    ]
-  },
-  {
-    title: 'Troy Sandal',
-    description: 'Flat leather handmade sandal / Adjustable silver buckle closure on ankle strap / 100% leather upper, 100% leather sole with rubber heel tap / Handmade in Peru',
-    url: 'ss14-natural-troy-sandal',
-    date: {
-      created: now,
-      modified: now
-    },
-    price: {
-      regular_cents: 29700,
-      sale_cents: 14900
-    },
-    variants: [
-      {
-        sku: 'x230mkf',
-        price: {
-          regular_cents: 25000,
-          sale_cents: 20000
-        },
-        options: {
-
-        }
-      }
-    ]
-  },
-  {
-    title: 'Jessa Sandal',
-    description: 'Handmade leather sandal / Antiqued brass buckle on adjustable ankle strap / Leather upper, leather sole / Handmade in Spain',
-    url: 'ss14-yellow-jessa-sandal',
-    date: {
-      created: now,
-      modified: now
-    },
-    price: {
-      regular_cents: 23600,
-      sale_cents: 11800
-    },
-    variants: [
-      {
-        sku: 'x230xhf',
         price: {
           regular_cents: 25000,
           sale_cents: 20000

@@ -21,6 +21,7 @@ Fixtures.methods = {
     }
 
     else {
+
       // iterate through each fixture entry
       _.each(Fixtures[collection][name], function(item, index, list) {
 
@@ -42,10 +43,12 @@ Fixtures.methods = {
         // create/insert into db
         Meteor.call(collection_params.create_method, item, function() {
           // entries successfully added
-          console.log('Item for ' + name + ' added to application.');
+          console.log('Item(s) for ' + name + ' added to application.');
         });
       });
     }
+
+    return true;
   },
 
   // clear fixtures
@@ -84,36 +87,40 @@ Fixtures.methods = {
 };
 
 Fixtures.getCollectionParams = function(collection) {
-  switch (collection) {
-
-    // products collection
-    case 'products':
-      return {
-        schema: Schemas.collections.products,
-        create_method: 'api/products/create',
-        clear_method: 'api/products/clear'
-      };
-
-    // orders collection
-    case 'orders':
-      return {
-        schema: Schemas.collections.orders,
-        create_method: 'api/orders/create',
-        clear_method: 'api/orders/clear'
-      };
-
-  // discounts collection
-    case 'discounts':
-      return {
-        //schema: Schemas.collections.discounts,
-        create_method: 'api/discounts/create',
-        clear_method: 'api/discounts/clear'
-      };
-    default:
-      return {
-        //schema: Schemas.collections[collection],
-        create_method: 'api/' + collection + '/create',
-        clear_method: 'api/'+ collection + '/clear'
-      };
-  }
+  return {
+    schema: (_.isUndefined(Schemas.collections[collection])) ? {} : Schemas.collections[collection],
+    create_method: 'api/' + collection + '/create',
+    clear_method: 'api/'+ collection + '/clear'
+  };
 };
+  // switch (collection) {
+
+  //   // products collection
+  //   case 'products':
+  //     return {
+  //       schema: Schemas.collections.products,
+  //       create_method: 'api/products/create',
+  //       clear_method: 'api/products/clear'
+  //     };
+
+  //   // orders collection
+  //   case 'orders':
+  //     return {
+  //       schema: Schemas.collections.orders,
+  //       create_method: 'api/orders/create',
+  //       clear_method: 'api/orders/clear'
+  //     };
+
+  // // discounts collection
+  //   case 'discounts':
+  //     return {
+  //       //schema: Schemas.collections.discounts,
+  //       create_method: 'api/discounts/create',
+  //       clear_method: 'api/discounts/clear'
+  //     };
+  //   default:
+  //     return {
+  //       schema: _.isUndefined(Schemas.collections[collection]) : {} : Schemas.collections[collection],
+  //       create_method: 'api/' + collection + '/create',
+  //       clear_method: 'api/'+ collection + '/clear'
+  //     };
