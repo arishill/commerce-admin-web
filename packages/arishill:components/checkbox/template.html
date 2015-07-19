@@ -1,0 +1,17 @@
+<template name="component_checkbox">
+  <div class="checkbox {{css}}" data-checkbox="{{JSONStringify options}}">
+    <input type="checkbox" name="{{name}}{{#if index}}[{{index}}]{{/if}}" id="{{name}}{{#if index}}_{{index}}{{/if}}" checked={{checked}}>
+    <label for="{{name}}{{#if index}}_{{index}}{{/if}}">
+      <i class="icon-check-site"></i>
+    </label>
+  </div>
+</template>
+
+<template name="component_toggle">
+  <div class="checkbox-alt {{css}}" data-checkbox="{{JSONStringify options}}">
+    <input type="checkbox" name="{{name}}" id="{{name}}{{#if index}}_{{index}}{{/if}}" checked={{checked}}>
+    <label for="{{name}}{{#if index}}_{{index}}{{/if}}">
+      <span class="disc"></span>
+    </label>
+  </div>
+</template>
