@@ -122,6 +122,25 @@
   }
 }
 
+.arrow-right-middle {
+  .arrow;
+  &::after {
+    border-color: transparent @color-white @color-white transparent;
+    top: 50%;
+    right: -4px;
+  }
+  &.border-gray-light {
+    &::after {
+      box-shadow: -1px -1px 0px 0 @color-gray-transparent;
+    }
+  }
+  &.box-shadow {
+    &::after {
+      box-shadow: 1px 1px 0px @color-gray-transparent;
+    }
+  }
+}
+
 .arrow-top-left {
   .arrow;
   &::after {
@@ -145,7 +164,7 @@
   .arrow;
   &::after {
     margin-left: -8px;
-    top: 0px;
+    top: 1px;
     right: 20px;
     border-color: #fff #fff transparent transparent;
   }
