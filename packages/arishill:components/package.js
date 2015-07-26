@@ -20,21 +20,27 @@ Package.onUse(function(api) {
     'definitions.js',
     '_config/jquery.observer.js',
 
+    /* dropdown */
     'dropdown/template.html',
     'dropdown/core.js',
     'dropdown/style.less',
 
+    /* image multi */
     'image-multi/template.html',
     'image-multi/core.js',
     'image-multi/callbacks.js',
     'image-multi/style.less',
 
+    /* datepicker */
     'datepicker/depends.js',
     'datepicker/template.html',
     'datepicker/core.js',
     'datepicker/callbacks.js',
-    'datepicker/style.less'
+    'datepicker/style.less',
 
+    /* checkbox */
+    'checkbox/template.html',
+    'checkbox/helpers.js'
   ], 'client');
 
   api.export([

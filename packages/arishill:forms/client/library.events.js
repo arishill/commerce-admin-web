@@ -33,7 +33,7 @@ Aristotle.events.save = function(event, template, options) {
   // clean order to schema
   form_obj = Forms.utils.clean(form_obj);
 
-  Schemas.collections[options.collection].default.clean(form_obj, { filter: false});
+  // Schemas.collections[options.collection].default.clean(form_obj, { filter: false});
 
   if (_.isFunction(options.addTo)) {
     form_obj = options.addTo(form_obj);
@@ -43,8 +43,22 @@ Aristotle.events.save = function(event, template, options) {
     draft: form_obj
   };
 
+  var event_schema = Schemas.collections[options.collection];
+
+  if (options.action === 'update') {
+    var form_arr = [];
+    _.each(form_obj, function(item, index) {
+      for (property in item) {
+        form_arr.push(index + '.' + property);
+      }
+    });
+    event_schema = Schemas.collections[options.collection].default.pick(form_arr);
+    event_schema.context = event_schema.namedContext(options.collection + options.id);
+  }
+
   // validate order against schema
-  if (Schemas.collections[options.collection].context.validate(form_obj)) {
+
+  if (event_schema.context.validate(form_obj)) {
 
     if (options.action === 'create') {
       // create
@@ -65,6 +79,24 @@ Aristotle.events.save = function(event, template, options) {
   }
 };
 
+// confirm form event
+Aristotle.events.confirm = function(event, form, callback) {
+  event.preventDefault();
+
+  var _confirm = form.find('[data-confirm]');
+
+  _confirm.removeClass("is-hidden");
+
+  _confirm.on('click', '[data-cancel]', function(){
+    _confirm.addClass("is-hidden");
+  });
+
+  _confirm.on('click', '[data-ok]', function(){
+    callback();
+    _confirm.addClass("is-hidden");
+  })
+}
+
 // delete data from database
 Aristotle.events.delete = function(event, template, options) {
   event.preventDefault();
@@ -75,7 +107,12 @@ Aristotle.events.delete = function(event, template, options) {
     }
     else {
       // redirect after success
-      Router.go(options.redirect);
+      if (_.isString(options.redirect)) {
+        Router.go(options.redirect);
+      }
+      if (_.isFunction(options.callback)) {
+        options.callback();
+      }
     }
   });
 };
@@ -125,13 +162,15 @@ Aristotle.events._create = function(insert_obj, options) {
 
 Aristotle.events._update = function(insert_obj, options) {
   // update method
-  Collections.orders.update({_id: options.id}, {$set: insert_obj.draft}, function(error) {
+  Collections[options.collection].update({_id: options.id}, {$set: insert_obj.draft}, function(error) {
     if (error) {
       console.log('error');
     }
     else {
-      // redirect after success
-      Router.go(options.redirect);
+      if (options.redirect) {
+        // redirect after success
+        Router.go(options.redirect);
+      }
     }
   });
 }

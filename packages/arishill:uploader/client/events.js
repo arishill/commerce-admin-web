@@ -102,7 +102,6 @@ Uploader.methods.simple = function(config) {
 
 Uploader.methods.resumable = function(config) {
   Meteor.call('api/upload/resumable', config.params, function(event, data) {
-
     Reader.getResumablePut(config.file, data.token, function(params) {
       params.onProgress = function(event) {
         config.target.trigger('upload:progress', [{loaded: event.loaded, total: event.total }]);

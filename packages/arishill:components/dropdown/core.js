@@ -18,7 +18,8 @@ Components.dropdown = function(selector, options) {
     hide_duration: 300,
     drop_list: '[data-dropdown-list]',
     drop_anchor: '[data-dropdown-anchor]',
-    close_on_click: false
+    close_on_click: false,
+    onSelect: null
   };
 
   _super.init = function(el, index) {
@@ -52,13 +53,13 @@ Components.dropdown = function(selector, options) {
   };
 
   _super.getOptions = function(el, options, defaults) {
-    var obj = {};
-
+    var obj = {},
+        basis = $.extend({}, defaults, options);
     try {
       obj = el.data('dropdown');
     } catch (e) {}
 
-    return $.extend({}, defaults, obj);
+    return $.extend({}, basis, obj);
   };
 
 
@@ -108,7 +109,11 @@ Components.dropdown = function(selector, options) {
         _this.hide();
       }
       if (_this.options.select_input) {
-        _this.updateInput($(this).data('value'));
+        _this.updateInput($(this).find('a').data('value'));
+      }
+
+      if (_.isFunction(_this.options.onSelect)) {
+        _this.options.onSelect(event, $(this).find('a'), _this);
       }
     });
 

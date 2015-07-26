@@ -9,9 +9,22 @@ Forms.utils.clean = function(obj) {
     if (index === 'url') {
       obj[index] = Forms.utils.cleanUrl(item);
     }
+    if (index === 'flags') {
+      _.each(item, function(sub_item, sub_index){
+        obj[index][sub_index] = Forms.utils.cleanFlags(sub_item);
+      });
+    }
   });
 
   return obj;
+};
+
+Forms.utils.cleanFlags = function(flag) {
+  if (_.isBoolean(flag)) {
+    return flag;
+  } else {
+    return parseInt(flag) ? true : false;
+  }
 };
 
 Forms.utils.cleanUrl = function(url) {
