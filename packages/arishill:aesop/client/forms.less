@@ -71,7 +71,7 @@
 
     // focus
     &:focus {
-      .placeholder(@color-gray-light);
+      .placeholder(@color-gray-xlight);
       color: @color-black;
       border: 1px solid @color-site-light;
       .box-shadow(0 0 7px 0 @color-site-light);
@@ -94,6 +94,17 @@
 
   textarea {
     padding: 12px;
+  }
+}
+
+.form-search {
+  input[type="text"] {
+    .placeholder(@color-gray);
+
+    // focus
+    &:focus {
+      .placeholder(@color-gray-xlight);
+    }
   }
 }
 
