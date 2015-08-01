@@ -34,8 +34,8 @@
       <td class="text-center">{{getProductStock .}}</td>
       <td class="text-center">{{sold}}</td>
       <td class="text-center">{{favorites}}</td>
-      <td class="text-right"><a href="{{pathFor 'products_edit' }}" class="link-black">Edit</a></td>
-      <td class="text-center border-gray border--left border--bottom"><a href="#" class="btn icon-trash-red icon--center">Delete</a></td>
+      <td class="text-center border-gray border--left border--bottom padding-horz-small"><a href="{{pathFor 'products_edit' }}" class="btn icon-pencil-black icon--center">Edit</a></td>
+      <td class="text-center border-gray border--left border--bottom padding-horz-small"><a href="#" class="btn icon-trash-red icon--center">Delete</a></td>
     </tr>
     {{/each}}
   </tbody>
