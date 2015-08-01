@@ -15,7 +15,7 @@
 
 
     <fieldset class="{{formError "url"}}">
-      <label for="text-url" class="text-gray padding-bottom-xsmall is-block">Path/URL</label>
+      <label for="text-url" class="form-label">Path/URL</label>
       <input id="text-url" type="text" name="url" value="{{url}}" class="input-fill">
       {{#if formError "url"}}
         <p class="color-error padding-top-xsmall">{{formErrorMsg "url"}}</p>
@@ -23,7 +23,7 @@
     </fieldset>
 
     <fieldset class="{{formError "subtitle"}}">
-      <label for="text-subtitle" class="text-gray">Subtitle</label>
+      <label for="text-subtitle" class="form-label">Subtitle</label>
       <input id="text-subtitle" type="text" name="subtitle" value="{{subtitle}}" class="input-fill">
       {{#if formError "subtitle"}}
         <p class="color-error padding-top-xsmall">{{formErrorMsg "subtitle"}}</p>

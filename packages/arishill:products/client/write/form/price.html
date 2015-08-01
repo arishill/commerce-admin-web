@@ -1,5 +1,5 @@
 <template name="aristotle__products__form_price">
-  <section id="products-form-price" class="row margin-top-xlarge">
+  <section id="products-form-pricing" class="row margin-top-xlarge">
     <h3 class="form-title">
       Pricing <a href="#" class="form-title---icon">Help with this section</a>
     </h3>
@@ -25,12 +25,12 @@
     <div class="col small-1-2 gutter-left-medium">
 
       <fieldset class="contain-text-75 {{formError "flag.ignore_bulk_markdowns"}}">
-        {{{checkboxAlt 'flags[ignore_bulk_markdowns]' 'flags_ignore_bulkmarkdowns' '' flags.ignore_bulk_markdowns 'large'}}}
+        {{> component_toggle getBulkMarkdownsToggle index flags.ignore_bulk_markdowns}}
         <span class="text-gray-dark margin-left-small">Ignore Bulk Markdowns</span>
       </fieldset>
 
       <fieldset class="contain-text-75 {{formError "flag.is_sale"}}">
-        {{{checkboxAlt 'flags[is_sale]' 'flags_is_sale' '' flags.is_sale 'large'}}}
+        {{> component_toggle getSaleToggle index flags.is_sale}}
         <span class="text-gray-dark margin-left-small">On sale</span>
       </fieldset>
     </div>

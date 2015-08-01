@@ -3,20 +3,6 @@
 /* EVENTS
 .................................................*/
 
-// index
-Template.aristotle__products__table.events({
-  // remove products from DB
-  'click [data-action="delete"]': function(event, template) {
-    Aristotle.events.delete(event, template, {
-      collection: 'products',
-      redirect: 'products_index',
-      params: {
-        '_id': $(event.target).parents('form').data('id')
-      }
-    });
-  }
-});
-
 // form
 Template.aristotle__products__form.events({
   // add items to product
@@ -96,29 +82,5 @@ Template.aristotle__products__form.events({
         '_id': $(event.target).parents('form').data('id')
       }
     });
-  },
-
-  // upload done
-  'upload:done [data-action=upload]': function(event, template, data) {
-  },
-
-  // upload complete
-  'upload:complete [data-action=upload]': function(event, template, data) {
-    var obj = Session.get('product'),
-        image_name = $(event.target).data('name') + '[0]',
-        image_obj = Forms.utils.serializeHelpers.handleMultiDimen(image_name, null, data.url, {}),
-        key = image_name.split(/[[\]]{1,2}/);
-
-    key.length--;
-    obj.images = (_.isUndefined(obj.images)) ? {} : obj.images;
-    obj.images[key[1]] = (_.isUndefined(obj.images[key[1]])) ? [] : obj.images[key[1]];
-
-    _.each(image_obj.images[key[1]], function(item, index, list) {
-      obj.images[key[1]].push(item);
-    });
-
-    Session.set('product', obj);
   }
 });
-
-Uploader.setup('aristotle__products__form');

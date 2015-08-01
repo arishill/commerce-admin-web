@@ -1,6 +1,7 @@
 <template name="aristotle__products__form">
 
-  <form id="products-form-{{page.action}}" data-action="{{page.action}}"  data-id="{{product._id}}" class="form padding-horz-xlarge margin-horz-medium padding-vert-large">
+  <form id="products-form-{{page.action}}" data-action="{{page.action}}"  data-id="{{product._id}}" class="form padding-horz-xlarge margin-horz-medium padding-vert-large contain">
+
     <div class="contain padding-bottom-xlarge">
 
       <!-- sections-->
@@ -10,7 +11,7 @@
         {{> aristotle__products__form_images }}
         {{> aristotle__products__form_variants }}
         {{> aristotle__products__form_categories }}
-        {{> aristotle__products__form_relationships }}
+        {{! aristotle__products__form_relationships }}
       {{/with}}
 
       <!-- submit -->

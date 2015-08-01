@@ -1,0 +1,32 @@
+<template name="aristotle__products__edit">
+
+  <section id="products-edit">
+    <header class="row padding-vert-medium padding-horz-medium border-gray-light border--bottom">
+      <div class="col small-1-2 text-left text-middle">
+        <a href="{{pathFor 'products_index'}}" class="col-pull icon--center icon--large icon-chevron-left-gray btn">Back</a>
+
+        <p class="contain-50 margin-horz-small">
+          {{#if product.images.thumb}}
+            <div class="img-1-1" style="background-image: url({{imgix product.images.thumb 'thumb'}})"></div>
+          {{else}}
+            <div class="img-placeholder-sq"></div>
+          {{/if}}
+        </p>
+
+        <h1 class="is-inline margin-left-small">
+          <strong class="is-block head-black text--large">{{product.title}}</strong>
+          <a href="{{site.domain}}/{{product.url}}" target="_blank" class="text-gray-dark text--medium is-inline icon-external-link-gray icon--right icon--small">{{product.url}}</a>
+        </h1>
+
+      </div>
+      <div class="col small-1-2 text-right text-middle padding-top-small">
+        <p class="is-inline text-gray-dark padding-right-small">Is Available</p>
+        {{> component_toggle getStatusToggle index product.flags.is_active}}
+      </div>
+
+      {{> component_dropdown getDropdownOptions}}
+    </header>
+
+    {{> aristotle__products__form}}
+  </section>
+</template>
