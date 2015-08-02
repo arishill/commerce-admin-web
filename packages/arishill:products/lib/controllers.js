@@ -6,12 +6,13 @@ ProductsIndex = RouteController.extend({
   template: 'aristotle__products__index',
   layoutTemplate: 'app_layout',
   waitOn: function() {
-    return Meteor.subscribe('products');
-  },
-  data: function() {
-    return {
-      products: Collections.products.find({}, { sort: { 'date.modified': -1 } })
-    };
+    Session.set('products_count', 0);
+
+    Meteor.call('api/products/count', function(error, count) {
+      Session.set('products_count', count)
+    });
+
+    return;
   },
   action: function() {
     this.render();
@@ -51,6 +52,9 @@ ProductsEdit = RouteController.extend({
     return {
       product: Collections.products.findOne({}),
       schema: 'products',
+      site: {
+        domain: 'http://spinanyc.com'
+      },
       page: {
         btn: 'Save Product',
         action: 'update',
@@ -58,21 +62,18 @@ ProductsEdit = RouteController.extend({
       }
     }
   },
-  // data: function() {
-  //   // if (typeof(Session.get('product')) !== 'undefined') {
-  //   //   return {
-  //   //     product: Session.get('product'),
-  //   //     schema: 'products',
-  //   //     page: {
-  //   //       btn: 'Save Product',
-  //   //       action: 'update'
-  //   //     }
-  //   //   };
-  //   // } else {
-  //   //   Session.set('product', Collections.products.findOne());
-  //   // }
-  // },
   action: function() {
+    this.render();
+  }
+});
+
+// arrange
+ProductsArrange = RouteController.extend({
+  template: 'aristotle__products__arrange',
+  layoutTemplate: 'app_layout',
+  waitOn: function () {},
+  data: function() {},
+  action: function () {
     this.render();
   }
 });

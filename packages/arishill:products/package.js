@@ -8,15 +8,20 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0.2');
 
   api.use([
+    /* meteor */
     'mongo',
     'random',
     'underscore',
+    /* vendor */
     'iron:router@=1.0.6',
     'aldeed:simple-schema@1.2.0',
     'momentjs:moment',
+    'tmeasday:publish-counts',
+    /* arishill */
     'arishill:core',
     'arishill:uploader',
     'arishill:imgix',
+    'arishill:fixtures',
     'arishill:forms'
   ]);
 
@@ -25,6 +30,7 @@ Package.onUse(function(api) {
     'minimongo',
     'spacebars',
     'less',
+    'reactive-var',
     'arishill:aesop',
     'arishill:admin-modules'
   ], 'client');
@@ -38,32 +44,41 @@ Package.onUse(function(api) {
     'lib/schemas/schema.scheduled.js',
     'lib/schemas/schema.shipping.js',
     'lib/schemas/schema.variants.js',
-    'lib/schema.js'
+    'lib/schema.js',
+
+    /* fixtures */
+    'fixtures/example.clothing_botique.js',
+    'fixtures/example.flower_botique.js'
   ]);
 
   api.addFiles([
-    'client/styles/edit.less',
+    /* index */
+    'client/index/template.html',
+    'client/index/_table_head.html',
+    'client/index/_table_row.html',
+    'client/index/callbacks.js',
+    'client/index/events.js',
+    'client/index/helpers.js',
+    'client/index/styles.less',
 
-    'client/views/index.html',
-    'client/views/create.html',
-    'client/views/edit.html',
-    'client/views/table/_table.html',
-    'client/views/table/head.html',
-    'client/views/table/body.html',
-    'client/views/form/_form.html',
-    'client/views/form/categories.html',
-    'client/views/form/shipping.html',
-    'client/views/form/info.html',
-    'client/views/form/images.html',
-    'client/views/form/schedule.html',
-    'client/views/form/flags.html',
-    'client/views/form/options.html',
-    'client/views/form/price.html',
-    'client/views/form/relationships.html',
-    'client/views/form/variants.html',
-    'client/callbacks.js',
-    'client/events.js',
-    'client/helpers.js'
+    /* edit & create */
+    'client/write/create.html',
+    'client/write/edit.html',
+    'client/write/form/_form.html',
+    'client/write/form/categories.html',
+    'client/write/form/shipping.html',
+    'client/write/form/info.html',
+    'client/write/form/images.html',
+    'client/write/form/schedule.html',
+    'client/write/form/flags.html',
+    'client/write/form/options.html',
+    'client/write/form/price.html',
+    'client/write/form/relationships.html',
+    'client/write/form/variants.html',
+    'client/write/callbacks.js',
+    'client/write/helpers.js',
+    'client/write/styles.less',
+    'client/write/events.js'
   ], 'client');
 
   api.addFiles([

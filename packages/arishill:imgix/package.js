@@ -4,6 +4,10 @@ Package.describe({
   version: '0.1.0'
 });
 
+Npm.depends({
+  'imgix-core-js': '0.2.1'
+});
+
 Package.onUse(function(api) {
   api.versionsFrom('1.0.2');
 
@@ -24,6 +28,7 @@ Package.onUse(function(api) {
   ], 'client');
 
   api.addFiles([
+    'server/config.js'
   ], 'server');
 
   api.export([
@@ -32,6 +37,7 @@ Package.onUse(function(api) {
   ], 'client');
 
   api.export([
+    'Imgix'
   ], 'server');
 
 });

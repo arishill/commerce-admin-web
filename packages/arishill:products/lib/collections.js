@@ -8,3 +8,9 @@ Collections.products.allow({
   insert: function(userId, post) { return true; }
 });
 
+// console.log(EasySearch);
+// EasySearch.createSearchIndex('products', {
+//   field: ['description', '_id', 'title'],
+//   collection: Collections.products,
+//   limit: 20
+// });

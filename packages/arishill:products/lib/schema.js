@@ -16,7 +16,10 @@ Schemas.collections.products.default = new SimpleSchema({
     type: Object,
     optional: true
   },
-  'images': Schemas.images(),
+  'images': {
+    type: Object,
+    blackbox: true
+  },
   'title': {
     type: String,
     label: "Title",
