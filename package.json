@@ -1,0 +1,38 @@
+{
+  "name": "arishill-commerce-admin",
+  "version": "0.1.0",
+  "description": "Arishill Commerce Admin",
+  "keywords": [
+    "arishill",
+    "admin",
+    "ecommerce",
+    "checkout",
+    "credit cards"
+  ],
+  "author": "Arishill (https://arishill.com/)",
+  "contributors": [
+    "Scott Robertson <scott@arishill.com>"
+  ],
+  "engines": {
+    "node": ">= v0.10.0"
+  },
+  "main": "core/app.js",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "browserify": "~2.5.1",
+    "crypto": "0.0.3",
+    "dotenv": "^1.2.0",
+    "escape-html": "^1.0.3",
+    "express": "^4.13.3",
+    "jsonwebtoken": "^5.4.1",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babelify": "^6.3.0",
+    "chalk": "^1.1.1",
+    "reload": "^0.4.0",
+    "uglifyjs": "^2.4.10",
+    "watchify": "~3.4.0"
+  },
+  "license": "MIT"
+}

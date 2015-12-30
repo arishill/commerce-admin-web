@@ -1,9 +1,5 @@
-.meteor
 .npm
 .DS_Store
-.deploy
-settings.json
-private
 npm-debug.log
-..bfg-report
-private.txt
+node_modules
+.env
