@@ -2,12 +2,18 @@
 <html>
   <head>
     <title>Arishill Commerce JS</title>
-    <link href="aesop.css" media="screen" rel="stylesheet" type="text/css">
-    <link href="app.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="/aesop.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="/app.css" media="screen" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div id="app"></div>
-    <script src="vendor.js"></script>
-    <script src="app.js"></script>
+    <script>
+      API = {
+        url: '{{API.url}}',
+        key: '{{API.key}}'
+      };
+    </script>
+    <script src="/vendor.js"></script>
+    <script src="/app.js"></script>
   </body>
 </html>
