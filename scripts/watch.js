@@ -12,7 +12,7 @@ const manifests   = {
   vendor: require('./manifests/vendor.js')
 };
 
-catw('client/*/*/*.js', function() {
+catw('client/**/*.js', function() {
   let src = './public/app.js';
   concat(manifests.app, src, function() {
     let result = babel.transform(fs.readFileSync(src).toString(), {
@@ -29,14 +29,21 @@ catw('client/*/*/*.js', function() {
   });
 });
 
-catw('client/manifests/vendor.js', function() {
+// catw('client/manifests/vendor.js', function() {
+//   let src = './public/vendor.js';
+//   concat(manifests.vendor, src, function() {
+//     process.stdout.write(chalk.yellow('Vendor JS Updated \n'));
+//   });
+// });
+
+catw('node_modules/arishill-mithril/distr/arishill-mithril.js', function() {
   let src = './public/vendor.js';
   concat(manifests.vendor, src, function() {
     process.stdout.write(chalk.yellow('Vendor JS Updated \n'));
   });
 });
 
-catw('client/*/*/*.less', function(stream) {
+catw('client/**/*.less', function(stream) {
   let w = stream.pipe(fs.createWriteStream('public/bundle.less'));
   w.on('close', function () {
     let src = 'public/bundle.less';
