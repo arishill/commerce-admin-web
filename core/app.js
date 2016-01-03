@@ -4,17 +4,31 @@
 ..............................*/
 require('dotenv').load();
 
-const express   = require('express');
-const http      = require('http');
-const parser    = require('body-parser');
-const app       = express();
+const express     = require('express');
+const http        = require('http');
+const parser      = require('body-parser');
+const handlebars  = require('handlebars');
+const fs          = require('fs');
+const app         = express();
 
 app.set('port', process.env.PORT);
 app.use(express.static('public'));
 app.use(parser.json());
 
 app.get('*', function(request, response) {
-  response.sendFile(__dirname + '/layout.html');
+  let data = {
+    API: {
+      url: process.env.API_URL,
+      key: process.env.API_KEY
+    }
+  };
+
+  fs.readFile(__dirname + '/layout.html', 'utf8', function(err, source){
+    if (err) {
+      return console.log(err);
+    }
+    response.send(handlebars.compile(source)(data));
+  });
 });
 
 const server = http.createServer(app);
