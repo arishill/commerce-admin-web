@@ -5,27 +5,28 @@
   c.helpers = {
     items: [
       {
+        'name': 'site',
         'href': 'http://arishill.com',
         'target': '_blank',
-        'text': 'arishill.com',
+        'title': 'arishill.com',
         'icon': 'icon-external-link-white',
       },
       {
-        'href': 'http://arishill.com',
-        'target': '_blank',
-        'text': 'Content',
+        'name': 'content',
+        'href': '/content',
+        'title': 'Content',
         'icon': 'icon-content-white',
       },
       {
-        'href': 'http://arishill.com',
-        'target': '_blank',
-        'text': 'Shop',
+        'name': 'shop',
+        'href': '/shop',
+        'title': 'Shop',
         'icon': 'icon-cart-white',
       },
       {
-        'href': 'http://arishill.com',
-        'target': '_blank',
-        'text': 'Settings',
+        'name': 'settings',
+        'href': '/settings',
+        'title': 'Settings',
         'icon': 'icon-gear-white',
       }
     ]

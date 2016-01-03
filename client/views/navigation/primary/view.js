@@ -11,10 +11,10 @@
         m('ul.list-inline-force.pull', [
           c.helpers.items.map(function(item) {
             return m('li', [
-              m('a.btn.' + item.icon + '.icon--right', {
+              m('a.btn.' + item.icon + (item.name === app.route.section ? '.is-active' : '') + '.icon--right', {
                 'href': item.href,
                 'target': item.target || ''
-              }, item.text)
+              }, item.title)
             ]);
           })
         ])

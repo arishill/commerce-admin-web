@@ -3,12 +3,23 @@
 (function(layout, c, m) {
 
   layout.container = {
+    controller: function() {
+      let pathname = window.location.pathname;
+
+      app.route = {
+        pathname: pathname,
+        section: pathname.split('/')[1],
+        subsection: pathname.split('/')[2] || 'dashboard',
+      };
+    },
     view: function() {
       return [
         m.component(c.navigation.primary.container),
         m.component(c.navigation.secondary.container),
         m('section.stage.has-drawer', [
-          m('.contain', []),
+          m('.contain', [
+            m.component(c[app.route.section][app.route.subsection].index.container),
+          ]),
           m('aside.drawer', [
             m('.padding-medium', [
               m('.row', [
