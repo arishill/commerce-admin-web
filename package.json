@@ -18,6 +18,7 @@
   },
   "main": "core/app.js",
   "dependencies": {
+    "accounting": "^0.4.1",
     "body-parser": "^1.13.3",
     "crypto": "0.0.3",
     "dotenv": "^1.2.0",
@@ -26,6 +27,8 @@
     "handlebars": "^4.0.5",
     "jsonwebtoken": "^5.4.1",
     "mithril": "0.2.0",
+    "moment": "^2.11.0",
+    "money": "^0.2.0",
     "underscore": "^1.8.3"
   },
   "devDependencies": {

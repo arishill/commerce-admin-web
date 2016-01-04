@@ -54,8 +54,10 @@
     "node"          : false,
     "globals"       : {},
     "predef"        :[
-      "require",
       "m",
+      "accounting",
+      "money",
+      "moment",
       "app",
       "A",
       "_",
