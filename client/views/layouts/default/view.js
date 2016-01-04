@@ -8,6 +8,8 @@
 
       app.route = {
         pathname: pathname,
+        method: m.route.param('id') ? 'show' : 'index',
+        id: m.route.param('id'),
         section: pathname.split('/')[1],
         subsection: pathname.split('/')[2] || 'dashboard',
       };
@@ -18,7 +20,7 @@
         m.component(c.navigation.secondary.container),
         m('section.stage.has-drawer', [
           m('.contain', [
-            m.component(c[app.route.section][app.route.subsection].index.container),
+            m.component(c[app.route.section][app.route.subsection][app.route.method].container),
           ]),
           m('aside.drawer', [
             m('.padding-medium', [
