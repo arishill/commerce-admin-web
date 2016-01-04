@@ -6,6 +6,7 @@ let Manifest = [
 
   /* shared components */
   'client/views/_shared/header/view.js',
+  'client/views/_shared/checkbox/view.js',
 
   /* primary nav component */
   'client/views/navigation/primary/helpers.js',
@@ -32,6 +33,9 @@ let Manifest = [
     /* orders components */
     'client/views/shop/orders/index/view.js',
     'client/views/shop/orders/show/view.js',
+    'client/views/shop/orders/show/details.view.js',
+    'client/views/shop/orders/show/payment.view.js',
+    'client/views/shop/orders/show/shipment.view.js',
 
     /* coupons components */
     'client/views/shop/coupons/index/view.js',

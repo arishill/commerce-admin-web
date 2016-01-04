@@ -27,19 +27,18 @@
           m('thead', [
             m('tr', [
               m('th.text-center.set-20'),
-              m('th.text-center.set-20'),
-              m('th.text-center.set-30', 'Date'),
-              m('th.text-left.small-3-16[colspan=2]', 'Ship to'),
+              m('th.text-left.set-30', 'Date'),
+              m('th.text-left.small-3-16', 'Ship to'),
               m('th.text-left.small-3-16', m.trust('Name / <em>Email</em>')),
-              m('th.text-left.small-2-16', 'Order Total'),
+              m('th.text-right.small-3-16', 'Order Total'),
               m('th.text-center.small-3-16', 'Status'),
               m('th.text-center.set-30.padding-horz-small'),
               m('th.text-center.set-30.padding-horz-small')
             ]),
           ]),
           m('tbody', [
-            app.model.orders.list().map(function(item) {
-              return m.component(orders.row, item);
+            app.model.orders.list().map(function(item, index) {
+              return m.component(orders.row, item, index);
             })
           ])
         ]);
@@ -51,29 +50,25 @@
   };
 
   orders.row = {
-    view: function(ctrl, item) {
+    view: function(ctrl, item, index) {
       return m('tr', [
-        m('td.text-center.set-20'),
-        m('td.text-center.set-20', [
-          m('a[href=#]', [
-            m('i.icon-double-arrow-down-gray.icon--small')
-          ])
+        m('td.text-center', [
+          m.component(c.checkbox, { checked: false, name: item.id, index: index})
         ]),
-        m('td.text-center', item.date.created),
-        m('td.text-center', 'Flag'),
-        m('td.text-left', 'Paris, France'),
+        m('td.text-left', moment(item.date.created).format('MM/DD/YYYY')),
+        m('td.text-left', item.customer.shipping.address.city + ', ' + item.customer.shipping.address.province),
         m('td.text-left', m.trust(item.customer.name.first + ' ' + item.customer.name.last + '<br>'), [
           m('em', item.email)
         ]),
         m('td.text-right', [
-          m('span', item.receipt.amount.total_cents, [
+          m('span', accounting.formatMoney(item.receipt.amount.total_cents), [
             m('i.padding-left-small.icon-gift-gray'),
             m('i.icon-tag-gray')
           ])
         ]),
         m('td.text-center'),
         m('td.text-center.border-gray.border--left.border--bottom.padding-horz-small.btn-block', [
-          m('a.btn.icon-pencil-black.icon--center[href=#]', 'Edit')
+          m('a.btn.icon-pencil-black.icon--center[href=/shop/orders/'+ item.id + ']', {config: m.route}, 'Edit')
         ]),
         m('td.text-center.border-gray.border--left.border--bottom.padding-horz-small.btn-block', [
           m('form', [

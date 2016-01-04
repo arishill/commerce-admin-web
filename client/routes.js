@@ -8,17 +8,18 @@ m.route(document.getElementById('app'), '/', {
     '/': app.layout.default.container,
 
     /* shop */
-    '/shop': app.layout.default.container,
-    '/shop/reports': app.layout.default.container,
-    '/shop/products': app.layout.default.container,
-    '/shop/categories': app.layout.default.container,
-    '/shop/coupons': app.layout.default.container,
-    '/shop/sales': app.layout.default.container,
-    '/shop/orders': app.layout.default.container,
+    '/shop'             : app.layout.default.container,
+    '/shop/reports'     : app.layout.default.container,
+    '/shop/products'    : app.layout.default.container,
+    '/shop/categories'  : app.layout.default.container,
+    '/shop/coupons'     : app.layout.default.container,
+    '/shop/sales'       : app.layout.default.container,
+    '/shop/orders'      : app.layout.default.container,
+    '/shop/orders/:id'  : app.layout.default.container,
 
     /* content */
-    '/content': app.layout.default.container,
+    '/content'          : app.layout.default.container,
 
     /* settings */
-    '/settings': app.layout.default.container
+    '/settings'         : app.layout.default.container
 });
