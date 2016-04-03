@@ -14,7 +14,7 @@ Below is a sampling of designs of the dashboard, products index, and invoice edi
 ![alt tag](https://storage.googleapis.com/arishill/images/arishill-products.png)
 
 ### Tech
-Arishill Commerce is being built on [Meteor](https://github.com/meteor/meteor), so we can't express our gratitude enough for all that the Meteor team has done. They make our job that much easier.
+Arishill Commerce is being built on NodeJS.
 
 ### Features
 All functionality is handled in local meteor packages. These packages will potentially be broken out into separate repos in the future. Some features (and packages) currently in progress:
@@ -32,13 +32,9 @@ All functionality is handled in local meteor packages. These packages will poten
 - Content (for general collections)
 
 ### History
-The first version of Arishill Commerce was written in PHP back in 2012. It is currently being used by several boutique clients including:
+The first version of Arishill Commerce was written in PHP back in 2011-2012. It is currently being used by several boutique clients.
 
-- [French Garment Cleaners](http://frenchgarmentcleaners.com) — *Boutique in Brooklyn, NY*
-- [Spina NYC](http://spinanyc.com) — *Flower Shop/Event Services Company in New York, NY*
-- [Gwen Penn](http://gwenpenn.com) — *Character shop selling art prints*
-
-This open source version of Arishill Commerce, will be built on the same premise, but is a complete re-design and re-write in MeteroJS improving the first iteration in many ways.
+This open source version of Arishill Commerce, will be built on the same premise, but is a complete re-design and re-write in NodeJS improving the first iteration in many ways.
 
 ==============================
-Copyright (c) 2012-2015 Arishill, LLC
+Copyright (c) 2012-2016 Arishill, LLC
