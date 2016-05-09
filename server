@@ -1,2 +1,0 @@
-pm2 start core/app.js --watch --name=admin
-pm2 logs admin

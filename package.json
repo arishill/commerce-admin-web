@@ -16,7 +16,7 @@
   "engines": {
     "node": ">= v0.10.0"
   },
-  "main": "core/app.js",
+  "main": "server/app.js",
   "dependencies": {
     "accounting": "^0.4.1",
     "body-parser": "^1.13.3",

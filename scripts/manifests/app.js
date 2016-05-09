@@ -1,62 +1,75 @@
 'use strict';
 
 let Manifest = [
-  'client/ext.js',
-  'client/scope.js',
+  'client/_core/ext.js',
+  'client/_core/scope.js',
+
+  /* models */
+  'client/models/products.js',
+  'client/data/products.all.js',
 
   /* shared components */
-  'client/views/_shared/header/view.js',
-  'client/views/_shared/checkbox/view.js',
+  'client/components/_shared/header/header.ui.js',
+  'client/components/_shared/checkbox/checkbox.ui.js',
+  'client/components/_shared/dropdown/dropdown.ui.js',
 
   /* primary nav component */
-  'client/views/navigation/primary/helpers.js',
-  'client/views/navigation/primary/state.js',
-  'client/views/navigation/primary/view.js',
+  'client/components/nav/primary/nav.primary.constants.js',
+  'client/components/nav/primary/nav.primary.controller.js',
+  'client/components/nav/primary/nav.primary.state.js',
+  'client/components/nav/primary/nav.primary.ui.js',
 
   /* secondary nav component */
-  'client/views/navigation/secondary/helpers.js',
-  'client/views/navigation/secondary/state.js',
-  'client/views/navigation/secondary/view.js',
+  'client/components/nav/secondary/nav.secondary.constants.js',
+  'client/components/nav/secondary/nav.secondary.controller.js',
+  'client/components/nav/secondary/nav.secondary.state.js',
+  'client/components/nav/secondary/nav.secondary.ui.js',
 
-  /* content > dashboard component */
-  'client/views/content/dashboard/index/view.js',
-
+  // /* content > dashboard component */
+  // 'client/components/content/dashboard/index/view.js',
+  //
   /* shop ..................................... */
 
     /* dashboard components */
-    'client/views/shop/dashboard/index/view.js',
+    'client/components/shop/dashboard/index/dashboard.index.ui.js',
 
     /* products components */
-    'client/views/shop/products/index/view.js',
-    'client/views/shop/products/show/view.js',
-
-    /* orders components */
-    'client/views/shop/orders/index/view.js',
-    'client/views/shop/orders/show/view.js',
-    'client/views/shop/orders/show/details.view.js',
-    'client/views/shop/orders/show/payment.view.js',
-    'client/views/shop/orders/show/shipment.view.js',
-
-    /* coupons components */
-    'client/views/shop/coupons/index/view.js',
-    'client/views/shop/coupons/show/view.js',
-
-    /* sales components */
-    'client/views/shop/sales/index/view.js',
-    'client/views/shop/sales/show/view.js',
-
-    /* categories components */
-    'client/views/shop/categories/index/view.js',
-    'client/views/shop/categories/show/view.js',
-
-  /* settings > dashboard component */
-  'client/views/settings/dashboard/index/view.js',
+    'client/components/shop/products/index/products.index.ui.js',
+  //   'client/components/shop/products/show/view.js',
+  //
+  //   /* orders components */
+  //   'client/components/shop/orders/index/view.js',
+  //   'client/components/shop/orders/show/view.js',
+  //   'client/components/shop/orders/show/details.view.js',
+  //   'client/components/shop/orders/show/payment.view.js',
+  //   'client/components/shop/orders/show/shipment.view.js',
+  //
+  //   /* coupons components */
+  //   'client/components/shop/coupons/index/view.js',
+  //   'client/components/shop/coupons/show/view.js',
+  //   'client/components/shop/coupons/show/details.view.js',
+  //   'client/components/shop/coupons/show/applies.view.js',
+  //   'client/components/shop/coupons/show/schedule.view.js',
+  //   'client/components/shop/coupons/show/notify.view.js',
+  //
+  //   /* sales components */
+  //   'client/components/shop/sales/index/view.js',
+  //   'client/components/shop/sales/show/view.js',
+  //
+  //   /* categories components */
+  //   'client/components/shop/categories/index/view.js',
+  //   'client/components/shop/categories/show/view.js',
+  //
+  // /* settings > dashboard component */
+  // 'client/components/settings/dashboard/index/view.js',
 
   /* layouts */
-  'client/views/layouts/default/view.js',
+  'client/layouts/standard/standard.controller.js',
+  'client/layouts/standard/standard.state.js',
+  'client/layouts/standard/standard.ui.js',
 
   /* routes */
-  'client/routes.js'
+  'client/_core/routes.js'
 ];
 
 module.exports = Manifest;

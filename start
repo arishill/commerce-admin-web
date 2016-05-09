@@ -1,0 +1,2 @@
+pm2 start server/app.js --watch --name=admin
+pm2 logs admin
