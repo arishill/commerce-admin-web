@@ -2,7 +2,9 @@
 
 Admin.components.shop.products.index.ui.container = {
   controller: function() {
-    Admin.models.products.all();
+    return new Admin.components.shop.products.index.controller({
+      init: true
+    });
   },
   view: function() {
     return m('section#shop-products-index', [
@@ -50,11 +52,22 @@ Admin.components.shop.products.index.ui.table = {
 };
 
 Admin.components.shop.products.index.ui.row = {
+  controller: function() {
+    return new Admin.components.shop.products.index.controller();
+  },
   view: function(ctrl, item) {
     return m('tr', [
       m('td.text-center.set-20'),
       m('td.text-center', [
-        m('.img-placeholder-sq') // <div class="img-1-1" style="background-image: url({{imgix images.thumb 'thumb'}})"></div>
+        ctrl.hasImage(item) ?
+          // if has image
+          m('.img-1-1', {
+            style: {
+              backgroundImage: 'url(' + item.skus[0].images.cascade + ')'
+            }
+          }) :
+          // else
+          m('.img-placeholder-sq')
       ]),
       m('td.text-center', [
         m('form', [
@@ -64,20 +77,25 @@ Admin.components.shop.products.index.ui.row = {
       ]),
       m('td.text-left', item.title),
       m('td.text-center', [
-        m('span.is-block' + (item.flags.is_sale ? 'text--line' : ''), item.price.regular_cents),
-        item.flags.is_sale ? m('span.is-block.text-yellow', item.price.sale_cents) : m('span.is-hidden.is-transparent-mid.text-yellow', item.price.sale_cents)
+        m('span.is-block' + (item.flags.is_sale ? '.text--line' : ''), accounting.formatMoney(item.price.regular_cents/100)),
+        item.flags.is_sale ? m('span.is-block.text-yellow', accounting.formatMoney(item.price.sale_cents/100)) : m('span.is-hidden.is-transparent-mid.text-yellow', item.price.sale_cents)
       ]),
       m('td.text-center', [
         m('form') // sale toggle
       ]),
       m('td.text-center', [
-        m('span', 0) // product stock
+        m('span', item.skus[0].stock)
       ]),
       m('td.text-center.border-gray.border--left.border--bottom.padding-horz-small.btn-block', [
-        m('a.btn.icon-pencil-black.icon--center[href=#]', 'Edit')
+        m('a.btn.icon-pencil-black.icon--center', {
+          href: '/shop/products/' + item.id,
+          config: m.route
+        }, 'Edit')
       ]),
       m('td.text-center.border-gray.border--left.border--bottom.padding-horz-small.btn-block', [
-        m('form', [
+        m('form', {
+          onsubmit: ctrl.deleteProduct
+        }, [
           m('div.bg-white.box-shadow.arrow-right-middle.padding-small.is-hidden[data-confirm]', [
             m('h5.is-inline.margin-right-small', 'Are you sure?'),
             m('a[href=#][data-cancel]btn-gray.btn--small.margin-right-xsmall', 'Cancel'),

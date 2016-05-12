@@ -10,6 +10,7 @@ m.route(document.getElementById('admin'), '/', {
     '/shop'                 : Admin.layouts.standard.ui.container,
     '/shop/reports'         : Admin.layouts.standard.ui.container,
     '/shop/products'        : Admin.layouts.standard.ui.container,
+    '/shop/products/:id'    : Admin.layouts.standard.ui.container,
     '/shop/categories'      : Admin.layouts.standard.ui.container,
     '/shop/coupons'         : Admin.layouts.standard.ui.container,
     '/shop/coupons/:id'     : Admin.layouts.standard.ui.container,
