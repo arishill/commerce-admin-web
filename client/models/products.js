@@ -23,7 +23,6 @@ Admin.models.products.update = function(id, params) {
   Admin.data.products.all.map(function(item) {
     if (item.id === id) {
       item = _.extend({}, item, params);
-      console.log(item);
     }
   });
 };

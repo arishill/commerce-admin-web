@@ -7,6 +7,16 @@ Admin.components.shop.products.show.ui.container = {
     });
   },
   view: function() {
-    return m('section#shop-products-show', 'Show!');
+    if (Admin.models.products.data.single()) {
+      return m('section#shop-products-show', [
+        m('div', Admin.models.products.data.single().title)
+      ]);
+    }
+    else {
+      return m('div.contain--fixed.fill-width.fill-height', [
+        m('.ui-loader')
+      ]);
+    }
+
   }
 };
