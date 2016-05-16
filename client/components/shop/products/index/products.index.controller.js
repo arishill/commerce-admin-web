@@ -11,9 +11,38 @@ Admin.components.shop.products.index.controller = function(opts) {
     return item.skus.length && item.skus[0].images.cascade;
   };
 
-  self.deleteProduct = function(event) {
+  self.toggleSale = function(id, flags, event) {
+    flags.is_sale = !flags.is_sale;
+    Admin.models.products.update(id, {
+      flags: flags
+    });
+  };
+
+  self.toggleStatus = function(id, flags, event) {
+    flags.is_active = !flags.is_active;
+    Admin.models.products.update(id, {
+      flags: flags
+    });
+  };
+
+  self.deleteProduct = function(id, event) {
     event.preventDefault();
-    alert('you are deleting this product!');
+    Admin.components.shop.products.state.isDeleteProcessing(id);
+
+    Admin.models.products.delete(id, function() {
+      Admin.components.shop.products.state.isDeleteProcessing(null);
+      Admin.components.shop.products.state.isDeletingId(null);
+    });
+  };
+
+  self.deleteConfirm = function(id, event) {
+    event.preventDefault();
+    Admin.components.shop.products.state.isDeletingId(id);
+  };
+
+  self.deleteCancel = function(event) {
+    event.preventDefault();
+    Admin.components.shop.products.state.isDeletingId(null);
   };
 
   if (opts && opts.init) {

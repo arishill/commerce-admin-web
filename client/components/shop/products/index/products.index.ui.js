@@ -29,7 +29,7 @@ Admin.components.shop.products.index.ui.table = {
           m('tr', [
             m('th.text-center.set-20'),
             m('th.text-center.small-1-16', 'Thumb'),
-            m('th.text-center.small-1-16', 'Status'),
+            m('th.text-center.set-75', 'Status'),
             m('th.text-left', 'Title'),
             m('th.text-center', 'Price'),
             m('th.text-center', 'On Sale'),
@@ -70,10 +70,9 @@ Admin.components.shop.products.index.ui.row = {
           m('.img-placeholder-sq')
       ]),
       m('td.text-center', [
-        m('form', [
-          m('input[type=hidden]', { value: '0', name: 'flags[is_active]' }),
-          m('input.btn-' + (item.flags.is_active ? 'green' : 'gray') + '.btn--fill.btn--small[type=submit]', { value: item.flags.is_active ? 'Active' : 'Inactive' })
-        ])
+        m('a[href=#].btn-' + (item.flags.is_active ? 'green' : 'gray') + '.btn--fill.btn--no-border.btn--small', {
+          onclick: ctrl.toggleStatus.bind(event, item.id, item.flags)
+        }, item.flags.is_active ? 'Active' : 'Inactive')
       ]),
       m('td.text-left', item.title),
       m('td.text-center', [
@@ -81,7 +80,14 @@ Admin.components.shop.products.index.ui.row = {
         item.flags.is_sale ? m('span.is-block.text-yellow', accounting.formatMoney(item.price.sale_cents/100)) : m('span.is-hidden.is-transparent-mid.text-yellow', item.price.sale_cents)
       ]),
       m('td.text-center', [
-        m('form') // sale toggle
+        m('form', [
+          m.component(Admin.components.shared.toggle.ui.container, {
+            name: 'sale_toggle',
+            index: item.id,
+            checked: item.flags.is_sale,
+            onchange: ctrl.toggleSale.bind(event, item.id, item.flags)
+          })
+        ])
       ]),
       m('td.text-center', [
         m('span', item.skus[0].stock)
@@ -94,14 +100,18 @@ Admin.components.shop.products.index.ui.row = {
       ]),
       m('td.text-center.border-gray.border--left.border--bottom.padding-horz-small.btn-block', [
         m('form', {
-          onsubmit: ctrl.deleteProduct
+          onsubmit: ctrl.deleteProduct.bind(event, item.id)
         }, [
-          m('div.bg-white.box-shadow.arrow-right-middle.padding-small.is-hidden[data-confirm]', [
-            m('h5.is-inline.margin-right-small', 'Are you sure?'),
-            m('a[href=#][data-cancel]btn-gray.btn--small.margin-right-xsmall', 'Cancel'),
-            m('a[href=#][data-ok].btn-red.btn--small', 'Delete')
+          m('div.bg-white.box-shadow.arrow-right-middle.padding-medium[data-confirm]' + (Admin.components.shop.products.state.isDeletingId() === item.id ? '.is-active' : '.is-hidden'), [
+            m('h5.is-inline.margin-right-medium', 'Are you sure?'),
+            m('a.btn-gray.btn--small.margin-right-xsmall', {
+              onclick: ctrl.deleteCancel
+            }, 'Cancel'),
+            m('button.btn-red.btn--small[type=submit]', 'Delete')
           ]),
-          m('input.btn.icon-trash-red.icon--center[type=submit]', { value: 'Delete '})
+          m('button.btn.icon-trash-red.icon--center' + (Admin.components.shop.products.state.isDeleteProcessing() === item.id ? '.is-loading' : ''), {
+            onclick: ctrl.deleteConfirm.bind(event, item.id)
+          }, { value: 'Delete '})
         ])
       ])
     ]);

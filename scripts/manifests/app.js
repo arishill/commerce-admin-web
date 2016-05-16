@@ -11,6 +11,7 @@ let Manifest = [
   'client/components/_shared/header/header.ui.js',
   'client/components/_shared/checkbox/checkbox.ui.js',
   'client/components/_shared/dropdown/dropdown.ui.js',
+  'client/components/_shared/toggle/toggle.ui.js',
 
   /* primary nav component */
   'client/components/nav/primary/nav.primary.constants.js',
@@ -35,6 +36,7 @@ let Manifest = [
     /* products components */
     'client/components/shop/products/data/products.all.js',
     'client/components/shop/products/index/products.index.controller.js',
+    'client/components/shop/products/index/products.index.state.js',
     'client/components/shop/products/index/products.index.ui.js',
     'client/components/shop/products/show/products.show.controller.js',
     'client/components/shop/products/show/products.show.ui.js',

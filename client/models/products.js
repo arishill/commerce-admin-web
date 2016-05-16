@@ -18,3 +18,30 @@ Admin.models.products.retrieve = function(id) {
 
   Admin.models.products.data.single(doc);
 };
+
+Admin.models.products.update = function(id, params) {
+  Admin.data.products.all.map(function(item) {
+    if (item.id === id) {
+      item = _.extend({}, item, params);
+      console.log(item);
+    }
+  });
+};
+
+Admin.models.products.delete = function(id, callback) {
+  let doc;
+
+  Admin.data.products.all.map(function(item, index) {
+    if (item.id === id) {
+      doc = index;
+    }
+  });
+
+  setTimeout(function() {
+    Admin.models.products.data.all().splice(doc, 1);
+    if (callback) {
+      callback();
+      m.endComputation();
+    }
+  }, 500);
+};

@@ -12,6 +12,9 @@ window.Admin = {
       checkbox: {
         ui: {}
       },
+      toggle: {
+        ui: {}
+      },
       header: {
         ui: {}
       },
