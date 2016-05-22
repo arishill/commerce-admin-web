@@ -40,6 +40,15 @@ let Manifest = [
     'client/components/shop/products/index/products.index.ui.js',
     'client/components/shop/products/show/products.show.controller.js',
     'client/components/shop/products/show/products.show.ui.js',
+    'client/components/shop/products/show/ui/products.ui.form.info.js',
+    'client/components/shop/products/show/ui/products.ui.form.price.js',
+    'client/components/shop/products/show/ui/products.ui.form.flags.js',
+    'client/components/shop/products/show/ui/products.ui.form.schedule.js',
+    'client/components/shop/products/show/ui/products.ui.form.categories.js',
+
+    // 'client/components/shop/products/show/ui/products.ui.form.variants.js',
+    'client/components/shop/products/show/ui/products.ui.form.images.js',
+
   //
   //   /* orders components */
   //   'client/components/shop/orders/index/view.js',

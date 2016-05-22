@@ -1,7 +1,7 @@
 'use strict';
 
 Admin.components.shared.dropdown.ui.container = {
-  controller: function() {
+  controller: function(data) {
     let self = this;
 
     self.isOpen = m.prop(false);
@@ -9,7 +9,7 @@ Admin.components.shared.dropdown.ui.container = {
   },
   view: function(ctrl, data) {
     return m('div.dropdown.dropdown--bottom.dropdown--fill.fill-width', [
-      m('a[href=#].btn-dropdown-gray-light.text-left.fill-width', {
+      m('a[href=#].btn-dropdown-' + (data.color ? data.color : 'gray-light') + '.text-left.fill-width', {
         onclick: function(event) {
           event.preventDefault();
           if (ctrl.isOpen()) {
@@ -20,7 +20,10 @@ Admin.components.shared.dropdown.ui.container = {
           }
         }
       }, data.selectedVal() ? data.selectedVal().label : data.label),
-      data.input ? m('input[type=hidden]', { name: ctrl.isChanged() ? data.name : '', value: data.selectedVal().name}) : '',
+      data.input ? m('input[type=hidden]', {
+        name: ctrl.isChanged() ? data.name : '',
+        value: data.selectedVal() ? data.selectedVal().name : null
+      }) : '',
       m('ul.dropdown-list.text-center.text-small.arrow-top-right.box-shadow' + (ctrl.isOpen() ? '.is-active' : ''), [
         data.items.map(function(item){
           return m('li', [

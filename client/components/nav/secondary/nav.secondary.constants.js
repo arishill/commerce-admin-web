@@ -41,15 +41,10 @@ Admin.components.nav.secondary.constants = {
           'title': 'Categories'
         },
         {
-          'name': 'sales',
-          'href': '/shop/sales',
-          'title': 'Sales'
-        },
-        {
-          'name': 'coupons',
-          'href': '/shop/coupons',
-          'title': 'Coupons'
-        },
+          'name': 'discounts',
+          'href': '/shop/discounts',
+          'title': 'Discounts'
+        }
       ],
 
       // group 3

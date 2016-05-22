@@ -48,7 +48,9 @@ window.Admin = {
           ui: {}
         },
         show: {
-          ui: {}
+          ui: {
+            form: {}
+          }
         }
       },
       categories: {

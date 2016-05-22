@@ -6,15 +6,15 @@ Admin.components.shop.products.index.ui.container = {
       init: true
     });
   },
-  view: function() {
+  view: function(ctrl) {
     return m('section#shop-products-index', [
       m.component(Admin.components.shared.header.ui.container, {
         title: 'Products',
         icon: 'icon-product-site',
         buttons: {
-          has_arrange: true,
           has_add: true
-        }
+        },
+        search: ctrl.search
       }),
       m.component(Admin.components.shop.products.index.ui.table)
     ]);
@@ -22,8 +22,11 @@ Admin.components.shop.products.index.ui.container = {
 };
 
 Admin.components.shop.products.index.ui.table = {
-  view: function() {
-    if (Admin.models.products.data.all()) {
+  controller: function() {
+    return new Admin.components.shop.products.index.controller();
+  },
+  view: function(ctrl) {
+    if (ctrl.products()) {
       return m('table.table', [
         m('thead', [
           m('tr', [
@@ -39,7 +42,7 @@ Admin.components.shop.products.index.ui.table = {
           ]),
         ]),
         m('tbody', [
-          Admin.models.products.data.all().map(function(item) {
+          ctrl.products().map(function(item) {
             return m.component(Admin.components.shop.products.index.ui.row, item);
           })
         ])
@@ -56,7 +59,15 @@ Admin.components.shop.products.index.ui.row = {
     return new Admin.components.shop.products.index.controller();
   },
   view: function(ctrl, item) {
-    return m('tr', [
+    return m('tr.has-pointer' + (m.route.param('id') === item.id ? '.bg-gray-xxlight' : ''), {
+      onclick: function(event) {
+        let parent = event.target.parentElement ? event.target.parentElement.nodeName : null;
+        if (parent && parent === 'TD' || event.target.nodeName === 'TD') {
+          event.preventDefault();
+          m.route('/shop/products/' + item.id);
+        }
+      }
+    }, [
       m('td.text-center.set-20'),
       m('td.text-center', [
         ctrl.hasImage(item) ?
@@ -70,9 +81,11 @@ Admin.components.shop.products.index.ui.row = {
           m('.img-placeholder-sq')
       ]),
       m('td.text-center', [
-        m('a[href=#].btn-' + (item.flags.is_active ? 'green' : 'gray') + '.btn--fill.btn--no-border.btn--small', {
-          onclick: ctrl.toggleStatus.bind(event, item.id, item.flags)
-        }, item.flags.is_active ? 'Active' : 'Inactive')
+        m('.contain', [
+          m('a[href=#].btn-' + (item.flags.is_active ? 'green' : 'gray') + '.btn--fill.btn--no-border.btn--small', {
+            onclick: ctrl.toggleStatus.bind(event, item.id, item.flags)
+          }, item.flags.is_active ? 'Active' : 'Inactive')
+        ])
       ]),
       m('td.text-left', item.title),
       m('td.text-center', [
