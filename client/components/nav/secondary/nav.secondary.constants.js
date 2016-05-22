@@ -36,11 +36,6 @@ Admin.components.nav.secondary.constants = {
           'title': 'Products'
         },
         {
-          'name': 'categories',
-          'href': '/shop/categories',
-          'title': 'Categories'
-        },
-        {
           'name': 'discounts',
           'href': '/shop/discounts',
           'title': 'Discounts'

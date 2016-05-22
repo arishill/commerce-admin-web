@@ -6,6 +6,7 @@ let Manifest = [
 
   /* models */
   'client/models/products.js',
+  'client/models/orders.js',
 
   /* shared components */
   'client/components/_shared/header/header.ui.js',
@@ -45,12 +46,14 @@ let Manifest = [
     'client/components/shop/products/show/ui/products.ui.form.flags.js',
     'client/components/shop/products/show/ui/products.ui.form.schedule.js',
     'client/components/shop/products/show/ui/products.ui.form.categories.js',
-
-    // 'client/components/shop/products/show/ui/products.ui.form.variants.js',
     'client/components/shop/products/show/ui/products.ui.form.images.js',
 
-  //
-  //   /* orders components */
+    /* orders components */
+    'client/components/shop/orders/data/orders.all.js',
+    'client/components/shop/orders/index/orders.index.controller.js',
+    'client/components/shop/orders/index/orders.index.state.js',
+    'client/components/shop/orders/index/orders.index.ui.js',
+
   //   'client/components/shop/orders/index/view.js',
   //   'client/components/shop/orders/show/view.js',
   //   'client/components/shop/orders/show/details.view.js',
