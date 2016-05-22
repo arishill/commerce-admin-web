@@ -1,6 +1,7 @@
 Admin.models.products.data = {
   all: m.prop(null),
   single: m.prop(null)
+  search: m.prop(null)
 };
 
 Admin.models.products.all = function() {
@@ -38,6 +39,7 @@ Admin.models.products.delete = function(id, callback) {
 
   setTimeout(function() {
     Admin.models.products.data.all().splice(doc, 1);
+    Admin.models.products.data.search().splice(doc, 1);
     if (callback) {
       callback();
       m.endComputation();
