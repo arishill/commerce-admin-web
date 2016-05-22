@@ -6,6 +6,9 @@ Admin.components.nav.secondary.ui.container = {
   },
   view: function() {
     return m('nav.nav-secondary', [
+      m('div.bg-site.fill-width.padding-vert-xsmall.text-center.contain', [
+        m('h1.symbol-logo-default', 'Your Co.')
+      ]),
       Admin.components.nav.secondary.constants[Admin.route.section].items.map(function(group) {
         return m('ul.list-no-bullets', [
           group.map(function(item){
