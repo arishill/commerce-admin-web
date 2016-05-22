@@ -13,7 +13,7 @@ Below is a screenshot of the products index view to give an idea of what's in st
 ![alt tag](https://storage.googleapis.com/arishill-demo/arishill-commerce-admin.png)
 
 ### Tech
-Arishill Commerce Admin is being built on NodeJS. It will utilize the Arishill Commerce API. You can learn more how the API will work by checking out our [API Docs](https://arishill.com/docs).
+Arishill Commerce Admin is being built on [NodeJS](https://nodejs.org/) server-side and [Mithril](http://mithril.js.org/) client-side. It will utilize the Arishill Commerce API. You can learn more how the API will work by checking out our [API Docs](https://arishill.com/docs).
 
 ### Features
 Some feature currently in progress:
