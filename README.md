@@ -1,7 +1,7 @@
-Arishill Commerce
+Arishill Commerce Admin (Web)
 ==============================
 
-Arishill Commerce is a work in progress. It is not yet ready for production use, as most features are not in a complete workable state.
+Arishill Commerce is a work in progress. It is not yet ready for production use, as most features are not in a complete workable state. This repo is for the Web Admin of the platform.
 
 The goal of Arishill Commerce is to be an open source commerce platform for growing businesses. We aim to create something that is flexible and easy for developers to use.
 
