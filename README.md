@@ -7,15 +7,13 @@ The goal of Arishill Commerce is to be an open source commerce platform for grow
 
 We have a ways to go, but figured it useful to begin making our progress publicly available.
 
-### Design Preview
-Below is a sampling of designs of the dashboard, products index, and invoice edit page to give an idea of what's in store.
+### Preview
+Below is a screenshot of the products index view to give an idea of what's in store for the Commerce Admin.
 
-![alt tag](https://storage.googleapis.com/arishill/images/arishill-dashboard.png)
-![alt tag](https://storage.googleapis.com/arishill/images/arishill-invoices.png)
-![alt tag](https://storage.googleapis.com/arishill/images/arishill-products.png)
+![alt tag](https://storage.googleapis.com/arishill-demo/arishill-commerce-admin.png)
 
 ### Tech
-Arishill Commerce is being built on NodeJS.
+Arishill Commerce Admin is being built on NodeJS. It will utilize the Arishill Commerce API. You can learn more how the API will work by checking out our [API Docs](https://arishill.com/docs).
 
 ### Features
 Some feature currently in progress:
