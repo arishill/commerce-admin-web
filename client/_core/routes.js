@@ -17,6 +17,7 @@ m.route(document.getElementById('admin'), '/', {
     '/shop/sales'           : Admin.layouts.standard.ui.container,
     '/shop/orders'          : Admin.layouts.standard.ui.container,
     '/shop/orders/:id'      : Admin.layouts.standard.ui.container,
+    '/shop/orders/:id/:tab' : Admin.layouts.standard.ui.container,
 
     /* content */
     '/content'              : Admin.layouts.standard.ui.container,
