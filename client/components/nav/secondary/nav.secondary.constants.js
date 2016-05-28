@@ -21,11 +21,6 @@ Admin.components.nav.secondary.constants = {
         'name': 'dashboard',
         'href': '/shop',
         'title': 'Dashboard'
-        },
-        {
-          'name': 'reports',
-          'href': '/shop/reports',
-          'title': 'Reports'
         }
       ],
       // group 2

@@ -31,13 +31,13 @@ Admin.layouts.standard.ui.drawer = {
 
     return m('aside.drawer' + (Admin.layouts.standard.state.hasDrawer() ? '.is-active' : ''), [
       m('.relative.fill-width.fill-height', [
-        m('.absolute.top.right.z-top.padding-right-xsmall.padding-top-small', [
+        m('.absolute.top.right.z-top.margin-right-xsmall.margin-top-small', [
           m('a.icon-x-black.icon--small.icon--center', {
             href: '/' + Admin.route.section + '/' + Admin.route.subsection,
             config: m.route
           }, 'Close')
         ]),
-        m('.row', [
+        m('.row.padding-top-medium', [
           drawerComponent
         ])
       ])

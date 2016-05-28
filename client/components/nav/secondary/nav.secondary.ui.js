@@ -19,10 +19,10 @@ Admin.components.nav.secondary.ui.container = {
             ]);
           })
         ]);
-      }),
-      m('p.contain-abs-bottom.contain--50.text-center.padding-bottom-small', [
-        m('a.text-gray.text--small.icon-help-site.icon--bottom[href=#]', 'Help for this page')
-      ])
+      })
+      // m('p.contain-abs-bottom.contain--50.text-center.padding-bottom-small', [
+      //   m('a.text-gray.text--small.icon-help-site.icon--bottom[href=#]', 'Help for this page')
+      // ])
     ]);
   }
 };
