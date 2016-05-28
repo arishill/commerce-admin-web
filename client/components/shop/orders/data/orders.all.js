@@ -203,7 +203,7 @@ Admin.data.orders = {
             "line_2": null,
             "city": 'Arishill',
             "province": 'Geshire',
-            "postal_code": 'A512',
+            "postal_code": '94022',
             "country_code": "US"
           },
           "delivery": {
@@ -606,7 +606,8 @@ Admin.data.orders = {
             "line_2": null,
             "city": "Wigolia",
             "province": "Geshire",
-            "postal_code": 'W198',
+            "postal_code": '94022',
+            // "postal_code": 'W198',
             "country_code": "US"
           },
           "delivery": {
@@ -619,8 +620,8 @@ Admin.data.orders = {
             "line_1": "Cherry Valley Road 1208",
             "line_2": null,
             "city": "Wigolia",
-            "province": "Geshire",
-            "postal_code": 'W198',
+            "postal_code": '94022',
+            // "postal_code": 'W198',
             "country_code": "US"
           }
         }
@@ -837,7 +838,8 @@ Admin.data.orders = {
             "line_2": null,
             "city": "Augember",
             "province": "Geshire",
-            "postal_code": 'AG198',
+            "postal_code": '94022',
+            // "postal_code": 'AG198',
             "country_code": "US"
           },
           "delivery": {
@@ -850,8 +852,8 @@ Admin.data.orders = {
             "line_1": "Old Willow Lane",
             "line_2": null,
             "city": "Augember",
-            "province": "Geshire",
-            "postal_code": 'AG198',
+            "postal_code": '94022',
+            // "postal_code": 'AG198',
             "country_code": "US"
           }
         }
