@@ -20,7 +20,8 @@ app.get('*', function(request, response) {
     API: {
       url: process.env.API_URL,
       key: process.env.API_KEY
-    }
+    },
+    GOOGLE_API_KEY: process.env.GOOGLE_PUBLIC_API_KEY
   };
 
   fs.readFile(__dirname + '/layout.html', 'utf8', function(err, source){
