@@ -17,9 +17,15 @@ Admin.components.shared.header.ui.container = {
       ]),
       m('div.col.small-1-2.text-right', [
         data.buttons.has_arrange ? m('a[href=#].btn-white.btn--medium.icon--left.icon-arrange-site.icon--small.margin-right-small', 'Arrange ' + data.title) : '',
-        data.buttons.has_add ? m('a.btn-white.btn--medium.icon--left.icon-plus-site.icon--small', {
+        data.buttons.has_add ? m('a.btn-white.btn--medium.icon--left.icon-plus-' + (Admin.components.shared.header.state.addHover() ? 'black' : 'gray') + '.icon--small', {
           href: m.route() + '/create',
-          config: m.route
+          config: m.route,
+          onmouseenter: function() {
+            Admin.components.shared.header.state.addHover(true);
+          },
+          onmouseleave: function() {
+            Admin.components.shared.header.state.addHover(false);
+          }
         }, 'Add ' + data.title.replace(/s$/, '') ) : ''
       ])
     ]);
