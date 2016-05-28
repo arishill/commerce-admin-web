@@ -18,6 +18,7 @@ Admin.components.shop.orders.show.controller = function(opts) {
     }
 
     if (m.route.param('id')) {
+      Admin.models.orders.data.single(null);
       setTimeout(function() {
         Admin.models.orders.retrieve(m.route.param('id'), function() {
           Admin.components.shop.orders.show.state.geocodeData(null);
