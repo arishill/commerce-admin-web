@@ -12,7 +12,7 @@ Admin.models.orders.create = function(obj) {
   Admin.data.orders.all.push(obj);
 };
 
-Admin.models.orders.retrieve = function(id) {
+Admin.models.orders.retrieve = function(id, callback) {
   let doc = null;
 
   if (id === 'new') {
@@ -28,6 +28,10 @@ Admin.models.orders.retrieve = function(id) {
   }
 
   Admin.models.orders.data.single(doc);
+
+  if (callback) {
+    callback(); 
+  }
 };
 
 Admin.models.orders.update = function(id, params) {
