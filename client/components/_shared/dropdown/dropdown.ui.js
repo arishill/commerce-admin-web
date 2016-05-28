@@ -4,6 +4,7 @@ Admin.components.shared.dropdown.ui.container = {
   controller: function(data) {
     let self = this;
 
+    self.selected = m.prop(data.selectedVal());
     self.isOpen = m.prop(false);
     self.isChanged = m.prop(false);
   },
@@ -19,22 +20,23 @@ Admin.components.shared.dropdown.ui.container = {
             ctrl.isOpen(true);
           }
         }
-      }, data.selectedVal() ? data.selectedVal().label : data.label),
+      }, ctrl.selected() ? ctrl.selected().label : data.label),
       data.input ? m('input[type=hidden]', {
         name: ctrl.isChanged() ? data.name : '',
-        value: data.selectedVal() ? data.selectedVal().name : null
+        value: ctrl.selected() ? ctrl.selected().name : null
       }) : '',
       m('ul.dropdown-list.text-center.text-small.arrow-top-right.box-shadow' + (ctrl.isOpen() ? '.is-active' : ''), [
         data.items.map(function(item){
           return m('li', [
             m('a', { href: item.link ? item.link : '#', onclick: function(event) {
               event.preventDefault();
-              data.selectedVal({
+              ctrl.selected({
                 name: item.name,
                 label: item.label
               });
               ctrl.isChanged(true);
               ctrl.isOpen(false);
+              data.onselect(ctrl.selected());
             } }, item.label)
           ]);
         })
