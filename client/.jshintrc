@@ -59,6 +59,8 @@
     "Admin",
     "accounting",
     "_",
-    "moment"
+    "moment",
+    "GoogleMaps",
+    "google"
   ]
 }
