@@ -37,13 +37,12 @@ Admin.components.shop.products.index.ui.table = {
             m('th.text-center', 'Price'),
             m('th.text-center', 'On Sale'),
             m('th.text-center', 'Stock'),
-            m('th.text-center.set-30.padding-horz-small'),
-            m('th.text-center.set-30.padding-horz-small')
+            // m('th.text-center.set-30.padding-horz-small')
           ]),
         ]),
         m('tbody', [
-          ctrl.products().map(function(item) {
-            return m.component(Admin.components.shop.products.index.ui.row, item);
+          ctrl.products().map(function(item, index) {
+            return m.component(Admin.components.shop.products.index.ui.row, item, index);
           })
         ])
       ]);
@@ -58,7 +57,7 @@ Admin.components.shop.products.index.ui.row = {
   controller: function() {
     return new Admin.components.shop.products.index.controller();
   },
-  view: function(ctrl, item) {
+  view: function(ctrl, item, index) {
     return m('tr.has-pointer' + (m.route.param('id') === item.id ? '.bg-gray-xxlight' : ''), {
       onclick: function(event) {
         let parent = event.target.parentElement ? event.target.parentElement.nodeName : null;
@@ -68,7 +67,9 @@ Admin.components.shop.products.index.ui.row = {
         }
       }
     }, [
-      m('td.text-center.set-20'),
+      m('td.text-center.set-20', [
+        m.component(Admin.components.shared.checkbox.ui.container, { checked: false, name: item.id, index: index})
+      ]),
       m('td.text-center', [
         ctrl.hasImage(item) ?
           // if has image
@@ -104,29 +105,29 @@ Admin.components.shop.products.index.ui.row = {
       ]),
       m('td.text-center', [
         m('span', item.skus[0].stock)
-      ]),
-      m('td.text-center.border-gray.border--left.border--bottom.padding-horz-small.btn-block', [
-        m('a.btn.icon-pencil-black.icon--center', {
-          href: '/shop/products/' + item.id,
-          config: m.route
-        }, 'Edit')
-      ]),
-      m('td.text-center.border-gray.border--left.border--bottom.padding-horz-small.btn-block', [
-        m('form', {
-          onsubmit: ctrl.deleteProduct.bind(event, item.id)
-        }, [
-          m('div.bg-white.box-shadow.arrow-right-middle.padding-medium[data-confirm]' + (Admin.components.shop.products.state.isDeletingId() === item.id ? '.is-active' : '.is-hidden'), [
-            m('h5.is-inline.margin-right-medium', 'Are you sure?'),
-            m('a.btn-gray.btn--small.margin-right-xsmall', {
-              onclick: ctrl.deleteCancel
-            }, 'Cancel'),
-            m('button.btn-red.btn--small[type=submit]', 'Delete')
-          ]),
-          m('button.btn.icon-trash-red.icon--center' + (Admin.components.shop.products.state.isDeleteProcessing() === item.id ? '.is-loading' : ''), {
-            onclick: ctrl.deleteConfirm.bind(event, item.id)
-          }, { value: 'Delete '})
-        ])
       ])
+      // m('td.text-center.border-gray.border--left.border--bottom.padding-horz-small.btn-block', [
+      //   m('a.btn.icon-pencil-black.icon--center', {
+      //     href: '/shop/products/' + item.id,
+      //     config: m.route
+      //   }, 'Edit')
+      // ]),
+      // m('td.text-center.border-gray.border--left.border--bottom.padding-horz-small.btn-block', [
+      //   m('form', {
+      //     onsubmit: ctrl.deleteProduct.bind(event, item.id)
+      //   }, [
+      //     m('div.bg-white.box-shadow.arrow-right-middle.padding-medium[data-confirm]' + (Admin.components.shop.products.state.isDeletingId() === item.id ? '.is-active' : '.is-hidden'), [
+      //       m('h5.is-inline.margin-right-medium', 'Are you sure?'),
+      //       m('a.btn-gray.btn--small.margin-right-xsmall', {
+      //         onclick: ctrl.deleteCancel
+      //       }, 'Cancel'),
+      //       m('button.btn-red.btn--small[type=submit]', 'Delete')
+      //     ]),
+      //     m('button.btn.icon-trash-red.icon--center' + (Admin.components.shop.products.state.isDeleteProcessing() === item.id ? '.is-loading' : ''), {
+      //       onclick: ctrl.deleteConfirm.bind(event, item.id)
+      //     }, { value: 'Delete '})
+      //   ])
+      // ])
     ]);
   }
 };
