@@ -4,20 +4,29 @@ Admin.components.shop.orders.show.controller = function(opts) {
   let self = this;
 
   self.init = function() {
-    Admin.models.orders.data.single(null);
-    setTimeout(function() {
-      if (m.route.param('id')) {
+    if (m.route.param('tab')) {
+      Admin.components.shop.orders.show.state.page(m.route.param('tab'));
+    }
+
+    if (Admin.models.orders.data.single() && Admin.models.orders.data.single().id === m.route.param('id')) {
+      return;
+    }
+
+    if (m.route().match(/create/)) {
+      Admin.models.orders.retrieve('new');
+      return;
+    }
+
+    if (m.route.param('id')) {
+      setTimeout(function() {
         Admin.models.orders.retrieve(m.route.param('id'), function() {
           Admin.components.shop.orders.show.state.geocodeData(null);
             self.getGeocodeData();
         });
-      }
-      if (m.route().match(/create/)) {
-        Admin.models.orders.retrieve('new');
-      }
 
-      m.endComputation();
-    }, 600);
+        m.endComputation();
+      }, 600);
+    }
   };
 
   self.cardType = function(card) {
@@ -132,7 +141,7 @@ Admin.components.shop.orders.show.controller = function(opts) {
     if (Admin.components.shop.orders.show.state.geocodeData()) {
       let map = new google.maps.Map(el, {
         center: Admin.components.shop.orders.show.state.geocodeData()[0].geometry.location,
-        zoom: 7
+        zoom: 10
       });
 
       let marker = new google.maps.Marker({

@@ -7,11 +7,11 @@ Admin.components.shop.orders.show.ui.form.payment = {
   view: function(ctrl) {
     let status = ctrl.getPaymentStatus(Admin.models.orders.data.single());
     return m('section#orders-form-payment', [
-      m('h3.form-title', 'Status'),
+      m('h3.form-title', 'Payment Status'),
       m('.row.margin-vert-medium', [
         m('div.col.small-1-2.text-left', [
           m('h4.padding-top-xsmall', [
-            m('span.tag-' + status.color + '.is-inline', status.text),
+            m('span.tag-' + status.color + '.tag--fixed.is-inline', status.text),
           ])
         ]),
         m('div.col.small-1-2.text-right', [

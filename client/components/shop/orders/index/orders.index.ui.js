@@ -33,15 +33,11 @@ Admin.components.shop.orders.index.ui.table = {
             m('th.text-center.set-20'),
             m('th.text-center', 'Order No.'),
             m('th.text-left.set-30', 'Date'),
-            m('th.text-center', [
-              m('span.inline.padding-right-large', 'Payment')
-            ]),
-            m('th.text-center', [
-              m('span.inline.padding-right-large', 'Fulfillment')
-            ]),
             m('th.text-left.small-3-16', 'Ship to'),
             m('th.text-left', 'Name'),
-            m('th.text-right', 'Order Total')
+            m('th.text-right', 'Order Total'),
+            m('th.text-center', 'Payment'),
+            m('th.text-center', 'Fulfillment')
           ]),
         ]),
         m('tbody', [
@@ -76,30 +72,6 @@ Admin.components.shop.orders.index.ui.row = {
       ]),
       m('td.text-left.text-center', item.order_number),
       m('td.text-left', moment(item.date.created).format('MM/DD/YYYY')),
-      m('td.text-center', [
-        m('.contain', [
-          m('div', [
-            m('span.tag-' + ctrl.getPaymentStatus(item).color, {
-              style: {
-                minWidth: '90px'
-              }
-            }, ctrl.getPaymentStatus(item).text),
-            m('i.icon.icon--medium.icon-' + ctrl.getPaymentStatus(item).icon + '-gray.margin-left-small'),
-          ])
-        ])
-      ]),
-      m('td.text-center', [
-        m('.contain', [
-          m('div', [
-            m('span.tag-' + ctrl.getFulfillmentStatus(item).color, {
-              style: {
-                minWidth: '90px'
-              }
-            }, ctrl.getFulfillmentStatus(item).text),
-            m('i.icon.icon--medium.icon-' + ctrl.getFulfillmentStatus(item).icon + '-gray.margin-left-small'),
-          ])
-        ])
-      ]),
       m('td.text-left', item.customer.shipping.address.city + ', ' + item.customer.shipping.address.province),
       m('td.text-left', [
         m('span', [
@@ -112,6 +84,28 @@ Admin.components.shop.orders.index.ui.row = {
         m('span', accounting.formatMoney(item.receipt.amount.total_cents/100), [
           item.options.gift_wrapping ? m('i.padding-left-small.icon-gift-gray') : '',
           item.receipt.discount_code ? m('i.icon-tag-gray') : ''
+        ])
+      ]),
+      m('td.text-center', [
+        m('.contain', [
+          m('div', [
+            m('span.tag-' + ctrl.getPaymentStatus(item).color, {
+              style: {
+                minWidth: '90px'
+              }
+            }, ctrl.getPaymentStatus(item).text)
+          ])
+        ])
+      ]),
+      m('td.text-center', [
+        m('.contain', [
+          m('div', [
+            m('span.tag-' + ctrl.getFulfillmentStatus(item).color, {
+              style: {
+                minWidth: '90px'
+              }
+            }, ctrl.getFulfillmentStatus(item).text)
+          ])
         ])
       ])
     ]);

@@ -1,7 +1,7 @@
 'use strict';
 
 /* .........................................
-  Products Show Container
+  Orders Show Container
 ......................................... */
 Admin.components.shop.orders.show.ui.container = {
   controller: function() {
@@ -24,12 +24,11 @@ Admin.components.shop.orders.show.ui.container = {
         m('.loader.loader--medium')
       ]);
     }
-
   }
 };
 
 /* .........................................
-  Products Show Header
+  Orders Show Header
 ......................................... */
 Admin.components.shop.orders.show.ui.header = {
   controller: function() {
@@ -40,7 +39,7 @@ Admin.components.shop.orders.show.ui.header = {
       m('div.row.padding-medium', [
         m('.col.small-2-3.text-left.text-middle', [
           m('h1.is-inline.margin-left-small.text-middle', [
-            m('strong.is-inline.head-black.text--large',  m.route().match(/create/) ? 'Create Order' : 'Order #' + Admin.models.orders.data.single().id.split('-')[0]),
+            m('strong.is-inline.head-black.text--large',  m.route().match(/create/) ? 'Create Order' : 'Order #' + Admin.models.orders.data.single().order_number),
           ])
         ]),
         m('.col.small-1-3.text-right.text-middle', [
@@ -49,8 +48,8 @@ Admin.components.shop.orders.show.ui.header = {
             color: 'white',
             input: true,
             selectedVal: m.prop({
-              name: 'receipt',
-              label: 'Receipt'
+              name: Admin.components.shop.orders.show.state.page(),
+              label: _.capitalizeFirstLetter(Admin.components.shop.orders.show.state.page())
             }),
             name: 'order_show_location',
             items: [
@@ -72,7 +71,7 @@ Admin.components.shop.orders.show.ui.header = {
               }
             ],
             onselect: function(selected) {
-              Admin.components.shop.orders.show.state.page(selected.name);
+              m.route('/shop/orders/' + Admin.models.orders.data.single().id + '/' + selected.name);
             }
           })
         ])
