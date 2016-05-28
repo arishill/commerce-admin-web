@@ -14,7 +14,8 @@ Admin.components.nav.secondary.ui.container = {
           group.map(function(item){
             return m('li', [
               m('a.btn-block-site' + (item.name === Admin.route.subsection ? '.is-active' : ''), {
-                'href': item.href,
+                href: item.href,
+                config: m.route,
               }, item.title)
             ]);
           })
