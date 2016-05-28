@@ -4,6 +4,9 @@ let Manifest = [
   'client/_core/ext.js',
   'client/_core/scope.js',
 
+  /* utils */
+  'client/_utils/utils.strings.js',
+
   /* models */
   'client/models/products.js',
   'client/models/orders.js',
