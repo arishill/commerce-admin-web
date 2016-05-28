@@ -19,46 +19,66 @@ Admin.components.shop.orders.index.controller = function(opts) {
     }
   };
 
-  self.getShipmentColor = function(item) {
-    let color = 'gray';
-
-    switch (item.shipments[0].status) {
-      case 'delivered':
-        color = 'green';
-        break;
-      case 'cancelled':
-        color = 'gray';
-        break;
-      case 'pending':
-        color = 'yellow';
-        break;
-      case 'fail':
-        color = 'red';
-        break;
-    }
-
-    return color;
-  };
-
-  self.getPaymentColor = function(item) {
-    let color = 'gray';
+  self.getPaymentStatus = function(item) {
+    let status = {
+      color: 'gray',
+      text: null,
+      icon: 'credit-card'
+    };
 
     switch (item.payment.status) {
       case 'approved':
-        color = 'green';
+        status.text = 'Approved';
+        status.color = 'green';
         break;
       case 'cancelled':
-        color = 'gray';
+        status.text = 'Cancelled';
+        status.color = 'gray';
+        break;
+      case 'declined':
+        status.text = 'Decline';
+        status.color = 'red';
         break;
       case 'pending':
-        color = 'yellow';
-        break;
-      case 'fail':
-        color = 'red';
+        status.text = 'Pending';
+        status.color = 'orange';
         break;
     }
 
-    return color;
+    return status;
+  };
+
+  self.getFulfillmentStatus = function(item) {
+    let status = {
+      color: 'gray',
+      text: null,
+      icon: 'truck'
+    };
+
+    if (item.fulfillment.method.match(/digital_download/)) {
+      status.icon = 'download';
+    }
+
+    switch (item.fulfillment.status) {
+      case 'delivered':
+        status.text = 'Delivered';
+        status.color = 'green';
+        break;
+      case 'in_transit':
+        status.text = 'In transit';
+        status.color = 'orange';
+        break;
+      case 'pending':
+        status.text = 'Pending';
+        status.color = 'orange';
+        break;
+      case 'failed':
+        status.text = 'Failed';
+        status.color = 'red';
+        break;
+    }
+
+    return status;
   };
 
   self.search = function(event) {
