@@ -6,7 +6,8 @@ window.Admin = {
   },
   models: {
     products: {},
-    orders: {}
+    orders: {},
+    discounts: {}
   },
   components: {
     shared: {
@@ -67,6 +68,16 @@ window.Admin = {
         show: {}
       },
       orders: {
+        index: {
+          ui: {}
+        },
+        show: {
+          ui: {
+            form: {}
+          }
+        }
+      },
+      discounts: {
         index: {
           ui: {}
         },

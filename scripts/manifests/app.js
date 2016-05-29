@@ -9,6 +9,7 @@ let Manifest = [
 
   /* models */
   'client/models/products.js',
+  'client/models/discounts.js',
   'client/models/orders.js',
 
   /* shared components */
@@ -64,6 +65,14 @@ let Manifest = [
     'client/components/shop/orders/show/ui/orders.ui.form.payment.js',
     'client/components/shop/orders/show/ui/orders.ui.form.fulfillment.js',
 
+    /* discounts components */
+    'client/components/shop/discounts/data/discounts.all.js',
+    'client/components/shop/discounts/index/discounts.index.controller.js',
+    'client/components/shop/discounts/index/discounts.index.state.js',
+    'client/components/shop/discounts/index/discounts.index.ui.js',
+    'client/components/shop/discounts/show/discounts.show.controller.js',
+    'client/components/shop/discounts/show/discounts.show.state.js',
+    'client/components/shop/discounts/show/discounts.show.ui.js',
   //
   //   /* coupons components */
   //   'client/components/shop/coupons/index/view.js',

@@ -8,13 +8,11 @@ m.route(document.getElementById('admin'), '/', {
 
     /* shop */
     '/shop'                 : Admin.layouts.standard.ui.container,
-    '/shop/reports'         : Admin.layouts.standard.ui.container,
+    '/shop/discounts'       : Admin.layouts.standard.ui.container,
+    '/shop/discounts/:id'   : Admin.layouts.standard.ui.container,
     '/shop/products'        : Admin.layouts.standard.ui.container,
     '/shop/products/:id'    : Admin.layouts.standard.ui.container,
     '/shop/categories'      : Admin.layouts.standard.ui.container,
-    '/shop/coupons'         : Admin.layouts.standard.ui.container,
-    '/shop/coupons/:id'     : Admin.layouts.standard.ui.container,
-    '/shop/sales'           : Admin.layouts.standard.ui.container,
     '/shop/orders'          : Admin.layouts.standard.ui.container,
     '/shop/orders/:id'      : Admin.layouts.standard.ui.container,
     '/shop/orders/:id/:tab' : Admin.layouts.standard.ui.container,
