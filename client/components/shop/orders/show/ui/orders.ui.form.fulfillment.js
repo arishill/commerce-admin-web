@@ -8,16 +8,16 @@ Admin.components.shop.orders.show.ui.form.fulfillment = {
     let status = ctrl.getFulfillmentStatus(Admin.models.orders.data.single());
 
     return m('section#orders-form-fulfillment', [
-      m('h3.form-title', 'Fulfillment Status'),
       m('.row.margin-vert-medium', [
         m('div.col.small-1-2.text-left', [
-          m('h4.padding-top-xsmall', [
+          m('h4.padding-top-xsmall.text-gray', [
+            m('span.is-inline.padding-right-small','Status: '),
             m('span.tag-' + status.color + '.tag--fixed.is-inline', status.text),
           ])
         ]),
         m('div.col.small-1-2.text-right', [
           Admin.models.orders.data.single().fulfillment.status === 'delivered' ?
-            m('a.btn-white.icon-truck-white.icon--left[href=#]', 'View Tracking') :
+            m('a.btn-black.icon-tracking-white.icon--left[href=#]', 'View Tracking') :
             m('a.btn-black.icon-truck-white.icon--left[href=#]', 'Ship Now')
         ])
       ]),
@@ -34,7 +34,10 @@ Admin.components.shop.orders.show.ui.form.fulfillment = {
                     Admin.models.orders.data.single().customer.shipping.address.line_1 + '<br>' +
                     (Admin.models.orders.data.single().customer.shipping.address.line_2 ? Admin.models.orders.data.single().customer.shipping.address.line_2 + '<br>' : '') +
                     Admin.models.orders.data.single().customer.shipping.address.city + ', ' + Admin.models.orders.data.single().customer.shipping.address.province + ' ' + Admin.models.orders.data.single().customer.shipping.address.postal_code
-                  ))
+                  )),
+                  m('a.btn-white.btn--small.icon--small.icon--left.icon-profile.absolute.bottom.right.margin-bottom-medium.margin-right-medium', {
+                    href: '#'
+                  }, 'Customer')
                 ]),
                 Admin.models.orders.data.single().customer.shipping.delivery.instructions ?
                 m('div.col.small-1-3', [

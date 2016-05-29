@@ -7,10 +7,10 @@ Admin.components.shop.orders.show.ui.form.payment = {
   view: function(ctrl) {
     let status = ctrl.getPaymentStatus(Admin.models.orders.data.single());
     return m('section#orders-form-payment', [
-      m('h3.form-title', 'Payment Status'),
       m('.row.margin-vert-medium', [
         m('div.col.small-1-2.text-left', [
-          m('h4.padding-top-xsmall', [
+          m('h4.padding-top-xsmall.text-gray', [
+            m('span.is-inline.padding-right-small','Status: '),
             m('span.tag-' + status.color + '.tag--fixed.is-inline', status.text),
           ])
         ]),
@@ -35,6 +35,9 @@ Admin.components.shop.orders.show.ui.form.payment = {
                   Admin.models.orders.data.single().customer.shipping.address.city + ', ' + Admin.models.orders.data.single().customer.shipping.address.province + ' ' + Admin.models.orders.data.single().customer.shipping.address.postal_code + ', ' + Admin.models.orders.data.single().customer.shipping.address.country_code
                 )
               ),
+              m('a.btn-white.btn--small.icon--small.icon--left.icon-profile.absolute.bottom.right.margin-bottom-medium.margin-right-medium', {
+                href: '#'
+              }, 'Customer')
             ]),
             m('ul.list-inline.padding-medium', [
               m('li.icon--left.icon-mail-gray.padding-right-medium', Admin.models.orders.data.single().customer.email),

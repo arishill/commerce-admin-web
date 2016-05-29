@@ -6,18 +6,25 @@ Admin.components.shop.orders.show.ui.form.receipt = {
   },
   view: function(ctrl) {
     return m('section#orders-form-receipt', [
+      m('.row.padding-vert-medium.relative', [
+        m('p.text-gray', Admin.models.orders.data.single().customer.name.first + ' ' + Admin.models.orders.data.single().customer.name.last),
+        m('p.text-gray.icon--left.icon-mail-gray.padding-right-medium', Admin.models.orders.data.single().customer.email),
+        m('a.btn-black.icon--left.icon-profile-white.absolute.top.right.margin-top-medium', {
+          href: '#'
+        }, 'Customer')
+      ]),
       m('h3.form-title.relative', 'Items ', [
         m('div.form-title--action',
           Admin.components.shop.orders.show.state.isEditingItems() ? [
             m('a.btn-white.btn--small.icon--left.icon--xsmall.icon-plus-site[href=#].margin-right-xsmall', 'Item'),
             m('a.btn-white.btn--small.icon--left.icon--xsmall.icon-plus-site[href=#].margin-right-xsmall', 'Discount'),
-            m('a[href=#].btn-black.btn--small', {
+            m('a[href=#].btn-green.btn--small', {
               onclick: function(event) {
                 event.preventDefault();
                 Admin.components.shop.orders.show.state.isEditingItems(false);
               }
-            }, 'Done') ] :
-            [m('a[href=#].btn-black.btn--small.icon-pencil-white.icon--center', {
+            }, 'Save') ] :
+            [m('a[href=#].btn-white.btn--small.icon-pencil-black.icon--center', {
               onclick: function(event) {
                 event.preventDefault();
                 Admin.components.shop.orders.show.state.isEditingItems(true);

@@ -63,7 +63,6 @@ let Manifest = [
     'client/components/shop/orders/show/ui/orders.ui.form.receipt.js',
     'client/components/shop/orders/show/ui/orders.ui.form.payment.js',
     'client/components/shop/orders/show/ui/orders.ui.form.fulfillment.js',
-    'client/components/shop/orders/show/ui/orders.ui.form.customer.js',
 
   //
   //   /* coupons components */

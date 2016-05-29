@@ -37,9 +37,10 @@ Admin.components.shop.orders.show.ui.header = {
   view: function(ctrl) {
     return m('header.absolute.fill-width.bg-white.z-high.border-gray-light.border--bottom', [
       m('div.row.padding-medium', [
-        m('.col.small-2-3.text-left.text-middle', [
-          m('h1.is-inline.margin-left-small.text-middle', [
-            m('strong.is-inline.head-black.text--large',  m.route().match(/create/) ? 'Create Order' : 'Order #' + Admin.models.orders.data.single().order_number),
+        m('.col.small-2-3.text-left', [
+          m('h1.margin-left-small', [
+            m('p.head-black.text--large',  m.route().match(/create/) ? 'Create Order' : 'Order #' + Admin.models.orders.data.single().order_number),
+            m('p.text-gray', moment(Admin.models.orders.data.single().date.created).format('dddd, MMMM Do, YYYY'))
           ])
         ]),
         m('.col.small-1-3.text-right.text-middle', [
@@ -56,10 +57,6 @@ Admin.components.shop.orders.show.ui.header = {
               {
                 name: 'receipt',
                 label: 'Receipt'
-              },
-              {
-                name: 'customer',
-                label: 'Customer'
               },
               {
                 name: 'payment',
@@ -90,12 +87,17 @@ Admin.components.shop.orders.show.ui.actions = {
   },
   view: function(ctrl) {
     return m('footer.fill-width.bottom.absolute.bg-white.z-high.border-gray-light.border--top', [
-      m('div.row.text-right.padding-medium', [
-        m('a.btn-white.margin-right-small', {
-          href: '/' + Admin.route.section + '/' + Admin.route.subsection,
-          config: m.route
-        }, 'Cancel'),
-        m('button.btn-green.btn--wide', 'Save')
+      m('div.row.padding-medium', [
+        m('.col.small-1-2.text-left', [
+          m('button.btn.icon-trash-red.icon--center' + (Admin.components.shop.orders.state.isDeleteProcessing() === Admin.models.orders.data.single().id ? '.is-loading' : ''), {})
+        ]),
+        m('.col.small-1-2.text-right', [
+          m('a.btn-white.margin-right-small', {
+            href: '/' + Admin.route.section + '/' + Admin.route.subsection,
+            config: m.route
+          }, 'Cancel'),
+          m('button.btn-green.btn--wide', 'Save')
+        ])
       ])
     ]);
   }
