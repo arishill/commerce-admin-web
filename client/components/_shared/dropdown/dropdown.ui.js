@@ -10,7 +10,7 @@ Admin.components.shared.dropdown.ui.container = {
   },
   view: function(ctrl, data) {
     return m('div.dropdown.dropdown--bottom.dropdown--fill.fill-width', [
-      m('a[href=#].btn-dropdown-' + (data.color ? data.color : 'gray-light') + '.text-left.fill-width', {
+      m('a[href=#].btn-dropdown-' + (data.color ? data.color : 'gray-light') + '.text-left.fill-width' + (data.size ? ('.btn--' + data.size) : ''), {
         onclick: function(event) {
           event.preventDefault();
           if (ctrl.isOpen()) {
@@ -27,7 +27,7 @@ Admin.components.shared.dropdown.ui.container = {
       }) : '',
       m('ul.dropdown-list.text-center.text-small.arrow-top-right.box-shadow' + (ctrl.isOpen() ? '.is-active' : ''), [
         data.items.map(function(item){
-          return m('li', [
+          return m('li' + (item.is_disabled ? '.is-transparent-high' : ''), [
             m('a', { href: item.link ? item.link : '#', onclick: function(event) {
               event.preventDefault();
               ctrl.selected({
@@ -36,7 +36,9 @@ Admin.components.shared.dropdown.ui.container = {
               });
               ctrl.isChanged(true);
               ctrl.isOpen(false);
-              data.onselect(ctrl.selected());
+              if (data.onselect) {
+                data.onselect(ctrl.selected());
+              }
             } }, item.label)
           ]);
         })
