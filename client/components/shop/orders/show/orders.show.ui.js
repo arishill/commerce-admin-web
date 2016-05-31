@@ -89,7 +89,7 @@ Admin.components.shop.orders.show.ui.actions = {
     return m('footer.fill-width.bottom.absolute.bg-white.z-high.border-gray-light.border--top', [
       m('div.row.padding-medium', [
         m('.col.small-1-2.text-left', [
-          m('button.btn.icon-trash-red.icon--center' + (Admin.components.shop.orders.state.isDeleteProcessing() === Admin.models.orders.data.single().id ? '.is-loading' : ''), {})
+          m('button.btn.icon-trash-red.icon--center' + (Admin.components.shop.orders.show.state.isDeleteProcessing() === Admin.models.orders.data.single().id ? '.is-loading' : ''), {})
         ]),
         m('.col.small-1-2.text-right', [
           m('a.btn-white.margin-right-small', {
