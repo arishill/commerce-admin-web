@@ -8,16 +8,30 @@ Admin.layouts.standard.ui.container = {
   },
   view: function() {
     let method = Admin.route.method === 'show' ? 'index' : Admin.route.method;
-    let stageComponent = Admin.components[Admin.route.section][Admin.route.subsection][method].ui.container ;
+    let stageComponent;
+
+    if (m.route.param('subsection') && m.route.param('subsection').match(/customers|reports|collections|carts/)) {
+      Admin.components.shared.modal.state.wip(true);
+      Admin.components.shared.modal.state.isOpen(true);
+    }
+
+    if (Admin.components[Admin.route.section][Admin.route.subsection]) {
+      stageComponent = Admin.components[Admin.route.section][Admin.route.subsection][method].ui.container;
+    }
 
     return [
       m.component(Admin.components.nav.secondary.ui.container),
       m('section.stage', [
         m('.contain', [
-          m.component(stageComponent),
+          stageComponent ?
+          m.component(stageComponent) : '',
         ]),
-        m.component(Admin.layouts.standard.ui.drawer)
-      ])
+        m.component(Admin.layouts.standard.ui.drawer),
+        Admin.components.shared.modal.state.isOpen() ?
+          Admin.components.shared.modal.ui.overlay : ''
+      ]),
+      Admin.components.shared.modal.state.isOpen() ?
+        m.component(Admin.components.shared.modal.ui.container) : ''
     ];
   }
 };
