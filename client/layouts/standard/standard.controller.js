@@ -2,13 +2,13 @@
 
 Admin.layouts.standard.controller = function() {
   let pathname = m.route().split('?')[0];
-  
+
   Admin.route = {
     pathname: pathname,
     method: m.route.param('id') ? 'show' : 'index',
     id: m.route.param('id') || null,
-    section: pathname.split('/')[1] || 'shop',
-    subsection: pathname.split('/')[2] || 'dashboard',
+    section: m.route.param('section') || 'shop',
+    subsection: m.route.param('subsection') || 'dashboard',
   };
 
   if (Admin.route.method === 'show') {
