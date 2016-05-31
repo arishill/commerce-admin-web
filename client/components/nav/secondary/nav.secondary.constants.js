@@ -8,8 +8,9 @@ Admin.components.nav.secondary.constants = {
         {
         'name': 'dashboard',
         'href': '/content',
-        'title': 'Dashboard'
-        },
+        'title': 'Dashboard',
+        'is_active': true
+        }
       ]
     ]
   },
@@ -18,9 +19,16 @@ Admin.components.nav.secondary.constants = {
       // group 1
       [
         {
-        'name': 'dashboard',
-        'href': '/shop',
-        'title': 'Dashboard'
+          'name': 'dashboard',
+          'href': '/shop',
+          'title': 'Dashboard',
+          'is_active': true
+        },
+        {
+          'name': 'reports',
+          'href': '/shop/reports',
+          'title': 'Reports',
+          'is_active': false
         }
       ],
       // group 2
@@ -28,12 +36,26 @@ Admin.components.nav.secondary.constants = {
         {
           'name': 'products',
           'href': '/shop/products',
-          'title': 'Products'
+          'title': 'Products',
+          'is_active': true
         },
+        // {
+        //   'name': 'subscriptions',
+        //   'href': '/shop/subscriptions',
+        //   'title': 'Subscriptions',
+        //   'is_active': false
+        // },
         {
           'name': 'discounts',
           'href': '/shop/discounts',
-          'title': 'Discounts'
+          'title': 'Discounts',
+          'is_active': true
+        },
+        {
+          'name': 'collections',
+          'href': '/shop/collections',
+          'title': 'Collections',
+          'is_active': false
         }
       ],
 
@@ -42,7 +64,20 @@ Admin.components.nav.secondary.constants = {
         {
           'name': 'orders',
           'href': '/shop/orders',
-          'title': 'Orders'
+          'title': 'Orders',
+          'is_active': true
+        },
+        {
+          'name': 'customers',
+          'href': '/shop/customers',
+          'title': 'Customers',
+          'is_active': false
+        },
+        {
+          'name': 'carts',
+          'href': '/shop/carts',
+          'title': 'Carts',
+          'is_active': false
         }
       ]
     ]

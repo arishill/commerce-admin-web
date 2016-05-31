@@ -14,6 +14,9 @@ window.Admin = {
       checkbox: {
         ui: {}
       },
+      modal: {
+        ui: {}
+      },
       toggle: {
         ui: {}
       },
@@ -78,6 +81,46 @@ window.Admin = {
         }
       },
       discounts: {
+        index: {
+          ui: {}
+        },
+        show: {
+          ui: {
+            form: {}
+          }
+        }
+      },
+      collections: {
+        index: {
+          ui: {}
+        },
+        show: {
+          ui: {
+            form: {}
+          }
+        }
+      },
+      customers: {
+        index: {
+          ui: {}
+        },
+        show: {
+          ui: {
+            form: {}
+          }
+        }
+      },
+      carts: {
+        index: {
+          ui: {}
+        },
+        show: {
+          ui: {
+            form: {}
+          }
+        }
+      },
+      reports: {
         index: {
           ui: {}
         },
