@@ -26,7 +26,7 @@ Admin.components.shared.header.ui.container = {
           onmouseleave: function() {
             Admin.components.shared.header.state.addHover(false);
           }
-        }, 'Add ' + data.title.replace(/s$/, '') ) : ''
+        }, 'Create ' + data.title.replace(/s$/, '') ) : ''
       ])
     ]);
   }
