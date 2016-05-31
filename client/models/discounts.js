@@ -1,7 +1,8 @@
 Admin.models.discounts.data = {
   all: m.prop(null),
   single: m.prop(null),
-  search: m.prop(null)
+  search: m.prop(null),
+  form: m.prop(null)
 };
 
 Admin.models.discounts.all = function() {
@@ -17,34 +18,25 @@ Admin.models.discounts.retrieve = function(id, callback) {
 
   if (id === 'new') {
     doc = {
-      "id": "204661de-9bf9-490b-bdd8-3fb2b7849e58",
-      "object": "discount",
-      "date": {
-        "created": "2016-04-28T05:31:57Z",
-        "modified": "2016-04-29T02:52:57Z"
-      },
-      "title": "50% Off Swimming Suits",
-      "type": "sale",
+      "title": null,
+      "type": null,
       "ticket": null,
       "scope": {
         "match": "all"
       },
       "markdown": {
         "type": "percentage",
-        "percentage": 0.5
+        "percentage": 0
       },
       "flags": {
         "is_active": false,
-        "is_scheduled": true
+        "is_scheduled": false
       },
       "count": {
         "limit": false,
         "used": 0
       },
-      "scheduled": {
-        start: "2016-08-21T00:00:57Z",
-        end: "2016-09-15T00:00:57Z"
-      }
+      "scheduled": null
     };
   }
   else {
@@ -56,6 +48,7 @@ Admin.models.discounts.retrieve = function(id, callback) {
   }
 
   Admin.models.discounts.data.single(doc);
+  Admin.models.discounts.populateForm(doc);
 
   if (callback) {
     callback();
@@ -87,4 +80,12 @@ Admin.models.discounts.delete = function(id, callback) {
       m.endComputation();
     }
   }, 500);
+};
+
+Admin.models.discounts.populateForm = function(model) {
+  Admin.models.discounts.data.form = m.prop({});
+
+  _.each(model, function(item, prop) {
+    Admin.models.discounts.data.form()[prop] = m.prop(item);
+  });
 };

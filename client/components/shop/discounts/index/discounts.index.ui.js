@@ -31,12 +31,12 @@ Admin.components.shop.discounts.index.ui.table = {
         m('thead', [
           m('tr', [
             m('th.text-center.set-20'),
-            m('th.text-center', 'Type'),
+            m('th.text-center.set-75', 'Type'),
             m('th.text-left', 'Name / Scope'),
             m('th.text-center', 'Code'),
             m('th.text-center', 'Markdown'),
-            m('th.text-center', 'End Date'),
-            m('th.text-center', 'Redeemed / Limit'),
+            m('th.text-center.set-75', 'End Date'),
+            m('th.text-center.set-75', 'Used / Limit'),
             m('th.text-center', 'Status')
           ]),
         ]),
@@ -72,12 +72,14 @@ Admin.components.shop.discounts.index.ui.row = {
       ]),
       m('td.text-center', _.capitalizeFirstLetter(item.type)),
       m('td.text-left', [
-        m('p', item.title),
+        m('p.text--bold', item.title),
         m('p.text-gray.text--small.text--italic', 'All Products'),
       ]),
-      m('td.text-center', item.ticket ? item.ticket.code.toUpperCase() : m.trust('&mdash;')),
       m('td.text-center', [
-        m('span.text-yellow', ctrl.getMarkdown(item))
+        m('span', item.ticket ? item.ticket.code.toUpperCase() : m.trust('&mdash;'))
+      ]),
+      m('td.text-center', [
+        m('span.text-red', ctrl.getMarkdown(item))
       ]),
       m('td.text-center', item.scheduled && item.scheduled.end ? moment(item.scheduled.end).format('MM/DD/YYYY') : [
         m('i.icon-infinity-gray.icon--small')

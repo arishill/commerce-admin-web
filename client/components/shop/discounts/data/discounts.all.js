@@ -31,7 +31,7 @@ Admin.data.discounts = {
       }
     },
     {
-      "id": "fd85eda8-162f-4c59-bfa9-5f4b83ddb67c",
+      "id": "4813adf6-b963-490e-a157-81cea92a1a30",
       "object": "discount",
       "date": {
         "created": "2016-03-22T05:39:57Z",
@@ -65,7 +65,7 @@ Admin.data.discounts = {
       }
     },
     {
-      "id": "fd85eda8-162f-4c59-bfa9-5f4b83ddb67c",
+      "id": "0644a363-c673-4ceb-b11c-d8c820020508",
       "object": "discount",
       "date": {
         "created": "2016-03-22T05:39:57Z",
@@ -99,7 +99,7 @@ Admin.data.discounts = {
       }
     },
     {
-      "id": "73986b01-fece-4172-a537-3745508d9d78",
+      "id": "85346bff-850b-412e-94a4-03405b546f07",
       "object": "discount",
       "date": {
         "created": "2016-04-28T05:31:57Z",
@@ -126,7 +126,7 @@ Admin.data.discounts = {
       "scheduled": null
     },
     {
-      "id": "2f1225fe-0721-4974-a8f3-bf6d9dc38f47",
+      "id": "12fa1910-c63d-4822-911e-f58389eaafbe",
       "object": "discount",
       "date": {
         "created": "2016-04-22T05:39:57Z",
@@ -157,7 +157,7 @@ Admin.data.discounts = {
       "scheduled": {}
     },
     {
-      "id": "5218d8ab-2046-43df-a000-9d02c84d9dd4",
+      "id": "0ad2aed8-9f57-42ee-a63a-2e1993fd250d",
       "object": "discount",
       "date": {
         "created": "2016-04-22T05:39:57Z",
@@ -188,7 +188,7 @@ Admin.data.discounts = {
       "scheduled": null
     },
     {
-      "id": "d6fd6bd2-2ab5-40ea-b0ea-fdd015481640",
+      "id": "5f2db538-fbb1-42d4-b977-cc3d2c785956",
       "object": "discount",
       "date": {
         "created": "2016-04-22T05:39:57Z",
@@ -221,7 +221,7 @@ Admin.data.discounts = {
       }
     },
     {
-      "id": "f3651738-c5f5-41c7-a1c2-b1aa3c08c307",
+      "id": "817bbe11-2a0f-413e-ae13-2f4a6913785a",
       "object": "discount",
       "date": {
         "created": "2015-12-15T01:13:57Z",
@@ -252,7 +252,7 @@ Admin.data.discounts = {
       "scheduled": null
     },
     {
-      "id": "f3651738-c5f5-41c7-a1c2-b1aa3c08c307",
+      "id": "d6544922-3051-46cb-ae95-6f523258247e",
       "object": "discount",
       "date": {
         "created": "2015-12-15T01:13:57Z",
@@ -280,7 +280,7 @@ Admin.data.discounts = {
       "scheduled": null
     },
     {
-      "id": "f3651738-c5f5-41c7-a1c2-b1aa3c08c307",
+      "id": "47024eb4-2be3-4eb6-a30a-ef3d91de7c56",
       "object": "discount",
       "date": {
         "created": "2015-12-15T01:13:57Z",

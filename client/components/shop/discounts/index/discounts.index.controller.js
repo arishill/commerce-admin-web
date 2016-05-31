@@ -62,6 +62,7 @@ Admin.components.shop.discounts.index.controller = function(opts) {
 
     if (discount.flags.is_scheduled && discount.scheduled.start) {
       status.text = 'Scheduled';
+      status.color = 'orange';
       status.subtext = discount.scheduled.end_date;
       return status;
     }
