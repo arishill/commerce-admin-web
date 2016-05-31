@@ -18,6 +18,9 @@ let Manifest = [
   'client/components/_shared/checkbox/checkbox.ui.js',
   'client/components/_shared/dropdown/dropdown.ui.js',
   'client/components/_shared/toggle/toggle.ui.js',
+  'client/components/_shared/modal/modal.ui.js',
+  'client/components/_shared/modal/modal.state.js',
+  'client/components/_shared/modal/modal.controller.js',
 
   /* primary nav component */
   'client/components/nav/primary/nav.primary.constants.js',
@@ -73,6 +76,23 @@ let Manifest = [
     'client/components/shop/discounts/show/discounts.show.controller.js',
     'client/components/shop/discounts/show/discounts.show.state.js',
     'client/components/shop/discounts/show/discounts.show.ui.js',
+    'client/components/shop/discounts/show/ui/discounts.ui.form.applies.js',
+    'client/components/shop/discounts/show/ui/discounts.ui.form.details.js',
+    'client/components/shop/discounts/show/ui/discounts.ui.form.notify.js',
+    'client/components/shop/discounts/show/ui/discounts.ui.form.schedule.js',
+
+    /* collections components */
+    'client/components/shop/collections/index/collections.index.ui.js',
+
+    /* customers components */
+    'client/components/shop/customers/index/customers.index.ui.js',
+
+    /* carts components */
+    'client/components/shop/carts/index/carts.index.ui.js',
+
+    /* reports components */
+    'client/components/shop/reports/index/reports.index.ui.js',
+
   //
   //   /* coupons components */
   //   'client/components/shop/coupons/index/view.js',
