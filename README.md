@@ -1,7 +1,7 @@
 Arishill Commerce Admin (Web)
 ==============================
 
-![alt tag](https://storage.googleapis.com/arishill-demo/arishill-commerce-admin-web.png)
+![alt tag](https://storage.googleapis.com/arishill-admin/demo/arishill-commerce-admin.png)
 
 Arishill Commerce is a work in progress. It is not yet ready for production use, as most features are not in a complete workable state. This repo is for the Web Admin of the platform.
 
