@@ -2,7 +2,7 @@
 
 Admin.components.shared.header.ui.container = {
   view: function(ctrl, data) {
-    return m('header.row.padding-medium', [
+    return m('header.row.padding-medium.bg-gray-xxlight', [
       m('div.col.small-1-2.text-left', [
         m('div.unit-horz', [
           m('h1.header-icon.' + data.icon + '.padding-right-medium.border--right.unit-block', data.title),
@@ -17,15 +17,9 @@ Admin.components.shared.header.ui.container = {
       ]),
       m('div.col.small-1-2.text-right', [
         data.buttons.has_arrange ? m('a[href=#].btn-white.btn--medium.icon--left.icon-arrange-site.icon--small.margin-right-small', 'Arrange ' + data.title) : '',
-        data.buttons.has_add ? m('a.btn-white.btn--medium.icon--left.icon-plus-' + (Admin.components.shared.header.state.addHover() ? 'black' : 'gray') + '.icon--small', {
+        data.buttons.has_add ? m('a.btn-black.btn--medium', {
           href: m.route() + '/create',
-          config: m.route,
-          onmouseenter: function() {
-            Admin.components.shared.header.state.addHover(true);
-          },
-          onmouseleave: function() {
-            Admin.components.shared.header.state.addHover(false);
-          }
+          config: m.route
         }, 'Create ' + data.title.replace(/s$/, '') ) : ''
       ])
     ]);

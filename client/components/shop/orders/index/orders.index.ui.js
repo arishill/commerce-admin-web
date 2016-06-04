@@ -36,8 +36,9 @@ Admin.components.shop.orders.index.ui.table = {
             m('th.text-left.small-3-16', 'Ship to'),
             m('th.text-left', 'Name'),
             m('th.text-right', 'Order Total'),
-            m('th.text-center', 'Payment'),
-            m('th.text-center', 'Fulfillment')
+            m('th.text-center.set-75', 'Payment'),
+            m('th.text-center.set-75', 'Fulfillment'),
+            m('th.set-20', 'Actions')
           ]),
         ]),
         m('tbody', [
@@ -58,7 +59,7 @@ Admin.components.shop.orders.index.ui.row = {
     return new Admin.components.shop.orders.index.controller();
   },
   view: function(ctrl, item, index) {
-    return m('tr.has-pointer' + (m.route.param('id') === item.id ? '.bg-gray-xxlight' : ''), {
+    return m('tr.has-pointer' + (m.route.param('id') === item.id ? '.is-selected' : ''), {
       onclick: function(event) {
         let parent = event.target.parentElement ? event.target.parentElement.nodeName : null;
         if (parent && parent === 'TD' || event.target.nodeName === 'TD') {
@@ -74,11 +75,7 @@ Admin.components.shop.orders.index.ui.row = {
       m('td.text-left', moment(item.date.created).format('MM/DD/YYYY')),
       m('td.text-left', item.customer.shipping.address.city + ', ' + item.customer.shipping.address.province),
       m('td.text-left', [
-        m('span', [
-          m('a.link-gray-dark.icon-email-gray.icon--right', {
-            href: 'mailto:' + item.customer.email
-          }, item.customer.name.first + ' ' + item.customer.name.last)
-        ])
+        m('span', item.customer.name.first + ' ' + item.customer.name.last)
       ]),
       m('td.text-right', [
         m('span', accounting.formatMoney(item.receipt.amount.total_cents/100), [
@@ -91,7 +88,7 @@ Admin.components.shop.orders.index.ui.row = {
           m('div', [
             m('span.tag-' + ctrl.getPaymentStatus(item).color, {
               style: {
-                minWidth: '90px'
+                minWidth: '80px'
               }
             }, ctrl.getPaymentStatus(item).text)
           ])
@@ -102,11 +99,42 @@ Admin.components.shop.orders.index.ui.row = {
           m('div', [
             m('span.tag-' + ctrl.getFulfillmentStatus(item).color, {
               style: {
-                minWidth: '90px'
+                minWidth: '80px'
               }
             }, ctrl.getFulfillmentStatus(item).text)
           ])
         ])
+      ]),
+      m('td.text-center', [
+        m.component(Admin.components.shared.dropdown.ui.container, {
+          label: '',
+          width: 'medium',
+          icon_only: true,
+          color: 'white',
+          input: true,
+          selectedVal: m.prop(null),
+          items: [
+            {
+              name: 'edit',
+              label: 'Edit Order'
+            },
+            {
+              name: 'ship',
+              label: 'Print & Ship'
+            },
+            {
+              name: 'refund',
+              label: 'Refund Order'
+            },
+            {
+              name: 'email',
+              label: 'Email Customer'
+            }
+          ],
+          onselect: function(selected) {
+
+          }
+        })
       ])
     ]);
   }
