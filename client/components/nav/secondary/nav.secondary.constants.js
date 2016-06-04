@@ -22,7 +22,7 @@ Admin.components.nav.secondary.constants = {
           'name': 'dashboard',
           'href': '/shop',
           'title': 'Dashboard',
-          'is_active': true
+          'is_active': false
         },
         {
           'name': 'reports',

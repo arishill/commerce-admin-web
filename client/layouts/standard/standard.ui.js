@@ -10,7 +10,7 @@ Admin.layouts.standard.ui.container = {
     let method = Admin.route.method === 'show' ? 'index' : Admin.route.method;
     let stageComponent;
 
-    if (m.route.param('subsection') && m.route.param('subsection').match(/customers|reports|collections|carts/)) {
+    if (Admin.route.subsection && Admin.route.subsection.match(/customers|reports|dashboard|collections|carts/)) {
       Admin.components.shared.modal.state.wip(true);
       Admin.components.shared.modal.state.isOpen(true);
     }
