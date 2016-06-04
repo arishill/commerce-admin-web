@@ -64,6 +64,30 @@ Admin.components.shop.products.index.controller = function(opts) {
     });
   };
 
+
+  self.getProductStatus = function(item) {
+    let status = {
+      color: 'gray',
+      text: null
+    };
+
+    if (item.flags.is_active) {
+      status.text = 'Active';
+      status.color = 'green';
+    }
+    else {
+      status.text = 'Inactive';
+      status.color = 'gray';
+    }
+
+    if (item.flags.is_scheduled) {
+      status.text = 'Scheduled';
+      status.color = 'orange';
+    }
+
+    return status;
+  };
+
   self.deleteProduct = function(id, event) {
     event.preventDefault();
     Admin.components.shop.products.state.isDeleteProcessing(id);
