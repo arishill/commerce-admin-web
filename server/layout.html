@@ -2,14 +2,13 @@
 <html>
   <head>
     <title>Arishill Commerce</title>
-    <link href="/aesop.css" media="screen" rel="stylesheet" type="text/css">
-    <link href="/app.css" media="screen" rel="stylesheet" type="text/css">
-    <link rel="shortcut icon" href="/favicon.png" type="image/png">
+      <link href="/aesop.{{#is_production}}min.{{/is_production}}css" media="screen" rel="stylesheet" type="text/css">
+      <link rel="shortcut icon" href="/favicon.png" type="image/png">
   </head>
   <body>
     <div id="admin"></div>
-    <script src="/vendor.js"></script>
-    <script src="/app.js"></script>
+    <script src="/vendor.{{#is_production}}min.{{/is_production}}js"></script>
+    <script src="/app.{{#is_production}}min.{{/is_production}}js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key={{GOOGLE_API_KEY}}"async defer></script>
   </body>
 </html>
