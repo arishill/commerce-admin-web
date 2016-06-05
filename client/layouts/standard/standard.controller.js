@@ -3,6 +3,12 @@
 Admin.layouts.standard.controller = function() {
   let pathname = m.route().split('?')[0];
 
+  if (!Cookies.get('arishill-demo') && Admin.components.shared.modal.state.intro()) {
+    Cookies.set('arishill-demo', true);
+    Admin.components.shared.modal.state.wip(true);
+    Admin.components.shared.modal.state.isOpen(true);
+  }
+
   Admin.route = {
     pathname: pathname,
     method: m.route.param('id') ? 'show' : 'index',

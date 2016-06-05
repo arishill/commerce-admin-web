@@ -24,14 +24,34 @@ Admin.components.shared.modal.ui.overlay = {
 Admin.components.shared.modal.ui.wip = {
   view: function(ctrl, opts) {
     return m('.contain.padding-large', [
-      m('.text-center', [
-        m('.img-placeholder-sq.img--large.margin-vert-medium')
-      ]),
-      m('.head-black.text--large.text-center.margin-bottom-medium', 'Coming Soon'),
-      m('p.text-gray-dark.text--medium.text-center.padding-horz-large', 'The UI Demo for this section is still in progress. Stay up to date on our progress with the Arishill Commerce Admin and API platforms by entering your email below.'),
-      Admin.components.shared.modal.state.emailSuccess() ?
-        m.component(Admin.components.shared.modal.ui.email.success) :
-        m.component(Admin.components.shared.modal.ui.email.form)
+      Admin.components.shared.modal.state.intro() ?
+      [
+        m('.head-black.text--large.text-center.margin-bottom-medium.margin-top-large', 'Arishill Admin Demo'),
+        m('div.text-gray-dark.text--medium.text-left.padding-horz-large', [
+          m('p.margin-vert-medium', 'Thanks for visiting. This demo is in progress. Sections and functionality will be added as it is built, so we ask you not get upset for parts that do not work just yet :)'),
+          m('p.margin-vert-medium', m.trust('This demo is meant to give an idea of what is to come, as well as a means for us to start getting feedback. Let us know your thoughts at <a class="text-green" href="mailto:hello@arishill.com">hello@arishill.com</a>.')),
+          m('div.text-center.margin-vert-large', [
+            m('button.btn.btn--wide.btn-green', {
+              onclick: function(event) {
+                event.preventDefault();
+                Admin.components.shared.modal.state.intro(false);
+                Admin.components.shared.modal.state.isOpen(false);
+              }
+            }, 'Start Browsing')
+          ])
+        ])
+      ] :
+      [
+        m('.text-center', [
+          m('.img-placeholder-sq.img--large.margin-vert-medium')
+        ]),
+        m('.head-black.text--large.text-center.margin-bottom-medium', 'Coming Soon'),
+        m('p.text-gray-dark.text--medium.text-center.padding-horz-large', 'The UI Demo for this section is still in progress. Stay up to date on our progress with the Arishill Commerce Admin and API platforms by entering your email below.')
+      ],
+      Admin.components.shared.modal.state.intro() ? '' :
+        Admin.components.shared.modal.state.emailSuccess() ?
+          m.component(Admin.components.shared.modal.ui.email.success) :
+          m.component(Admin.components.shared.modal.ui.email.form)
     ]);
   }
 };

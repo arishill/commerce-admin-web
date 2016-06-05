@@ -59,7 +59,8 @@ Admin.components.nav.secondary.ui.container = {
               m('a.btn-block-site' + (item.name === Admin.route.subsection ? '.is-active' : ''), {
                 href: item.href,
                 // config: m.route
-                onclick: function() {
+                onclick: function(event) {
+                  event.preventDefault();
                   Admin.components.shared.modal.state.isOpen(false);
                   m.route(item.href);
                 }
