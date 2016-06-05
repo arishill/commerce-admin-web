@@ -22,6 +22,7 @@ app.post('/subscribe', function(request, response) {
 
 app.get('*', function(request, response) {
   let data = {
+    is_production: process.env.ENVIRONMENT === 'production' ? true : false,
     API: {
       url: process.env.API_URL,
       key: process.env.API_KEY
