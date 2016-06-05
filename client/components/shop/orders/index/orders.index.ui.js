@@ -12,7 +12,7 @@ Admin.components.shop.orders.index.ui.container = {
         title: 'Orders',
         icon: 'icon-order-site',
         buttons: {
-          has_add: true
+          has_add: false
         },
         search: ctrl.search
       }),
