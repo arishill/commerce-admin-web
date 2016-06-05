@@ -49,6 +49,7 @@ let Manifest = [
     'client/components/shop/products/index/products.index.ui.js',
     'client/components/shop/products/show/products.show.controller.js',
     'client/components/shop/products/show/products.show.ui.js',
+    'client/components/shop/products/show/products.show.state.js',
     'client/components/shop/products/show/ui/products.ui.form.info.js',
     'client/components/shop/products/show/ui/products.ui.form.price.js',
     'client/components/shop/products/show/ui/products.ui.form.flags.js',

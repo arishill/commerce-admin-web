@@ -96,7 +96,9 @@ Admin.components.shop.orders.show.ui.actions = {
             href: '/' + Admin.route.section + '/' + Admin.route.subsection,
             config: m.route
           }, 'Cancel'),
-          m('button.btn-green.btn--wide', 'Save')
+          m('button.btn-green.btn--wide.is-transparent-high', {
+            disabled: true
+          }, 'Save')
         ])
       ])
     ]);

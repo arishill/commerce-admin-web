@@ -20,7 +20,7 @@ Admin.components.shop.products.show.ui.container = {
           m.component(Admin.components.shop.products.show.ui.form.schedule),
           m.component(Admin.components.shop.products.show.ui.form.categories)
         ]),
-        m.component(Admin.components.shop.products.show.ui.actions),
+        m.component(Admin.components.shop.products.show.ui.actions)
       ]);
     }
     else {
@@ -82,7 +82,15 @@ Admin.components.shop.products.show.ui.actions = {
           href: '/' + Admin.route.section + '/' + Admin.route.subsection,
           config: m.route
         }, 'Cancel'),
-        m('button.btn-green.btn--wide', 'Save')
+        m('button.btn-green.is-transparent-high.btn--wide' + (Admin.components.shop.products.show.state.isSaveProcessing() ? '.is-loading' : ''), {
+          type: 'submit',
+          disabled: true,
+          onclick: function() {
+            event.preventDefault();
+            Admin.components.shop.products.show.state.isSaveProcessing(true);
+            m.endComputation();
+          }
+        }, 'Save')
       ])
     ]);
   }
