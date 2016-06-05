@@ -29,13 +29,6 @@ catw('client/**/*.js', function() {
   });
 });
 
-// catw('client/manifests/vendor.js', function() {
-//   let src = './public/vendor.js';
-//   concat(manifests.vendor, src, function() {
-//     process.stdout.write(chalk.yellow('Vendor JS Updated \n'));
-//   });
-// });
-
 catw('node_modules/arishill-mithril/distr/arishill-mithril.js', function() {
   let src = './public/vendor.js';
   concat(manifests.vendor, src, function() {
