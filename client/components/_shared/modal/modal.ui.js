@@ -42,60 +42,64 @@ Admin.components.shared.modal.ui.wip = {
         ])
       ] :
       [
-        m('.text-center', [
-          m('.img-placeholder-sq.img--large.margin-vert-medium')
-        ]),
-        m('.head-black.text--large.text-center.margin-bottom-medium', 'Coming Soon'),
+        m('.head-black.text--large.text-center.margin-bottom-medium.margin-top-xlarge', 'Coming Soon'),
         m('p.text-gray-dark.text--medium.text-center.padding-horz-large', 'The UI Demo for this section is still in progress. Stay up to date on our progress with the Arishill Commerce Admin and API platforms by entering your email below.')
       ],
       Admin.components.shared.modal.state.intro() ? '' :
-        Admin.components.shared.modal.state.emailSuccess() ?
-          m.component(Admin.components.shared.modal.ui.email.success) :
-          m.component(Admin.components.shared.modal.ui.email.form)
+        m('div.c-newsletter', [
+          Admin.components.shared.modal.state.emailSuccess() ?
+            m.component(Admin.components.shared.modal.ui.email.success) :
+            m.component(Admin.components.shared.modal.ui.email.form)
+        ])
     ]);
   }
 };
 
 Admin.components.shared.modal.ui.email = {
   form: {
-    view: function() {
-      return m('form.form.margin-vert-medium.text-center', {
-        action: 'https://arishill.us8.list-manage.com/subscribe/post-json?u=a23c9648e76232fcc138eb842&amp;id=180ffcee75&amp;c=?',
-        method: 'post',
-        autocomplete: 'off'
+    controller: function() {
+      return new Admin.components.shared.modal.controller();
+    },
+    view: function(ctrl) {
+      return m('form.form.margin-vert-medium.text-center.c-newsletter-form', {
+        autocomplete: 'off',
+        config: function(el) {
+          setTimeout(function() { _.addClass(el, 'is-active'); }, 0);
+        },
+        onsubmit: function(event) {
+          event.preventDefault();
+          Admin.components.shared.modal.state.emailProcessing(true);
+          m.endComputation();
+          ctrl.sendEmail();
+        }
       }, [
-        m('div', {
-            style: { position: 'absolute', left: '-5000px' },
-            'aria-hidden': true
-          }, [
-          m('input', {
-            type: 'text',
-            name: 'b_a23c9648e76232fcc138eb842_180ffcee75',
-            tabindex: '-1',
-            value: ''
-          })
-        ]),
-        m('input.inline.margin-right-xsmall', {
+        m('input.inline.margin-right-xsmall' + (Admin.components.shared.modal.state.emailProcessing() ? '.is-transparent-mid' : ''), {
           type: 'text',
-          name: 'EMAIL',
+          disabled: (Admin.components.shared.modal.state.emailProcessing() ? true : false),
+          value: ctrl.email(),
+          onkeypress: ctrl.handleKey,
+          onkeydown: ctrl.handleKey,
+          oninput: m.withAttr('value', ctrl.email),
           placeholder: 'Enter your email'
         }),
-        m('button.btn.btn--wide.btn-green', {
+        m('button.btn.btn--wide.btn-green' + (Admin.components.shared.modal.state.emailProcessing() ? '.is-processing' : ''), {
           type: 'submit'
-        }, 'Submit')
+        }, 'Submit'),
+        Admin.components.shared.modal.state.emailError() ?
+        m('p.padding-medium.text-center.text-red', Admin.components.shared.modal.state.emailError()) : ''
       ]);
     }
   },
   success: {
     view: function() {
-      return m('.text-1.padding-medium.text-center', [
-        m('i.icon-smile')
+      return m('.text-1.padding-medium.text-center.c-newsletter-success', {
+        config: function(el) {
+          setTimeout(function() { _.addClass(el, 'is-active'); }, 0);
+        }
+      }, [
+        m('i.icon-smile'),
+        m('p.padding-top-xsmall.text-gray-dark', 'Thanks! Please check your inbox to confirm.')
       ]);
-    }
-  },
-  error: {
-    view: function() {
-      return m('p.padding-medium.text-center');
     }
   }
 };

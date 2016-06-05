@@ -10,10 +10,15 @@ const parser      = require('body-parser');
 const handlebars  = require('handlebars');
 const fs          = require('fs');
 const app         = express();
+const subscribe   = require('./subscribe');
 
 app.set('port', process.env.PORT);
 app.use(express.static('public'));
 app.use(parser.json());
+
+app.post('/subscribe', function(request, response) {
+  subscribe(request, response);
+});
 
 app.get('*', function(request, response) {
   let data = {

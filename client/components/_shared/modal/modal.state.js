@@ -5,6 +5,7 @@ Admin.components.shared.modal.state = {
   intro: m.prop(true),
   emailError: m.prop(false),
   emailSuccess: m.prop(false),
+  emailProcessing: m.prop(false),
   isOpen: m.prop(false),
   inBetween: m.prop(true)
 };
