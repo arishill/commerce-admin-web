@@ -28,8 +28,8 @@ Admin.components.shared.modal.ui.wip = {
       [
         m('.head-black.text--large.text-center.margin-bottom-medium.margin-top-large', 'Arishill Admin Demo'),
         m('div.text-gray-dark.text--medium.text-left.padding-horz-large', [
-          m('p.margin-vert-medium', 'Thanks for visiting. This demo is in progress. Sections and functionality will be added as it is built, so we ask you not get upset for parts that do not work just yet :)'),
-          m('p.margin-vert-medium', m.trust('This demo is meant to give an idea of what is to come, as well as a means for us to start getting feedback. Let us know your thoughts at <a class="text-green" href="mailto:hello@arishill.com">hello@arishill.com</a>.')),
+          m('p.margin-vert-medium', 'Thanks for visiting. This demo is in progress. Sections and functionality will be added as it is built, so we ask that you not get upset for parts that do not work just yet :)'),
+          m('p.margin-vert-medium', m.trust('This demo is meant to give you an idea of what is to come, as well as a means for us to start getting feedback. If you have any thoughts to share, let us know at <a class="text-green" href="mailto:hello@arishill.com">hello@arishill.com</a>.')),
           m('div.text-center.margin-vert-large', [
             m('button.btn.btn--wide.btn-green', {
               onclick: function(event) {
