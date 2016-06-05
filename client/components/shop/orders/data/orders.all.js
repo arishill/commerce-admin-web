@@ -87,7 +87,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/stripe-three-quarter.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/stripe-three-quarter.jpg"
             },
             "options": {},
             "price": {
@@ -261,7 +261,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/hawaiian-backpack.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/hawaiian-backpack.jpg"
             },
             "options": {},
             "price": {
@@ -436,7 +436,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/classic-tie.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/classic-tie.jpg"
             },
             "options": {},
             "price": {
@@ -490,7 +490,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/board-short.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/board-short.jpg"
             },
             "options": {},
             "price": {
@@ -665,7 +665,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/twill-rucksack.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/twill-rucksack.jpg"
             },
             "options": {},
             "price": {
@@ -721,7 +721,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/soludos.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/soludos.jpg"
             },
             "options": {},
             "price": {
@@ -897,7 +897,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/twill-rucksack.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/twill-rucksack.jpg"
             },
             "options": {},
             "price": {
@@ -949,7 +949,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/soludos.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/soludos.jpg"
             },
             "options": {},
             "price": {
@@ -1127,7 +1127,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/stripe-three-quarter.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/stripe-three-quarter.jpg"
             },
             "options": {},
             "price": {
@@ -1301,7 +1301,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/hawaiian-backpack.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/hawaiian-backpack.jpg"
             },
             "options": {},
             "price": {
@@ -1476,7 +1476,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/classic-tie.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/classic-tie.jpg"
             },
             "options": {},
             "price": {
@@ -1530,7 +1530,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/board-short.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/board-short.jpg"
             },
             "options": {},
             "price": {
@@ -1705,7 +1705,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/twill-rucksack.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/twill-rucksack.jpg"
             },
             "options": {},
             "price": {
@@ -1761,7 +1761,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/soludos.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/soludos.jpg"
             },
             "options": {},
             "price": {
@@ -1937,7 +1937,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/twill-rucksack.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/twill-rucksack.jpg"
             },
             "options": {},
             "price": {
@@ -1989,7 +1989,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/soludos.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/soludos.jpg"
             },
             "options": {},
             "price": {
@@ -2167,7 +2167,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/stripe-three-quarter.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/stripe-three-quarter.jpg"
             },
             "options": {},
             "price": {
@@ -2341,7 +2341,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/hawaiian-backpack.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/hawaiian-backpack.jpg"
             },
             "options": {},
             "price": {
@@ -2516,7 +2516,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/classic-tie.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/classic-tie.jpg"
             },
             "options": {},
             "price": {
@@ -2570,7 +2570,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/board-short.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/board-short.jpg"
             },
             "options": {},
             "price": {
@@ -2745,7 +2745,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/twill-rucksack.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/twill-rucksack.jpg"
             },
             "options": {},
             "price": {
@@ -2801,7 +2801,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/soludos.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/soludos.jpg"
             },
             "options": {},
             "price": {
@@ -2977,7 +2977,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/twill-rucksack.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/twill-rucksack.jpg"
             },
             "options": {},
             "price": {
@@ -3029,7 +3029,7 @@ Admin.data.orders = {
               "is_taxable": true
             },
             "images": {
-              "cascade": "https://storage.googleapis.com/arishill-demo/soludos.jpg"
+              "cascade": "https://storage.googleapis.com/arishill-admin/demo/soludos.jpg"
             },
             "options": {},
             "price": {
