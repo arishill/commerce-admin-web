@@ -6,13 +6,14 @@ Admin.components.shared.header.ui.container = {
       m('div.col.small-1-2.text-left', [
         m('div.unit-horz', [
           m('h1.header-icon.' + data.icon + '.padding-right-medium.border--right.unit-block', data.title),
+          data.search ?
           m('form.form-search.btn--medium.btn.is-inline icon--left.icon-search-black.unit-block.unit-fill', [
             m('input.data-search.text-gray.text--xmedium.padding-left-xsmall.is-block.text-left.fill-width[type=text]', {
               placeholder: 'Type here to search...' ,
               onkeyup: data.search,
               onkeydown: data.search
             })
-          ]),
+          ]) : '',
         ])
       ]),
       m('div.col.small-1-2.text-right', [
