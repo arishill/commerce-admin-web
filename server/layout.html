@@ -9,9 +9,15 @@
         <link href="/aesop.css" media="screen" rel="stylesheet" type="text/css">
         <link rel="shortcut icon" href="/favicon.png" type="image/png">
       {{/is_production}}
+
+      <script src="https://use.typekit.net/{{ config.typekit_id }}.js"></script>
+      <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </head>
   <body>
     <div id="admin"></div>
+
+    <!-- SCRIPTS -->
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ config.google_api_key }}"></script>
     {{#is_production}}
       <script src="https://storage.googleapis.com/arishill-admin/demo/vendor.min.js"></script>
       <script src="https://storage.googleapis.com/arishill-admin/demo/app.min.js"></script>
@@ -19,7 +25,5 @@
       <script src="/vendor.js"></script>
       <script src="/app.js"></script>
     {{/is_production}}
-
-    <script src="https://maps.googleapis.com/maps/api/js?key={{GOOGLE_API_KEY}}"async defer></script>
   </body>
 </html>
