@@ -4,9 +4,9 @@ Admin.components.nav.primary.constants = {
   items: [
     {
       'name': 'site',
-      'href': 'http://arishill.com',
+      'href': 'http://geshire.com/stack',
       'target': '_blank',
-      'title': 'arishill.com',
+      'title': 'geshire.com',
       'icon': 'icon-external-link-white',
     },
     {

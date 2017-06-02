@@ -26,10 +26,10 @@ Admin.components.shared.modal.ui.wip = {
     return m('.contain.padding-large', [
       Admin.components.shared.modal.state.intro() ?
       [
-        m('.head-black.text--large.text-center.margin-bottom-medium.margin-top-large', 'Arishill Admin Demo'),
+        m('.head-black.text--large.text-center.margin-bottom-medium.margin-top-large', 'GStack Commerce Admin Demo'),
         m('div.text-gray-dark.text--medium.text-left.padding-horz-large', [
           m('p.margin-vert-medium', 'Thanks for visiting. This demo is in progress. Sections and functionality will be added as it is built, so we ask that you not get upset for parts that do not work just yet :)'),
-          m('p.margin-vert-medium', m.trust('This demo is meant to give you an idea of what is to come, as well as a means for us to start getting feedback. If you have any thoughts to share, let us know at <a class="text-green" href="mailto:hello@arishill.com">hello@arishill.com</a>.')),
+          m('p.margin-vert-medium', m.trust('This demo is meant to give you an idea of what is to come, as well as a means for us to start getting feedback. If you have any thoughts to share, let us know at <a class="text-green" href="mailto:hello@geshire.com">hello@geshire.com</a>.')),
           m('div.text-center.margin-vert-large', [
             m('button.btn.btn--wide.btn-green', {
               onclick: function(event) {
@@ -43,7 +43,7 @@ Admin.components.shared.modal.ui.wip = {
       ] :
       [
         m('.head-black.text--large.text-center.margin-bottom-medium.margin-top-xlarge', 'Coming Soon'),
-        m('p.text-gray-dark.text--medium.text-center.padding-horz-large', 'The UI Demo for this section is still in progress. Stay up to date on our progress with the Arishill Commerce Admin and API platforms by entering your email below.')
+        m('p.text-gray-dark.text--medium.text-center.padding-horz-large', 'The UI Demo for this section is still in progress. Stay up to date on our progress with the GStack Commerce Admin and API platforms by entering your email below.')
       ],
       Admin.components.shared.modal.state.intro() ? '' :
         m('div.c-newsletter', [
